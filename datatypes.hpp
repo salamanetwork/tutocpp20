@@ -6,6 +6,46 @@
 #include <cstring>
 #include <iomanip>
 
+/*
+    Weired Integral Types:
+        char;
+        short int;
+        -------------------------------------------------------------------------------
+        * Integral types less than 4 bytes don not support arithmetic operations [+, -, *, /, %]
+        * Because, of the CPU Designs.
+*/
+
+void weried_integral_types()
+{
+    short int si01 = 20;
+    short int si02 = 30;
+    
+    char c01 = 40;
+    char c02 = 50;
+    
+    // get the sizeof si01, si02, c01, and c02.
+    std::cout << "sizeof si01: "    << sizeof(si01) << " Bytes" << std::endl;
+    std::cout << "sizeof si02: "    << sizeof(si02) << " Bytes" << std::endl;
+    std::cout << "sizeof c01: "     << sizeof(c01)  << " Bytes" << std::endl;
+    std::cout << "sizeof c02: "     << sizeof(c02)  << " Bytes" << std::endl;
+    
+    // If we use an arithmetic operations it will convert directly to int
+    short int result01 { si01 + si02 }; // Warning: << -Wnarrwing
+    short int result02 { c01 + c02 };   // Warning: << -Wnarrwing
+    
+    // warning: narrowing conversion of ‘(((int)si01) + ((int)si02))’ from ‘int’ to ‘short int’ [-Wnarrowing]
+    std::cout << "sizeof result01: "    << sizeof(result01) << " Bytes" << std::endl;
+    
+    // warning: narrowing conversion of ‘(((int)si01) + ((int)si02))’ from ‘int’ to ‘short int’ [-Wnarrowing]
+    std::cout << "sizeof result02: "    << sizeof(result02) << " Bytes" << std::endl;
+
+    // Fix & Solution
+    auto result03 { si01 + si02 }; // Convert automatically to int [Wide conversion] 
+    auto result04 { c01 + c02 };   // Convert automatically to int [Wide conversion]
+    
+    std::cout << "sizeof result03: "    << sizeof(result03) << " Bytes" << std::endl;
+    std::cout << "sizeof result04: "    << sizeof(result04) << " Bytes" << std::endl;
+}
 
 void integers_types()
 {
