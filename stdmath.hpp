@@ -27,6 +27,22 @@ void std_math()
     std::cout << "2.5   rounded to: " << std::round(2.5) << std::endl;
     std::cout << "2.4   rounded to: " << std::round(2.4) << std::endl;
     
+    // ceil(x)
+    std::cout << "3.654 ceiled to: " << std::ceil(3.654) << std::endl;
+    std::cout << "2.5   ceiled to: " << std::ceil(2.5) << std::endl;
+    std::cout << "2.4   ceiled to: " << std::ceil(2.4) << std::endl;
+    
+    // floor(x)
+    std::cout << "3.654 floored to: " << std::floor(3.654) << std::endl;
+    std::cout << "2.5   floored to: " << std::floor(2.5) << std::endl;
+    std::cout << "2.4   floored to: " << std::floor(2.4) << std::endl;
+    
+    // abs(x)
+    const int WEIGHT = 76678;
+    const int LEVEL = -76678;
+    std::cout << "Abs for WEIGHT: " << std::abs(WEIGHT) << std::endl;
+    std::cout << "Abs for LEVELT: " << std::abs(LEVEL)  << std::endl;
+    
 }
 
 
