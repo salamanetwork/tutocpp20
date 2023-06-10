@@ -4,6 +4,8 @@
 #include <iomanip>
 #include <ios>
 
+#include <limits>
+
 using namespace std;
 
 #define STR_HELPER(x) #x
@@ -112,6 +114,33 @@ void std_ioformat()
     std::cout << std::nouppercase << std::hex << "HEX 10844: " << 10844 << std::endl; // using std::nouppercase
 }
 
+
+void std_numeric_limits()
+{
+    const unsigned WIDTH (60);
+    
+    std::cout << std::setfill('-');
+    std::cout << "Max int: "                << setw(WIDTH) << std::numeric_limits<int>::max()                   << std::endl;
+    std::cout << "Max double: "             << setw(WIDTH) << std::numeric_limits<double>::max()                << std::endl;
+    std::cout << "Max float"                << setw(WIDTH) << std::numeric_limits<float>::max()                 << std::endl;
+    std::cout << "Max long"                 << setw(WIDTH) << std::numeric_limits<long>::max()                  << std::endl;
+    std::cout << "Max long long"            << setw(WIDTH) << std::numeric_limits<long long>::max()             << std::endl;
+    std::cout << "Max Signed long long"     << setw(WIDTH) << std::numeric_limits<signed long long>::max()      << std::endl;
+    
+    std::cout << "Min int: "                << setw(WIDTH) << std::numeric_limits<int>::min()                   << std::endl;
+    std::cout << "Min double: "             << setw(WIDTH) << std::numeric_limits<double>::min()                << std::endl;
+    std::cout << "Min float"                << setw(WIDTH) << std::numeric_limits<float>::min()                 << std::endl;
+    std::cout << "Min long"                 << setw(WIDTH) << std::numeric_limits<long>::min()                  << std::endl;
+    std::cout << "Min long long"            << setw(WIDTH) << std::numeric_limits<long long>::min()             << std::endl;
+    std::cout << "Min Signed long long"     << setw(WIDTH) << std::numeric_limits<signed long long>::min()      << std::endl;
+    
+    std::cout << "Lowest int: "             << setw(WIDTH) << std::numeric_limits<int>::lowest()                << std::endl;
+    std::cout << "Lowest double: "          << setw(WIDTH) << std::numeric_limits<double>::lowest()             << std::endl;
+    std::cout << "Lowest float"             << setw(WIDTH) << std::numeric_limits<float>::lowest()              << std::endl;
+    std::cout << "Lowest long"              << setw(WIDTH) << std::numeric_limits<long>::lowest()               << std::endl;
+    std::cout << "Lowest long long"         << setw(WIDTH) << std::numeric_limits<long long>::lowest()          << std::endl;
+    std::cout << "Lowest Signed long long"  << setw(WIDTH) << std::numeric_limits<signed long long>::lowest()   << std::endl;
+}
 
 
 
