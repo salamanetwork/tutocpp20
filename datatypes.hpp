@@ -7,6 +7,101 @@
 #include <iomanip>
 
 /*
+    Literals and Constants:
+        * Literals:
+            - Data that is directly represented in code without going through some other variable stored in memory.
+            - They are literally stored in the program executable file, hence the name literal!.
+        * Constants:
+            # const:
+                - A variable you can initialize, but can’t change afterwards.
+                - A read only variable. Can’t assign data to it.
+                - const unsigned PI = 3.14;
+            # Constant Expressions:
+                * constexpr:
+                    - Constant expressions have been introduced in C++11.
+                    - Constant that may be evaluated at compile time or runtime.
+                    - Constant expressions are also constants, so you can’t reassign values to them.
+                    - Notes: 
+                        - If possible, move the potentially heavy computations at compile time.
+                        - The heavy computation is done once by the developer and users running the application can benefit from the results of the computation done at compile time.
+                * constinit:
+                    - Constant intialization have been introduced in C++20.
+                    - A variable that should be initialized with a constant or literal at compile time.
+                    - However, constexpr does imply constinit.
+                    - constexpr is not equivalent to const constinit, as the former mandates constant destruction, while the latter doesn't.
+                    - It can be both const and constinit. It cannot be both constexpr and constinit.
+                    - constinit helps developers ensure that is the case without having to guess or check the generated assembly. 
+                    - It can only be applied to variables with static or thread storage duration. It does not make sense to apply it to other variables, as constinit is all about static initialization.
+                    
+*/
+
+// constexpr constinit double MY_PI {3.14159265359};   // Fail: constexpr + constinit 
+const constinit double MY_PI {3.14159265359};       // Pass: const + constinit
+
+int XI {1};                             // Run Time Value
+// constinit int VAR_XI {XI};           // Fail
+// constexpr int VAR_XI {XI};           // Fail
+const int VAR_XI {XI};                  // Pass
+const int VAR_XII {2};                  // Pass
+// constinit int VAR_XIII {VAR_XI};     // Fail: VAR_XI does not have a constant initializer
+constinit int VAR_XIV  {VAR_XII};       // Pass
+
+
+void literals_and_constants()
+{   
+    // 01) const
+    // Compile error - uninitialized ‘const WIDTH’ [-fpermissive]
+    // const unsigned int WIDTH;        // Fail
+    const unsigned int WIDTH {80};      // Pass
+    const unsigned int HEIGHT {10};     // Pass
+    
+    const auto AREA { WIDTH * HEIGHT }; // Pass
+    std::cout << "Area {WIDTH * HEIGHT} is: " << AREA << std::endl;
+    
+    // 02) constexpr
+    constexpr double FIXED_INTEREST {3.6};
+    constexpr double PI {3.14159265359};
+    std::cout << std::endl;
+    
+    std::cout << "FIXED_INTEREST is: " << FIXED_INTEREST << std::endl;
+    std::cout << "PI is: " << PI << std::endl;
+    std::cout << std::endl;
+    
+    // Error: the value of ‘my_value’ is not usable in a constant expressio
+    unsigned short int my_value (2);    // Non constexpr
+    // my_value is not kown at the Compile time
+    // constexpr int my_life (my_value);   // Error
+    
+    // Pass:
+    constexpr int const_val = 5;
+    constexpr int const_val2 = const_val;
+    std::cout << "const_val2: " << const_val2  << std::endl;
+    std::cout << std::endl;
+    
+    // Pass:
+    const int const_val3 = 9;
+    constexpr int const_val4 = const_val3 * 10;
+    std::cout << "const_val4: " << const_val4  << std::endl;
+    std::cout << std::endl;
+    
+    // static_assert(expr) : using to check at compile time
+    // static_assert(const_val2 == 3, "const_val2 is not equal!");  // Error
+    static_assert(const_val2 == 5, "const_val2 is not equal!");     // Pass
+    
+    // 03) constinit
+    // constinit long double STOCK_MARKET_INTEREST_MONTHLY {987656.9887};       // Error
+    static constinit long double STOCK_MARKET_INTEREST_MONTHLY {987656.9887};   // Pass
+    std::cout << "STOCK_MARKET_INTEREST_MONTHLY: " << STOCK_MARKET_INTEREST_MONTHLY << std::endl;
+    std::cout << std::endl;
+    
+    // constexpr constinit long double STOCK_MARKET_INTEREST_DAILY {8985.98874};   // Error 
+    static const constinit long double STOCK_MARKET_INTEREST_DAILY {8985.98874};   // Pass
+    std::cout << "STOCK_MARKET_INTEREST_DAILY: " << STOCK_MARKET_INTEREST_DAILY << std::endl;
+    std::cout << std::endl;
+    
+}
+
+/*
     Weired Integral Types:
         char;
         short int;
