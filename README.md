@@ -37,3 +37,4 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   2) Programming: Principles and Practice Using C++ / Bjarne Stroustrup
   3) C++ Programming Language / Bjarne Stroustrup
   4) Professional C++ / Marc Gregoire 
+  5) C++ How to Program / Paul Deitel and Harvey Deitel
