@@ -1,7 +1,7 @@
 # tutocpp20:
 My Tutorial Journey On C++ 20 starts at 1 June 2023
   ## Log:
-  ### These are the file I coded ordered by LIFO -> The recent one is the last one in the list:
+  ### These are the file I coded ordered by LIFO (The recent one is the last one in the list):
     1) main.cpp
     2) stdios.hpp
     3) datatypes.hpp
