@@ -1,5 +1,13 @@
 # tutocpp20:
 My Tutorial Journey On C++ 20 starts at 1 June 2023
+  ## Log:
+  1) main.cpp
+  2) stdios.hpp
+  3) datatypes.hpp
+  4) stdmath.hpp
+  5) rps_game.hpp
+  6) data_conversion.hpp
+  7) bitwise_ops.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
