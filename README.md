@@ -1,7 +1,7 @@
-## tutocpp20:
+# tutocpp20:
 My Tutorial Journey On C++ 20 starts at 1 June 2023
 
-## Tools:
+# Tools:
 1) Fedora 38 GNU/LINUX, KDE
 2) Mozilla FireFox 114
 3) www.onlinegdb.com
@@ -17,8 +17,8 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
 13) www.repl.it
 14) www.cppinsights.io
 
-## References:
-  # Websites:
+# References:
+  ## Websites:
   1) www.cppreference.com
   2) www.cplusplus.com
   3) www.stackoverflow.com 
@@ -29,10 +29,10 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   8) www.leetcode.com
   9) www.gcc.gnu.org
   10) www.clang.llvm.org
-  # Videos, Online Courses:
+  ## Videos, Online Courses:
   1) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
   2) Udemy - Complete Modern C++ (C++11/14/17) / Umar Lone
-  # Books, PDF's:
+  ## Books, PDF's:
   1) Beginning C++20: From Novice to Professional / Ivor Horton and Peter Van Weert
   2) Programming: Principles and Practice Using C++ / Bjarne Stroustrup
   3) Professional C++ / Marc Gregoire 
