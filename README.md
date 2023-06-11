@@ -23,6 +23,8 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
 3) www.stackoverflow.com 
 4) www.geeksforgeeks.org
 5) www.programiz.com
-6) www.leetcode.com
-7) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
-8) Udemy - Complete Modern C++ (C++11/14/17) / Umar Lone
+6) www.tutorialspoint.com
+7) www.cppsecrets.com
+8) www.leetcode.com
+9) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
+10) Udemy - Complete Modern C++ (C++11/14/17) / Umar Lone
