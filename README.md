@@ -35,4 +35,5 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   ## Books, PDF's:
   1) Beginning C++20: From Novice to Professional / Ivor Horton and Peter Van Weert
   2) Programming: Principles and Practice Using C++ / Bjarne Stroustrup
-  3) Professional C++ / Marc Gregoire 
+  3) C++ Programming Language / Bjarne Stroustrup
+  4) Professional C++ / Marc Gregoire 
