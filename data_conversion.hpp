@@ -34,6 +34,10 @@ using namespace std;
                 double ---> int;
     - Explicit Conversion 
         - Implicit Cast using static_cast<type>
+    - Overflow && Underflow
+        - Be a mindful of the valid range of your data types.
+        - Check the <limits> header for valid range.
+        - Compiler will throw some tips and warnings about Overflow & Underflow
 */
 
 void data_conversion()
@@ -101,6 +105,10 @@ void data_conversion()
     std::cout << "sum_to_double of {xp01 + xp02}: " << sum_to_double << std::endl;
     std::cout << "sizeof sum_to_double: " << sizeof sum_to_double << std::endl << std::endl;
     
+    // Overflow && Underflow
+    unsigned char char_var (65);    // Here the data size is: from 0 to 255
+    char_var = 261; // Store in the memory in more than data size -> Overflow
+    char_var = -5;  // Store in the memory in less than data size -> Underflow
 }
 
 
