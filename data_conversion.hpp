@@ -32,6 +32,8 @@ using namespace std;
         - Happens when as assignment doing data Conversion
             - ex:
                 double ---> int;
+    - Explicit Conversion 
+        - Implicit Cast using static_cast<type>
 */
 
 void data_conversion()
@@ -55,9 +57,49 @@ void data_conversion()
     
     std::cout << "x_val: " << x_val << std::endl;
     std::cout << "sizeof x_val: " << sizeof x_val << std::endl << std::endl;
+    
     std::cout << "y_val: " << y_val << std::endl;
     std::cout << "sizeof y_val: " << sizeof y_val << std::endl << std::endl;
     
+    // Explicit Conversion by static_cast
+    double xp01 { 95.56 }, xp02 { 54.67 };
+    
+    // 01) Cast then sum method
+    int sum_to_int { 
+        static_cast<int>(xp01) + static_cast<int>(xp02) 
+    };
+    
+    // 02) Sum then Cast method
+    int sum;
+    sum = static_cast<int>(xp01 + xp02);
+    
+    // 03 Old-Style C-Cast
+    int sum_with_cast = (int)(xp01 + xp02);
+    
+    // original value
+    double sum_to_double { xp01 + xp02 };
+    
+    std::cout << "xp01: " << xp01 << std::endl;
+    std::cout << "sizeof xp01: " << sizeof xp01 << std::endl << std::endl;
+    
+    std::cout << "xp02: " << xp02 << std::endl;
+    std::cout << "sizeof xp02: " << sizeof xp02 << std::endl << std::endl;
+    
+    // 01) Cast then sum method
+    std::cout << "sum_to_int of {xp01 + xp02}: " << sum_to_int << std::endl;
+    std::cout << "sizeof sum_to_int: " << sizeof sum_to_int << std::endl << std::endl;
+    
+    // 02) Sum then Cast method
+    std::cout << "sum of {xp01 + xp02}: " << sum << std::endl;
+    std::cout << "sizeof sum: " << sizeof sum << std::endl << std::endl;
+    
+    // 03) Old-Style C-Cast
+    std::cout << "sum_with_cast of {xp01 + xp02}: " << sum_with_cast << std::endl;
+    std::cout << "sizeof sum_with_cast: " << sizeof sum_with_cast << std::endl << std::endl;
+    
+    // original value
+    std::cout << "sum_to_double of {xp01 + xp02}: " << sum_to_double << std::endl;
+    std::cout << "sizeof sum_to_double: " << sizeof sum_to_double << std::endl << std::endl;
     
 }
 
