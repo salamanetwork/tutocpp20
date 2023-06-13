@@ -198,6 +198,89 @@ void logical_bitwise_ops()
         << std::endl;
 }
 
+/*
+    - Compound Bitwith operators:
+        - They work on the variable and put the result back in the same variable again.
+        - (>>=) Shift To The Right With Assignment
+        - (<<=) Shift To The Left With Assignment
+        - (&=) AND To The Right With Assignment
+        - (|=) OR With Assignment
+        - (^=) XOR To The Right With Assignment
+*/
+void compound_bitwise_ops()
+{
+    constexpr int WIDTH(40);
+    
+    unsigned char ch = 0b10110010;  // 178
+    
+    std::cout << "Original Values:" << std::endl;
+    
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl;
+     
+    std::cout << std::endl; 
+    
+    // Using Compound Bitwith operators:
+    
+    // 001) (<<=) Compound Left Shift
+    std::cout << "Bitwise Compound (<<=) Compound Left Shift:" << std::endl;
+    ch <<= 2;
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch <<= 2 [Compound Left Shift] is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl;
+        
+    // 002) (>>=) Compound Right Shift 
+    std::cout << std::endl;
+    std::cout << "Bitwise Compound (>>=) Compound Right Shift:" << std::endl;
+    ch >>= 2;
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch >>= 2 [Compound Right Shift] is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl;
+        
+    // 003) (&=) Compound & AND 
+    std::cout << std::endl;
+    std::cout << "Bitwise Compound (&=) Compound & AND:" << std::endl;
+    ch &= 0b10101101;   // 173
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch &= 2 [Compound (&=) AND] is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl;
+    
+    // 004) (|=) Compound & OR 
+    std::cout << std::endl;
+    std::cout << "Bitwise Compound (|=) Compound | OR:" << std::endl;
+    ch |= 0b10101101;   // 173
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch |= 2 [Compound (|=) OR] is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl;
+        
+    // 005) (^=) Compound & XOR 
+    std::cout << std::endl;
+    std::cout << "Bitwise Compound (^=) Compound | XOR:" << std::endl;
+    ch ^= 0b10101101;   // 173
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch ^= 2 [Compound (^=) XOR] is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl;
+    
+}
 
 
 #endif
