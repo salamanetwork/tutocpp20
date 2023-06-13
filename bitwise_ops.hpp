@@ -45,7 +45,54 @@ void bitwise_ops()
     
 }
 
-
+/*
+    - Bitwise shift operators:
+        - Bit shifting is only supported for integral types like int, char,...
+        - If data is lost as a result of you shifting bits left(<<) or right(>>), you can’t get the data back just by doing the reverse operation. 
+        - You’ve just lost the data permanently!
+        - The Rules of bit shifting:
+            - Shifting To Right Divides by (2^n)
+            - Shifting To Left multiplies by (2^n)
+            - The Rule breaks if you throw off 1's either to the right or the left
+*/
+void shift_ops()
+{
+    unsigned short int value (0x157c);  // 5500
+    
+    std::cout << "Original Value is: " << value << std::endl;
+    std::cout << "Original Value as a bitset is: " << std::bitset<16>(value) << std::endl;
+    
+    std::cout << std::endl;
+    
+    // Using shift ops
+    
+    // using implicit cast for value by auto
+    auto val = (value >> 1);
+    
+    // using explicit cast for value by static_cast
+    // 001)
+    // = 2750 after shift to the right 1 pos
+    // value = static_cast<unsigned short int>(value >> 1);    // Shift 1 pos to the right.
+    
+    // std::cout << "Original Value After Shift 1 position to the right is: " << value << std::endl;
+    // std::cout << "Original Value After Shift 1 position to the right using bitset representation is: " << std::bitset<16>(value) << std::endl;
+    
+    // 002)
+    // = 11000 after shift to the left 1 pos
+    // value = static_cast<unsigned short int>(value << 1);    // Shift 1 pos to the left.
+    
+    // std::cout << "Original Value After Shift 1 position to the left is: " << value << std::endl;
+    // std::cout << "Original Value After Shift 1 position to the left using bitset representation is: " << std::bitset<16>(value) << std::endl;
+    
+    
+    // 003)
+    // = 44000 after shift to the left 3 pos
+    value = static_cast<unsigned short int>(value << 3);    // Shift 3 pos to the left.
+    
+    std::cout << "Original Value After Shift 3 position to the left is: " << value << std::endl;
+    std::cout << "Original Value After Shift 3 position to the left using bitset representation is: " << std::bitset<16>(value) << std::endl;
+ 
+}
 
 
 #endif
