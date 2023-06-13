@@ -95,6 +95,111 @@ void shift_ops()
 }
 
 
+/*
+    - Logical Bitwise operators:
+        - (&) AND, (|) OR, (~) NOT, (^) XOR
+        - Table of truth:
+            --------------------------------------------------
+            (a) |   (b) |   (a&b)   |  (a|b) |  (~a) |   (a^b)
+            --------------------------------------------------
+            0       0        0          0         1       0
+            0       1        0          1         1       1
+            1       0        0          1         0       1
+            1       1        1          1         0       0
+            --------------------------------------------------
+*/
+void logical_bitwise_ops()
+{
+    constexpr int WIDTH(20);
+    
+    unsigned char ch01 {0x6};   // 0000 0110
+    unsigned char ch02 {0x9};   // 0000 1001
+    
+    std::cout << "Original Values:" << std::endl;
+    
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch01 is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch01)
+        << std::endl;
+        
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch02 is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch02)
+        << std::endl;
+    
+    std::cout << std::endl;
+    
+    // Using logical bitwise ops:
+    
+    std::cout << "Bitwise (&) AND:" << std::endl;
+    // 001) (&) AND
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch01 & ch02 is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch01 & ch02)
+        << std::endl;
+        
+    std::cout << std::endl;
+    std::cout << "Bitwise (|) OR:" << std::endl;        
+    // 002) (|) OR
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch01 | ch02 is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch01 | ch02)
+        << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << "Bitwise (~) NOT:" << std::endl;        
+    // 003) (~) NOT
+    std::cout 
+        << std::setw(WIDTH)
+        << "~ch01 is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(~ch01)
+        << std::endl;
+    
+    std::cout 
+        << std::setw(WIDTH)
+        << "~ch02 is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(~ch02)
+        << std::endl;
+        
+        // Using bin literal
+        std::cout 
+            << std::setw(WIDTH)
+            << "~0b10101101 is: "
+            << std::setw(WIDTH)
+            << std::bitset<8>(~0b10101101)
+            << std::endl;
+            
+        // Using hex literal
+        std::cout 
+            << std::setw(WIDTH)
+            << "~0xAD is: "
+            << std::setw(WIDTH)
+            << std::bitset<8>(~0xAD)
+            << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << "Bitwise (^) XOR :" << std::endl;
+    // 004) (^) XOR
+    std::cout 
+        << std::setw(WIDTH)
+        << "ch01 ^ ch02 is: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch01 ^ ch02)
+        << std::endl;
+}
+
+
+
 #endif
 
 
