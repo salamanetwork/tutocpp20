@@ -22,9 +22,10 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
 9) Microsoft Visual Studio 2022
 10) Windows 11
 11) Notepad++
-12) Code::Blocks
-13) www.repl.it
-14) www.cppinsights.io
+12) Eclipse IDE
+13) Code::Blocks
+14) www.repl.it
+15) www.cppinsights.io
 
 # References:
   ## Websites:
