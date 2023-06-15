@@ -533,7 +533,40 @@ void bitwise_mask_demo_1()
 }
 
 
+/*
+    - Masks Demo 02
+        - Packing colors information
+*/
 
+const unsigned int r_mask { 0xFF000000 };   // will be shift 24 pos
+const unsigned int g_mask { 0x00FF0000 };   // will be shift 16 pos
+const unsigned int b_mask { 0x0000FF00 };   // will be shift 8 pos
+const unsigned int a_mask { 0x000000FF };   // will be shift 0 pos
+
+void bitwise_mask_demo_02()
+{
+    unsigned int my_rgba_color { 0xAABCDE00 };
+    
+    std::cout << std::uppercase << std::hex << std::showbase << std::endl;
+    
+    std::cout 
+        << "Red is: " 
+        << ( ( my_rgba_color & r_mask ) >> 24 ) // shift 24 pos
+        << std::endl;
+    std::cout 
+        << "Green is: "
+        << ( ( my_rgba_color & g_mask ) >> 16 ) // shift 16 pos
+        << std::endl;
+    std::cout 
+        << "Blue is: " 
+        << ( ( my_rgba_color & b_mask ) >> 8 ) // shift 8 pos
+        << std::endl;
+    std::cout 
+        << "Alpha is: " 
+        << ( ( my_rgba_color & a_mask ) >> 0 ) // shift 0 pos
+        << std::endl;
+    
+}
 
 
 #endif
