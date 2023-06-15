@@ -282,6 +282,182 @@ void compound_bitwise_ops()
     
 }
 
+/*
+    - Bit Masks (Shadow):
+        - Operations:
+            - Set bit position      (var |= mask)
+            - Reset bit position    (var &= mask) OR (var &= ~(Reverse_mask))
+            - Check bit position    ((var & mask) >> pos)
+            - Toggle bit position   (var ^(mask))
+*/
+void bitwise_mask()
+{
+    const int WIDTH { 20 };
+    
+    // 8-bit = 1-byte 
+    const unsigned char mask_bit_0 {0b00000001};    // Bit 0
+    const unsigned char mask_bit_1 {0b00000010};    // Bit 1
+    const unsigned char mask_bit_2 {0b00000100};    // Bit 2
+    const unsigned char mask_bit_3 {0b00001000};    // Bit 3
+    const unsigned char mask_bit_4 {0b00010000};    // Bit 4
+    const unsigned char mask_bit_5 {0b00100000};    // Bit 5
+    const unsigned char mask_bit_6 {0b01000000};    // Bit 6
+    const unsigned char mask_bit_7 {0b10000000};    // Bit 7
+    
+    unsigned char ch { 0b00000000 }; // All bits starts as off
+    
+    std::cout << "Original Value of ch:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+        
+    // Set bits by: |= with mask of the bits
+    // Targeting position 1 = bit 1 => mask_bit_1
+    ch |= mask_bit_1;
+    std::cout << "Value of ch after setting:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+        
+    // Targeting position 5 = bit 5 => mask_bit_5
+    ch |= mask_bit_5;
+    std::cout << "Value of ch after setting:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+        
+    // Targeting all positions 0-7 to set all
+    ch |= 
+    ( 
+        mask_bit_0 | mask_bit_1 | mask_bit_2 | mask_bit_3 |
+        mask_bit_4 | mask_bit_5 | mask_bit_6 | mask_bit_7
+    );
+    std::cout << "Value of ch after setting:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+        
+    // Reset bits by: &= with mask of the bits
+    // Targeting position 1 = bit 1 => mask_bit_1
+    ch &= ~mask_bit_1;
+    std::cout << "Value of ch after resetting:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+        
+    // Targeting position 5 = bit 5 => mask_bit_5
+    ch &= ~mask_bit_5;
+    std::cout << "Value of ch after resetting:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+    
+     // Targeting positions 0, 2, 4, 6 to reset them
+    ch &= 
+    ~( 
+        mask_bit_0 | mask_bit_2 | mask_bit_4 | mask_bit_6
+    );
+    std::cout << "Value of ch after resetting:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+    
+    // Check bits by: (& mask) >> pos
+    // Check the state of the bits
+    std::cout << "Check the state of a bit is on/off" << std::endl;
+    std::cout << "bit_0 is: " << ( ( ch & mask_bit_0 ) >> 0 ) << std::endl;
+    std::cout << "bit_0 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_0 ) ) << std::endl;
+    
+    std::cout << "bit_1 is: " << ( ( ch & mask_bit_1 ) >> 1 ) << std::endl;
+    std::cout << "bit_1 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_1 ) ) << std::endl;
+    
+    std::cout << "bit_2 is: " << ( ( ch & mask_bit_2 ) >> 2 ) << std::endl;
+    std::cout << "bit_2 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_2 ) ) << std::endl;
+    
+    std::cout << "bit_3 is: " << ( ( ch & mask_bit_3 ) >> 3 ) << std::endl;
+    std::cout << "bit_3 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_3 ) ) << std::endl;
+    
+    std::cout << "bit_4 is: " << ( ( ch & mask_bit_4 ) >> 4 ) << std::endl;
+    std::cout << "bit_4 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_4 ) ) << std::endl;
+    
+    std::cout << "bit_5 is: " << ( ( ch & mask_bit_5 ) >> 5 ) << std::endl;
+    std::cout << "bit_5 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_5 ) ) << std::endl;
+    
+    std::cout << "bit_6 is: " << ( ( ch & mask_bit_6 ) >> 6 ) << std::endl;
+    std::cout << "bit_6 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_6 ) ) << std::endl;
+    
+    std::cout << "bit_7 is: " << ( ( ch & mask_bit_7 ) >> 7 ) << std::endl;
+    std::cout << "bit_7 with static_cast is: " << ( static_cast<bool>( ch & mask_bit_7 ) ) << std::endl;
+    
+    // Toggling bits by: ^(mask)
+    // Targeting position 0
+    std::cout << std::endl;
+    ch ^= mask_bit_0;
+    std::cout << "Value of ch after Toggling: " << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+        
+    // Targeting position 7
+    std::cout << std::endl;
+    ch ^= mask_bit_7;
+    std::cout << "Value of ch after Toggling: " << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+        
+    // Targeting positions  4, 5, 6, 7 to Toggle them
+    ch ^=
+    ( 
+        mask_bit_4 | mask_bit_5 | mask_bit_6 | mask_bit_7
+    );
+    std::cout << "Value of ch after Toggling:" << std::endl;
+    std::cout 
+        << std::setw(WIDTH) 
+        << "ch: "
+        << std::setw(WIDTH)
+        << std::bitset<8>(ch)
+        << std::endl
+        << std::endl;
+    
+}
+
 
 #endif
 
