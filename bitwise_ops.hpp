@@ -460,7 +460,7 @@ void bitwise_mask()
 
 
 /*
-    - Masks Demo
+    - Masks Demo 01
         - fun_opts_v0 : No Performance / Waste Of Memory
         - fun_opts_v1 : Performance / No Waste Of Memory
 */
