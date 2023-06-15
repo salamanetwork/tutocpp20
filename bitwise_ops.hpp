@@ -545,23 +545,29 @@ const unsigned int a_mask { 0x000000FF };   // will be shift 0 pos
 
 void bitwise_mask_demo_02()
 {
+    const int WIDTH { 20 };
+    
     unsigned int my_rgba_color { 0xAABCDE00 };
     
-    std::cout << std::uppercase << std::hex << std::showbase << std::endl;
+    std::cout << "Colors Information: " << std::endl;
+    std::cout << std::uppercase << std::hex << std::showbase;
     
     std::cout 
-        << "Red is: " 
+        << std::setw(WIDTH) << "Red is: " 
         << ( ( my_rgba_color & r_mask ) >> 24 ) // shift 24 pos
         << std::endl;
     std::cout 
+        << std::setw(WIDTH) 
         << "Green is: "
         << ( ( my_rgba_color & g_mask ) >> 16 ) // shift 16 pos
         << std::endl;
     std::cout 
+        << std::setw(WIDTH)
         << "Blue is: " 
         << ( ( my_rgba_color & b_mask ) >> 8 ) // shift 8 pos
         << std::endl;
     std::cout 
+        << std::setw(WIDTH) 
         << "Alpha is: " 
         << ( ( my_rgba_color & a_mask ) >> 0 ) // shift 0 pos
         << std::endl;
