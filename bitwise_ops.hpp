@@ -459,6 +459,78 @@ void bitwise_mask()
 }
 
 
+/*
+    - Masks Demo
+        - fun_opts_v0 : No Performance / Waste Of Memory
+        - fun_opts_v1 : Performance / No Waste Of Memory
+*/
+
+void fun_opts_v0    // Uses many parameters & waste of memory
+(   
+    // using 1 byte for each parameter = 8 bit * 8 = 64 bit; 
+    bool f00,   // bool = 1 Byte = 8 bit. 
+    bool f01,   // bool = 1 Byte = 8 bit. 
+    bool f02,   // bool = 1 Byte = 8 bit.  
+    bool f03,   // bool = 1 Byte = 8 bit.
+    bool f04,   // bool = 1 Byte = 8 bit. 
+    bool f05,   // bool = 1 Byte = 8 bit. 
+    bool f06,   // bool = 1 Byte = 8 bit. 
+    bool f07    // bool = 1 Byte = 8 bit.
+)
+{
+    std::cout << std::boolalpha;
+    std::cout << "f00 is: " << f00 << std::endl;
+    std::cout << "f01 is: " << f01 << std::endl;
+    std::cout << "f02 is: " << f02 << std::endl;
+    std::cout << "f03 is: " << f03 << std::endl;
+    std::cout << "f04 is: " << f04 << std::endl;
+    std::cout << "f05 is: " << f05 << std::endl;
+    std::cout << "f06 is: " << f06 << std::endl;
+    std::cout << "f07 is: " << f07 << std::endl;
+}
+
+// Masks 8-bit = 1-byte 
+const unsigned char mask_bit_0 {0b00000001};    // Bit 0
+const unsigned char mask_bit_1 {0b00000010};    // Bit 1
+const unsigned char mask_bit_2 {0b00000100};    // Bit 2
+const unsigned char mask_bit_3 {0b00001000};    // Bit 3
+const unsigned char mask_bit_4 {0b00010000};    // Bit 4
+const unsigned char mask_bit_5 {0b00100000};    // Bit 5
+const unsigned char mask_bit_6 {0b01000000};    // Bit 6
+const unsigned char mask_bit_7 {0b10000000};    // Bit 7
+
+void fun_opts_v1    // Uses 1 parameter & no waste of memory
+(   
+    // using 1 byte parameter = 8 bit * 1 = 8 bit; 
+    unsigned char flags    // char = 1 byte
+)
+{
+    std::cout << std::boolalpha;
+    std::cout << "f00 is: " << ( ( flags & mask_bit_0 ) >> 0 ) << std::endl;
+    std::cout << "f01 is: " << ( ( flags & mask_bit_1 ) >> 1 ) << std::endl;
+    std::cout << "f02 is: " << ( ( flags & mask_bit_2 ) >> 2 ) << std::endl;
+    std::cout << "f03 is: " << ( ( flags & mask_bit_3 ) >> 3 ) << std::endl;
+    std::cout << "f04 is: " << ( ( flags & mask_bit_4 ) >> 4 ) << std::endl;
+    std::cout << "f05 is: " << ( ( flags & mask_bit_5 ) >> 5 ) << std::endl;
+    std::cout << "f06 is: " << ( ( flags & mask_bit_6 ) >> 6 ) << std::endl;
+    std::cout << "f07 is: " << ( ( flags & mask_bit_7 ) >> 7 ) << std::endl;
+}
+
+void bitwise_mask_demo()
+{
+    std::cout << "fun_opts_v0: " << std::endl;
+    fun_opts_v0(0, 0, 1, 1, 1, 0, 1, 0);
+    
+    std::cout << std::endl;
+    
+    std::cout << "fun_opts_v1: " << std::endl;
+    fun_opts_v1(0b00111010);
+    
+    std::cout << std::endl;
+    
+    std::cout << "fun_opts_v1: " << std::endl;
+    fun_opts_v1(mask_bit_6 | mask_bit_4 | mask_bit_2 | mask_bit_0);
+}
 #endif
 
 
