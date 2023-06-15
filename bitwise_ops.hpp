@@ -516,7 +516,7 @@ void fun_opts_v1    // Uses 1 parameter & no waste of memory
     std::cout << "f07 is: " << ( ( flags & mask_bit_7 ) >> 7 ) << std::endl;
 }
 
-void bitwise_mask_demo()
+void bitwise_mask_demo_1()
 {
     std::cout << "fun_opts_v0: " << std::endl;
     fun_opts_v0(0, 0, 1, 1, 1, 0, 1, 0);
@@ -531,6 +531,11 @@ void bitwise_mask_demo()
     std::cout << "fun_opts_v1: " << std::endl;
     fun_opts_v1(mask_bit_6 | mask_bit_4 | mask_bit_2 | mask_bit_0);
 }
+
+
+
+
+
 #endif
 
 
