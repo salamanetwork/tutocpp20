@@ -180,7 +180,24 @@ void if_constexpr()
 	}
 }
 
+/*
+	- if with initializer:
+ 		- This enhancement simplifies common code patterns and helps users keep scopes tight. 
+   		- Which in turn avoids variable leaking outside the scope.
+	 	- if (initialize; condition) { } else { }
+*/
 
+void if_with_initializer()
+{
+	srand(time(NULL));
+	
+   // C++17 if statement with initializer
+   if (int random_num = rand(); random_num % 2 == 0) {
+      std::cout << random_num << " is an even number\n";
+   } else {
+      std::cout << random_num << " is an odd number\n";
+   }
+}
 
 
 
