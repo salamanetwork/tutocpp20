@@ -5,6 +5,8 @@
 #include <iomanip>
 #include <ios>
 
+#include <cstdlib>
+
 #include <bitset>
 
 /*
