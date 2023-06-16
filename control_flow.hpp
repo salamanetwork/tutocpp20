@@ -146,6 +146,38 @@ void ternary_init()
 }
 
 
+/*
+	- if constexpr
+ 		- Do conditional at compile-time.
+   		- The evaluated expression should be fully evaluated at compile-time:
+	 		- const bool condition { true };
+			- constexpr bool condition { true };
+   
+*/
+
+void if_constexpr()
+{
+	const bool condition { false };
+	// const bool condition { true };
+	
+	std::cout << std::boolalpha;
+	
+	if constexpr (condition)
+	{
+		std::cout
+			<< "if constexpr evaluated as: "
+			<< condition
+			<< std::endl;
+	}
+	else
+	{
+		std::cout
+			<< "if constexpr evaluated as: "
+			<< condition
+			<< std::endl;
+	}
+}
+
 
 
 
