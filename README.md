@@ -3,10 +3,10 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   ## Log:
   ### These are the files I coded ordered by LIFO (The recent one is the last one in the list):
     0001) main.cpp
-    0002) stdios.hpp
-    0003) datatypes.hpp
-    0004) stdmath.hpp
-    0005) rps_game.hpp
+    0002) std_ios.hpp
+    0003) data_types.hpp
+    0004) std_math.hpp
+    0005) rock_paper_scissor_game.hpp
     0006) data_conversion.hpp
     0007) bitwise_ops.hpp
     0008) variables_lifetime_scopes.hpp
