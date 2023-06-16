@@ -51,6 +51,50 @@ void short_circuit_evaluation()
 }
 
 
+/*
+	- Itegral Logic Conditions
+ 		- (0) is always false.
+   		- (1) is always true.
+	 	- (Any number positive or negative except zero) will be alwys true.
+   			- ex:
+	  			-2 = true
+	  			-9 = true
+	  			 0 = false
+	  			 1 = true
+	   			15 = true
+	   
+*/
+void itegral_logic_conditions()
+{
+	// int condition { 0 };			// Represents FALSE anyway.
+	int condition { -10 };			// Represents TRUE anyway.
+
+	std::cout << std::boolalpha;
+
+	if(condition)
+	{
+		std::cout 
+			<< "The Condition is: "
+			<< static_cast<bool>(condition)	// using explicit type conversion
+			<< std::endl
+			<< "The Condition is TRUE and has a value of: " 
+			<< condition
+			<< std::endl;
+	}
+	else
+	{
+		std::cout 
+			<< "The Condition is: "
+			<< static_cast<bool>(condition)	// using explicit type conversion
+			<< std::endl
+			<< "The Condition is FALSE and has a value of: " 
+			<< condition
+			<< std::endl;
+	}
+	
+}
+
+
 
 
 
