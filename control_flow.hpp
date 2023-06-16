@@ -94,6 +94,40 @@ void itegral_logic_conditions()
 	
 }
 
+/*
+	- Ternary Operators:
+ 		- result = (eval_expr) ?  if_true_do : else_do;
+   - Ternary Initialization:
+   		- var { (eval_expr) ?  if_true_do : else_do };
+*/
+
+void ternary_ops()
+{
+	unsigned int a { 65 }, b { 71 }, result;
+
+	result = (a > b) ? a : b;
+
+	std::cout
+		<< "a value is: "
+		<< a
+		<< std::endl
+		<< "b value is: "
+		<< b
+		<< std::endl
+		<< "a > b result is: "
+		<< (
+				(a > b) ? 
+				"The value of a is greater than b." : 
+				"The value of b is greater than a."
+			)
+		<< std::endl
+		<< std::setw(20)
+		<< "The result is: "
+		<< result
+		<< std::endl;
+		
+}
+
 
 
 
