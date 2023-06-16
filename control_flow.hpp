@@ -199,6 +199,35 @@ void if_with_initializer()
    }
 }
 
+/*
+	- switch with initializer:
+	 	- switch (initialize; condition)
+*/
+
+void switch_with_initializer()
+{
+	struct Device
+    {
+        enum State { SLEEP, READY, BAD };
+        auto state() const { return m_state; }
+ 
+    private:
+        State m_state{};
+    };
+ 
+    switch (auto dev = Device{}; dev.state())
+    {
+        case Device::SLEEP:
+            std::cout << "SLEEP"     << std::endl;
+            break;
+        case Device::READY:
+            std::cout << "READY"     << std::endl;
+            break;
+        case Device::BAD:
+            std::cout << "BAD"     << std::endl;
+            break;
+    }
+}
 
 
 
