@@ -128,7 +128,22 @@ void ternary_ops()
 		
 }
 
+void ternary_init()
+{
+	int normal_speed	= 100;		// On normal speed
+	int fast_speed 		= 200;		// On fast speed
+	bool accelerate 	= true;		// Modifying the speed
 
+	// Using ternary initialization
+	int speed { (accelerate) ? fast_speed : normal_speed };
+
+	std::cout 
+		<< "Speed is: " 
+		<< speed
+		<< ( (accelerate) ? " on fast speed" : " on normal speed" )
+		<< std::endl;
+	
+}
 
 
 
