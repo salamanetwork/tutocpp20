@@ -44,7 +44,25 @@ void for_range_loop()
         std::cout << "Char Value: " << ch << std::endl;
 }
 
-
+/*
+    - Traditional While Loop Statement:
+        - while(condition)
+*/
+void while_trad_loop()
+{
+    // Items
+    int items { 10 };
+    
+    // Iterator
+    size_t i { 0 };
+    
+    while( i < items )
+    {
+        std::cout << "Item    := " << i << std::endl;
+        ++i;
+    }
+        
+}
 
 
 
