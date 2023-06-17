@@ -2,15 +2,16 @@
 My Tutorial Journey On C++ 20 starts at 1 June 2023
   ## Log:
   ### These are the files I coded ordered by LIFO (The recent one is the last one in the list):
-    00001)   main.cpp
-    00002)   std_ios.hpp
-    00003)   data_types.hpp
-    00004)   std_math.hpp
-    00005)   rock_paper_scissor_game.hpp
-    00006)   data_conversion.hpp
-    00007)   bitwise_ops.hpp
-    00008)   variables_lifetime_scopes.hpp
-    00009)   control_flow.hpp
+    00001)  main.cpp
+    00002)  std_ios.hpp
+    00003)  data_types.hpp
+    00004)  std_math.hpp
+    00005)  rock_paper_scissor_game.hpp
+    00006)  data_conversion.hpp
+    00007)  bitwise_ops.hpp
+    00008)  variables_lifetime_scopes.hpp
+    00009)  control_flow.hpp
+    00010)  loops.hpp 
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
