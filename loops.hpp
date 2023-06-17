@@ -115,6 +115,92 @@ void infinite_loops()
     while(true);
 }
 
+/*
+    - Nesting Loops
+*/
+void nesting_loops()
+{
+    const int rows { 3 };
+    const int cols { 5 };
+
+    // iterators
+    int row, col, c, r = 0;
+
+    // Table by: nesting for loop
+    std::cout << "Table by: nesting for loop: " << std::endl;
+
+    for(size_t row { 0 }; row < rows; ++row)
+    {
+        for(size_t col { 0 }; col < cols; ++col)
+        {
+            std::cout 
+                << "( Row: " 
+                    << row 
+                        << ", Column: " 
+                            << col 
+                                << " ) ";
+        }
+        
+        std::cout << std::endl;
+    }
+    
+    std::cout << std::endl;
+    
+    std::cout << "Table by: nesting while loop: " << std::endl;
+
+    while(row < rows)
+    {
+        while(col < cols)
+        {
+            std::cout 
+                << "( Row: " 
+                    << row 
+                        << ", Column: " 
+                            << col 
+                                << " ) ";
+            ++col;
+        }
+        
+        std::cout << std::endl;
+
+        // Reset the col to 0: 
+            // must be reset to 0 because of printing out with synchronizing with row number from the beginning like (1, 0), (2, 0), ... 
+        col = 0;
+
+        ++row;
+    }
+
+    std::cout << std::endl;
+    
+    std::cout << "Table by: nesting do while loop: " << std::endl;
+
+    do
+    {
+        do
+        {
+            std::cout 
+                << "( Row: " 
+                    << r 
+                        << ", Column: " 
+                            << c 
+                                << " ) ";
+
+            ++c;
+        }
+        while(c < cols);
+
+        // Reset col to 0
+        c = 0;    // col must start at 0 that is why we reset it back to 0
+
+        ++r;
+
+        std::cout << std::endl;
+    }
+    while(r < rows);
+
+    std::cout << std::endl;
+}
+
 
 
 
