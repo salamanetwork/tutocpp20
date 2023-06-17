@@ -24,6 +24,26 @@ void for_trad_loop()
 }
 
 
+/*
+    - Range Based For Loop Statement:
+        - for(value : collection)
+            - value: hold a copy of the current iteration in the entire collection
+            - collection: is a container like 'Array', 'List', etc...
+            - auto: deducing the type automatically.
+            - you can inject the collection directly.
+
+*/
+void for_range_loop()
+{
+    int collection [] { 1, 2, 3, 4, 5 };
+    
+    for(int value : collection)
+        std::cout << "Item Value: " << value << std::endl;
+
+    for(auto ch : { 'a', 'b', 'c', 'd', 'e', 'f' })
+        std::cout << "Char Value: " << ch << std::endl;
+}
+
 
 
 
