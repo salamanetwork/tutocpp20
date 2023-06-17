@@ -64,6 +64,33 @@ void while_trad_loop()
         
 }
 
+/*
+    - Traditional Do While Loop Statement:
+        - do { } while(condition)
+        - Note: Run The Body Of Do First, Then Run The Test Of While.
+*/
+void do_while_trad_loop()
+{
+    const unsigned int items { 25 };
+
+    // iterator
+    int i = 0;
+
+    do
+    {
+        if(i != 10 && i < 10)
+        {
+            std::cout << "Item    := 0" << i << std::endl;
+        }
+        else if(i >= 10)
+        {
+            std::cout << "Item    := " << i << std::endl;
+        }
+        
+        ++i;
+    } 
+    while( i < items );
+}
 
 
 
