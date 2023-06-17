@@ -238,6 +238,105 @@ void arrays_rands_ranges_range_1_to_10_starts_from_1_with_seeding()
     }
 }
 
+/*
+    - Multi-Dimessional Array:
+        - syntax: type name [row_count][col_count] {};
+        - syntax: type name [][col_count] {};    // ommiting row_count
+*/
+
+// 2D Array
+void multi_dim_2d_array()
+{
+    // declaring and initializing 2D array
+    int data_packet [3] [4]
+    {    
+        // col: 0    col: 1    col: 2    col: 3
+        {    10,     20,       30,         40   },           // row: 0
+        {    50,     60,       70,         80   },           // row: 1
+        {    90,     10,       20,         30   },           // row: 2
+    };
+
+    // printing out the mult-dim array
+    for(size_t i {0}; i < std::size(data_packet); ++i)
+    {
+        std::cout << "Row: " << i << std::endl;
+
+        for(size_t j {0}; j < std::size(data_packet[i]); ++j)
+        {
+            std::cout 
+                << " ( Col: "
+                << j
+                << " val: "
+                << data_packet[i][j]
+                << " )\t";
+        }
+        std::cout  << std::endl;
+    }
+    std::cout << std::endl << std::endl;
+}
+
+// 3D Array
+void multi_dim_3d_array()
+{
+    int cube_3d [8] /* points: */ [2] /* area: w, h */ [3] /* location-axes: x, y, z*/ 
+    {
+        {
+            { 10, 11, 12 } /* area: 0 */, { 13, 14, 15 } /* area: 0 */
+        },    // point: 0
+        {
+            { 16, 17, 18 } /* area: 0 */, { 19, 20, 21 } /* area: 0 */
+        },    // point: 1
+        {
+            { 22, 23, 24 } /* area: 0 */, { 25, 26, 27 } /* area: 1 */
+        },    // point: 2
+        {
+            { 22, 23, 24 } /* area: 0 */, { 25, 26, 27 } /* area: 1 */
+        },    // point: 3
+        {
+            { 22, 23, 24 } /* area: 0 */, { 25, 26, 27 } /* area: 1 */
+        },    // point: 4
+        {
+            { 22, 23, 24 } /* area: 0 */, { 25, 26, 27 } /* area: 1 */
+        },    // point: 5
+        {
+            { 22, 23, 24 } /* area: 0 */, { 25, 26, 27 } /* area: 1 */
+        },    // point: 6
+        {
+            { 22, 23, 24 } /* area: 0 */, { 25, 26, 27 } /* area: 1 */
+        },    // point: 7
+    };
+
+    std::cout << std::endl;
+
+    // printing out the mult-dim array
+    for(size_t j {0}; j < std::size(cube_3d); ++j)                    // j loop for points
+    {
+        for(size_t k {0}; k < std::size(cube_3d[j]); ++k)             // k loop for area
+        {
+            for(size_t l {0}; l < std::size(cube_3d[j][k]); ++l)      // l loop for axes
+            {
+                std::cout
+                    << " ( point: "
+                    << j
+                    << "\n\t area: "
+                    << k
+                    << "\n\t\t axes: "
+                    << l
+                    << "\n\t\t\t val: "
+                    << cube_3d[j][k][l]
+                    << " ) \n\n";
+            }
+
+            std::cout << std::endl;
+        }
+
+        std::cout << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
 
 
 
