@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <ios>
 
+#include <ctime>
 #include <cstdlib>
 
 #include <bitset>
@@ -132,6 +133,110 @@ void arrays_of_chars()
     
 }
 
+
+/*
+    - Random Numbers:
+        - std::rand(): generates an integer number between 0 and RAND_MAX.
+        - RAND_MAX: dependes on the compiler.
+        - Ranges: std::rand() % integer_num.
+            - integer_num: to define the upper bound for the range
+                - ex:
+                    std:rand() % 11; // define a range [0-10]
+            - ((std::rand() % integer_num) + 1): 
+                - If we want to start the range from 1 not 0 as [1-10]
+                    - 1: is lower bound
+                    - 10: is upper bound
+                - ex:
+                    ((std::rand() % 10) + 1); // Range [1-10]
+            - Notes:
+                - The Main Issue of std::rand:
+                    - Each time the program runs, will give you the same sequance.
+                        - std::time(0): Using UNIX time [01 January 1970][00:00:00 AM]
+                            - Seeding: depends on the time
+                                - std::srand(std::time(0));
+*/
+void arrays_rands()
+{
+    std::cout << std::endl;
+
+    cout << "RAND_MAX is: " << RAND_MAX << endl;
+    std::cout << std::endl;
+    
+    for(size_t i = 0; i < 10; ++i)
+    {    
+        int rand_num = std::rand();
+        std::cout 
+            << "Random Number of(" 
+            << i 
+            << ") is: " 
+            << rand_num
+            << std::endl;
+    }
+    
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
+// Without Seeding
+// Using std::rand for range [0-10] starts from 0 *without seeding
+void arrays_rands_ranges_range_0_to_10_starts_from_0_without_seeding()
+{
+    // Define a range betwwen 0 to 10
+    int rand_num = std::rand() % 11;
+
+    for(size_t i = 0; i < 10; ++i)
+    {    
+        rand_num = std::rand() % 11;
+        std::cout 
+            << "Random Number of(" 
+            << i 
+            << ") is: " 
+            << rand_num
+            << std::endl;
+    }
+}
+
+// Without Seeding
+// Using std::rand for range [1-10] starts from 1 *without seeding
+void arrays_rands_ranges_range_1_to_10_starts_from_1_without_seeding()
+{
+    // Define a range betwwen 1 to 10
+    int rand_num = (std::rand() % 10) + 1;
+
+    for(size_t i = 0; i < 10; ++i)
+    {    
+        rand_num = (std::rand() % 10) + 1;
+        std::cout 
+            << "Random Number of(" 
+            << i 
+            << ") is: " 
+            << rand_num
+            << std::endl;
+    }
+}
+
+// With Seeding
+// Using std::rand for range [1-10] starts from 1 *with seeding using std::srand
+void arrays_rands_ranges_range_1_to_10_starts_from_1_with_seeding()
+{
+    // Seeding
+    std::srand(std::time(0));    // Using true randomizer by utilize the time
+    
+    // Define a range betwwen 1 to 10
+    int rand_num = (std::rand() % 10) + 1;
+
+    for(size_t i = 0; i < 10; ++i)
+    {    
+        rand_num = (std::rand() % 10) + 1;
+        std::cout 
+            << "Random Number of(" 
+            << i 
+            << ") is: " 
+            << rand_num
+            << std::endl;
+    }
+}
 
 
 
