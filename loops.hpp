@@ -202,6 +202,33 @@ void nesting_loops()
 }
 
 
+/*
+    - Range based for loop with Initializer
+        - for(auto initializer; value : collection)
+*/
+
+void range_based_for_loop_with_initializer()
+{
+    for(auto multi { 2 }; auto v : { 1, 2, 3, 4, 5, 6, 7, 8, 9 })
+    {
+        if(v % 2 == 0)
+            std::cout 
+                << "Even Number " 
+                    << v 
+                        << " is now: " 
+                            << ( v * multi )
+                                << "\n";
+        else
+            std::cout 
+                << "Odd Number " 
+                    << v  
+                        << " is the same." 
+                            << "\n";
+
+        std::cout << std::endl;
+    }
+}
+
 
 
 
