@@ -103,6 +103,35 @@ void arrays()
     
 }
 
+/*
+    - Arrays of Chars
+        - c-string: using '\0' null terminated
+        - string literal: using "" instead
+*/
+void arrays_of_chars()
+{
+     // char array: valid C-string
+    // Should add '\0': Null Terminated at the end of the array
+    char fname [] { 'A', 'H', 'M', 'E', 'D', '\0' };
+    
+    std::cout << "(Using c-string '\\0' Null Terminate) The First Name Is: " << fname << std::endl;
+    std::cout << "Size of The First Name Is: " << std::size(fname) << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // char array: valid C-string
+    // Use "": to avoid '\0' Null Terminated
+    char lname [] { "SALAMA" };
+    
+    std::cout << "(Using string literal \"\" Without Null Terminate) The Last Name Is: " << lname << std::endl;
+    std::cout << "Size of The Last Name Is: " << std::size(lname) << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+}
+
 
 
 
