@@ -17,17 +17,17 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
 1) Fedora 38 GNU/LINUX, KDE
 2) Mozilla FireFox 114
 3) www.onlinegdb.com
-4) KDE Kate Code Editor
-5) KDE KDevelop
-6) g++ (GCC) 13.1.1 20230511 (Red Hat 13.1.1-2)
-7) clang version 16.0.4 (Fedora 16.0.4-1.fc38)
-8) Microsoft Visual Studio Code
-9) Microsoft Visual Studio 2022
-10) Windows 11
-11) Notepad++
-12) Eclipse IDE
-13) Code::Blocks
-14) www.repl.it
+4) www.repl.it
+5) KDE Kate Code Editor
+6) KDE KDevelop
+7) g++ (GCC) 13.1.1 20230511 (Red Hat 13.1.1-2)
+8) clang version 16.0.4 (Fedora 16.0.4-1.fc38)
+9) Microsoft Visual Studio Code
+10) Microsoft Visual Studio 2022
+11) Windows 11
+12) Notepad++
+13) Eclipse IDE
+14) Code::Blocks
 15) www.cppinsights.io
 
 # References:
