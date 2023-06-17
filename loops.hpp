@@ -92,6 +92,31 @@ void do_while_trad_loop()
     while( i < items );
 }
 
+/*
+    - Infinite Loops:
+        - for(;;) {}
+        - while(true) {}
+        - do {} while(true);
+*/
+
+void infinite_loops()
+{
+    // for
+    for(;;)
+        std::cout << "This is infinite loop by traditional for loop" << std::endl;
+
+    // while
+    while(true)
+        std::cout << "This is infinite loop by traditional while loop" << std::endl;
+
+    // do-while
+    do
+        std::cout << "This is infinite loop by traditional do/while loop" << std::endl;
+    while(true);
+}
+
+
+
 
 
 
