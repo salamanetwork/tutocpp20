@@ -7,6 +7,7 @@
 
 #include <ctime>
 #include <cstdlib>
+#include <cstdint>
 
 #include <bitset>
 
@@ -268,6 +269,80 @@ void pointer_to_array_of_chars()
     std::cout << "Print  full_name[11]:  "      << full_name[11]   << std::endl;
     std::cout << "Print  full_name[12]:  "      << full_name[12]   << std::endl;
 }
+
+/*
+    - Arrays of pointer to chars (Array of Pointers to Strings):
+        - An array of pointers to strings is an array of character pointers where each pointer points to the first character of the string or the base address of the string
+        - Advantages:
+            - Unlink the two dimensional array of characters, in array of strings and in array of pointers to strings, there is no fixed memory size for storage.
+            - The strings occupy only as many bytes as required hence, there is no wastage of space.
+        - Explaination : 
+            - https://overiq.com/c-programming-101/array-of-pointers-to-strings-in-c/
+        - Syntax:
+            const char * todo_list []
+            {
+                "Study C++ Programming",                // todo_list[0]
+                "Read The C++ Programming Book",        // todo_list[1]
+                "Initiate C++ Project",                 // todo_list[2]
+                "Read About Memory Management",         // todo_list[3]
+                "Understand The Pointer In C++",        // todo_list[4]
+                "Understand The Reference In C++",      // todo_list[5]
+            };
+
+            // todo_list[0] point to the first char of array of chars: 'S' ...
+            // todo_list[1] point to the first char of array of chars: 'R' ...
+            // todo_list[2] point to the first char of array of chars: 'I' ...
+            // todo_list[3] point to the first char of array of chars: 'R' ...
+            // todo_list[4] point to the first char of array of chars: 'U' ...
+            // todo_list[5] point to the first char of array of chars: 'U' ...
+        
+*/
+
+void arrays_of_pointer_to_chars()
+{
+    const char * todo_list []
+    {
+        "Study C++ Programming",
+        "Read The C++ Programming Book",
+        "Initiate C++ Project",
+        "Read About Memory Management",
+        "Understand The Pointer In C++",
+        "Understand The Reference In C++",
+    };
+
+    for(uint32_t index {1}; auto item : todo_list)
+    {
+        std::cout << index << ") " << item << std::endl;
+        ++index;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
