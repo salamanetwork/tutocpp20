@@ -179,6 +179,95 @@ void pointers()
 }
 
 
+/*
+    - Pointer to char:
+        - syntax: 
+            char c {'a'};            // Normal Variable initialized with a single char 'a'
+            char *ch { nullptr };    // Intialize with nullptr
+            ch = &c;                 // Now 'ch' pointer point to 'c' variable by its address
+        - C-String Literals:
+            - C-String Literals Means: 'const char *'.
+            - We can point to a c-string literal by a pointer.
+            - Notes:
+                - C-String literals is just an Array of chars.
+                    - ex:
+                        char f_name[6] {'A', 'H', 'M', 'E', 'D', '\0'};    // '\0' is null terminated character
+                        char l_name[] {"SALAMA"};    // using C-String Literals, automatically add null terminated by default
+                - We can use pointer to refer to an Array of chars as C-String Literals
+                    - ex:
+                        char * full_name { "AHMED SALAMA" };
+                    - Notes:
+                        - This point it will refere to the first item, or the index 0 at this array of chars
+                        - explaination:
+                            char * full_name { "AHMED SALAMA" };
+                            // full_name will refer to 'A'
+*/
+
+void pointer_to_array_of_chars()
+{
+    // Declare & Define with 'const' to avoid compiler warnings
+    const char f_name[6] {'A', 'H', 'M', 'E', 'D', '\0'};
+    const char l_name[] {"SALAMA"};
+    
+    // ISO C++: Forbids convertion from 'const char*' to 'char*'
+    const char * full_name { "AHMED SALAMA" };
+
+    std::cout << "Print First Name: "     << f_name << std::endl;
+    std::cout << "Print Last Name: "      << l_name << std::endl;
+    std::cout << "Print Full Name: "      << full_name << std::endl;
+    
+    std::cout  << std::endl;
+
+    // Using (Deferencing): Will give you the first character only from the array
+    /*
+        const char * full_name {"AHMED SALAMA"}; // An Array OF Characters
+        ------------------------------------------------------------
+        |    Index    |    Value        |        Remarks           |
+        ------------------------------------------------------------
+        |    0        |    'A'          |        Char 'A'          |
+        ------------------------------------------------------------
+        |    1        |    'H'          |        Char 'H'          |
+        ------------------------------------------------------------
+        |    2        |    'M'          |        Char 'M'          |
+        ------------------------------------------------------------
+        |    3        |    'E'          |        Char 'E'          |
+        ------------------------------------------------------------
+        |    4        |    'D'          |        Char 'D'          |
+        ------------------------------------------------------------
+        |    5        |    ' '          |        Char ' '          |
+        ------------------------------------------------------------
+        |    6        |    'S'          |        Char 'S'          |
+        ------------------------------------------------------------
+        |    7        |    'A'          |        Char 'A'          |
+        ------------------------------------------------------------
+        |    8        |    'L'          |        Char 'L'          |
+        ------------------------------------------------------------
+        |    9        |    'A'          |        Char 'A'          |
+        ------------------------------------------------------------
+        |    10       |    'M'          |        Char 'M'          |
+        ------------------------------------------------------------
+        |    11       |    'A'          |        Char 'A'          |
+        ------------------------------------------------------------
+        |    12       |    '\0'         |        Null Terminated   |
+        ------------------------------------------------------------
+
+        *full_name = full_name[0];    // Index(0)
+        
+    */
+    std::cout << "Print *full_name[0]:   "      << *full_name      << std::endl;
+    std::cout << "Print  full_name[1]:   "      << full_name[1]    << std::endl;
+    std::cout << "Print  full_name[2]:   "      << full_name[2]    << std::endl;
+    std::cout << "Print  full_name[3]:   "      << full_name[3]    << std::endl;
+    std::cout << "Print  full_name[4]:   "      << full_name[4]    << std::endl;
+    std::cout << "Print  full_name[5]:   "      << full_name[5]    << std::endl;
+    std::cout << "Print  full_name[6]:   "      << full_name[6]    << std::endl;
+    std::cout << "Print  full_name[7]:   "      << full_name[7]    << std::endl;
+    std::cout << "Print  full_name[8]:   "      << full_name[8]    << std::endl;
+    std::cout << "Print  full_name[9]:   "      << full_name[9]    << std::endl;
+    std::cout << "Print  full_name[10]:  "      << full_name[10]   << std::endl;
+    std::cout << "Print  full_name[11]:  "      << full_name[11]   << std::endl;
+    std::cout << "Print  full_name[12]:  "      << full_name[12]   << std::endl;
+}
 
 
 
