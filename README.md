@@ -13,6 +13,7 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
     00009)  control_flow.hpp
     00010)  loops.hpp 
     00011)  arrays.hpp
+    00012)  pointers.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
