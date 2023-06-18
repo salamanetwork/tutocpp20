@@ -1,6 +1,11 @@
 # tutocpp20:
 My Tutorial Journey On C++ 20 starts at 1 June 2023
-  ## Log:
+
+## Utilies:
+  # BASH:
+     clear && g++ -std=c++2a *.cpp -o main && ./main
+
+## Log:
   ### These are the files I coded ordered by LIFO (The recent one is the last one in the list):
     00001)  main.cpp
     00002)  std_ios.hpp
