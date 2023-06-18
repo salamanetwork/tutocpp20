@@ -321,6 +321,308 @@ void arrays_of_pointer_to_chars()
 }
 
 
+/*
+    - Const Pointer and Pointer to Const:
+        - 01) Non 'const' pointer:
+            - We can change the value of the variable we point to at any time.
+            - We can refer to another variable at any time.
+            - Notes:
+                - Non const pointer should refer to another non const variable.
+            - Syntax:
+                type * var_name { &another_var_name_to_point_to };
+            - ex:
+                int var {300};
+                int *ptr_var { &var };    // We Can Modify At Any Time.
+                
+        - 02) Pointer to 'const'
+            - We can not modify the variable that we point to through this pointer
+            - We can refer to another variables' address
+            - Apply 'const' keyword to a variable name
+            - Notes:
+                - We can refer to non 'const' variable
+            - Syntax:
+                const type * var_name { &another_var_name_to_point_to };
+            - ex:
+                int var {300};
+                const int *ptr_var { &var };    // We Can Not Modify At Any Time.
+        
+        - 03) Const Pointer (Opposite to case (02)):
+            - We can not refer to another variables' address
+            - Apply 'const' keyword to a variable data
+            - Notes:
+                - We can refer to non 'const' variable
+            - Syntax:
+                type * const var_name { &another_var_name_to_point_to };
+            - ex:
+                int var1 {300};
+                int var1 {700};
+                int * const ptr_var { &var1 };    // We Can Not Point To Somewhere Else At Any Time.
+       
+        - 04) Pointer To Const To Const Pointer (Opposite to Case (01)):
+            - We can not refer to another variables' address
+            - We can not modify a variables' value
+            - Apply 'const' keyword to a variable name & variable data
+            - Notes:
+                - We can refer to non 'const' variable
+            - Syntax:
+                const type * const var_name { &another_var_name_to_point_to };
+            - ex:
+                int var1 {300};
+                int var1 {700};
+                const int * const ptr_var { &var1 };    // We Can Not Point To Somewhere Else, And Change The Value At Any Time.
+            
+        - #### SUMMARY ####
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            |                Case                        |    Can Modifying Address    |    Can Modifying Value  |                          Syntax                       |
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            |    01) Non const pointer                   |            Yes              |            No           |  type * ptr_name { &the_address_of_var };             |
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            |    02) Pointer to Const                    |            Yes              |            No           |  type * const ptr_name { &the_address_of_var };       |
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            |    3) Const Pointer                        |            No               |            Ye           |  const type * ptr_name { &the_address_of_var };       |
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            |    4) Pointer to Const to Const Pointer    |            No               |            No           |  const type * const ptr_name { &the_address_of_var }; | 
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            - Samples:
+                int var_01 { 79 };                           // Normal Variable    
+                int var_02 { 80 };                           // Normal Variable
+                
+                int * ptr_var_01 { &var_01 };                // Non Const Poiner [Refer to Another: Yes    Modify the Value: Yes]
+                const int * ptr_var_02 { &var_01 };          // Const Pointer [Refer to Another: Yes    Modify the Value: No]
+                int * const ptr_var_03 { &var_02 };          // Pointer To Const  [Refer to Another: No    Modify the Value: Yes]
+                const int * const ptr_var_04 { &var_02 };    // Pointer to Const to Const Pointer  [Refer to Another: No    Modify the Value: No]               
+                
+            - Notes:
+                - If 'const' keyword shows up on the left of  * : The Data Is Const. 
+                - If 'const' keyword shows up on the right of * : The Pointer Is Const. 
+*/
+
+void const_pointer_and_pointer_to_const()
+{
+    // 01) Non 'const' pointer
+        // Allow Modifyng The Address That Pointer Referring To.
+        // Allow Modifyng The Value Of That Variable That Pointer Referring To.
+    
+    int var_01 { 300 };    // initialized with 300
+    int var_02;            // initialized with 0
+    
+    int *ptr_var { &var_01 };    // We Can Modify At Any Time.
+
+    std::cout << std::endl;
+       
+    std::cout << "01) Non 'const' pointer: "     << std::endl;
+    
+    std::cout << "Before MOdifing: "     << std::endl;
+    
+    std::cout << "\tvar_01 value: "      << var_01      << std::endl;
+    std::cout << "\tvar_01 address: "    << &var_01     << std::endl;
+    
+    std::cout << std::endl;
+    
+    std::cout << "\tvar_02 value: "     << var_02       << std::endl;
+    std::cout << "\tvar_02 address: "   << &var_02       << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout << "\tptr_var value: "     << ptr_var       << std::endl;
+    std::cout << "\tptr_var address: "   << &ptr_var       << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "After MOdifing: "     << std::endl;
+
+    *ptr_var = 500;        // Changing the value of var_01
+    
+    std::cout << "\tvar_01 value: "      << var_01      << std::endl;
+    std::cout << "\tvar_01 address: "    << &var_01     << std::endl;
+    
+    std::cout << std::endl;
+
+    ptr_var = &var_02;     // Changing the address that ptr_var refer to
+
+    *ptr_var = 8978914;    // Changing the value of var_02
+    
+    std::cout << "\tvar_02 value: "     << var_02       << std::endl;
+    std::cout << "\tvar_02 address: "   << &var_02       << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout << "\tptr_var value: "     << ptr_var       << std::endl;
+    std::cout << "\tptr_var address: "   << &ptr_var       << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // 02) Pointer to const:
+        // We can refer to another variable address
+        // Disallow Modifyng The Value Of That Variable That Pointer Referring To.
+
+    int var_03 { 8000 };
+
+    // Declare & Define Pointer to const
+    const int * ptr_var_01 { &var_03 };    // We can not modify later
+
+    std::cout << std::endl;
+
+    std::cout << "02) Pointer to const: "     << std::endl;
+    
+    std::cout << "Before MOdifing: "     << std::endl;
+    
+    std::cout << "\tvar_03 value: "      << var_03      << std::endl;
+    std::cout << "\tvar_03 address: "    << &var_03     << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout << "\tptr_var_01 value: "     << ptr_var_01       << std::endl;
+    std::cout << "\tptr_var_01 address: "   << &ptr_var_01      << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "After MOdifing: "     << std::endl;
+    
+    // Error: assignment of read-only location ‘* ptr_var_01’
+    // *ptr_var_01 = 99999999;    
+    
+    std::cout << "\tvar_03 value: "      << var_03      << std::endl;
+    std::cout << "\tvar_03 address: "    << &var_03     << std::endl;
+
+    std::cout << std::endl;
+
+    // We can refer to another variable address
+    ptr_var_01 = &var_01;
+    
+    std::cout << "\tptr_var_01 value: "     << ptr_var_01       << std::endl;
+    std::cout << "\tptr_var_01 address: "   << &ptr_var_01      << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // 03) Const pointer: 
+        // Disallow Modifyng The Address That Pointer Referring To.
+        // Allow Modifyng The Value Of That Variable That Pointer Referring To.
+        // We can NOT refer to another variable address
+    
+    int var_04 { 120000 };
+    int var_05 { 900000 };
+
+    // Declare & Define Pointer to const
+    int * const  ptr_var_04 { &var_04 };    // We can not refere to another address later
+
+    std::cout << std::endl;
+
+    std::cout << "03) Const pointer: "     << std::endl;
+    
+    std::cout << "Before MOdifing: "     << std::endl;
+    
+    std::cout << "\tvar_04 value: "      << var_04      << std::endl;
+    std::cout << "\tvar_04 address: "    << &var_04     << std::endl;
+    
+    std::cout << std::endl;
+
+    std::cout << "\tvar_05 value: "      << var_05      << std::endl;
+    std::cout << "\tvar_05 address: "    << &var_05     << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout << "\tptr_var_04 value: "     << ptr_var_04       << std::endl;
+    std::cout << "\tptr_var_04 address: "   << &ptr_var_04      << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "After MOdifing: "     << std::endl;
+    
+    // Modifying the value of var_04    -> pass
+    *ptr_var_04 = 99999999;
+    
+     // Modifying the value of var_04 to equal to the value of var_05   -> pass
+    *ptr_var_04 = var_05;
+    
+    std::cout << "\tvar_04 value: "      << var_04      << std::endl;
+    std::cout << "\tvar_04 address: "    << &var_04     << std::endl;
+
+    std::cout << std::endl;
+
+    // Error: assignment of read-only variable ‘ptr_var_04’
+    // ptr_var_04 = &var_05;
+
+
+    std::cout << "\tvar_05 value: "      << var_05      << std::endl;
+    std::cout << "\tvar_05 address: "    << &var_05     << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout << "\tptr_var_04 value: "     << ptr_var_04       << std::endl;
+    std::cout << "\tptr_var_04 address: "   << &ptr_var_04      << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // 04) Pointer To Const To Const Pointer
+        // Disallow Modifyng The Address That Pointer Referring To.
+        // Disallow Modifyng The Value Of That Variable That Pointer Referring To.
+    
+    int var_06 { 300 };            // initialized with 300
+    int var_07 { 700 };            // initialized with 0
+    
+    const int * const ptr_var_06 { &var_06 };    // We Can NOT Modify At Any Time.
+
+    std::cout << std::endl;
+       
+    std::cout << "04) Pointer To Const To Const Pointer: "     << std::endl;
+    
+    std::cout << "Before MOdifing: "     << std::endl;
+    
+    std::cout << "\tvar_06 value: "      << var_06      << std::endl;
+    std::cout << "\tvar_06 address: "    << &var_06     << std::endl;
+    
+    std::cout << std::endl;
+    
+    std::cout << "\tvar_07 value: "     << var_07       << std::endl;
+    std::cout << "\tvar_07 address: "   << &var_07       << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout << "\tptr_var_06 value: "     << ptr_var_06       << std::endl;
+    std::cout << "\tptr_var_06 address: "   << &ptr_var_06       << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "After MOdifing: "     << std::endl;
+
+    // error: assignment of read-only location ‘*(const int*)ptr_var_06’
+    // *ptr_var_06 = 500;        // Changing the value of var_06
+    
+    std::cout << "\tvar_06 value: "      << var_06      << std::endl;
+    std::cout << "\tvar_06 address: "    << &var_06     << std::endl;
+    
+    std::cout << std::endl;
+
+    //  error: assignment of read-only variable ‘ptr_var_06’
+    // ptr_var_06 = &var_07;     // Changing the address that ptr_var_06 refer to  --> Fail
+
+    // error: assignment of read-only location ‘*(const int*)ptr_var_06’
+    // *ptr_var_06 = 8978914;    // Changing the value of var_07 --> Fail
+    
+    std::cout << "\tvar_07 value: "     << var_07       << std::endl;
+    std::cout << "\tvar_07 address: "   << &var_07       << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout << "\tptr_var_06 value: "     << ptr_var_06      << std::endl;
+    std::cout << "\tptr_var_06 address: "   << &ptr_var_06       << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
+
 
 
 
