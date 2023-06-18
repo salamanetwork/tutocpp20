@@ -2,7 +2,7 @@
 My Tutorial Journey On C++ 20 starts at 1 June 2023
 
 ## Utilies:
-  # BASH:
+  ### BASH:
      clear && g++ -std=c++2a *.cpp -o main && ./main
 
 ## Log:
