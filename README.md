@@ -1,7 +1,7 @@
 # tutocpp20:
 My Tutorial Journey On C++ 20 starts at 1 June 2023
 
-## Utilies:
+## Utilities:
   ### BASH:
      clear && g++ -std=c++2a *.cpp -o main && ./main
 
