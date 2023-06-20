@@ -623,6 +623,58 @@ void const_pointer_and_pointer_to_const()
 }
 
 
+/*
+    - Array of const pointer to const char:
+        - We can not change the value of the array.
+        - We can change to point to another const char.        
+*/
+
+void array_of_const_pointer_to_const_char()
+{
+    // To Prevent Modifyin The Data
+    // const char * const todo_list_can_edited []    // Disable Modifying the data
+    const char * todo_list_can_edited []             // Enable Modifying the data
+    {
+        "Study C++ Programming",
+        "Read The C++ Programming Book",
+        "Initiate C++ Project",
+        "Read About Memory Management",
+        "Understand The Pointer In C++",
+        "Understand The Reference In C++",
+    };
+
+    // Before Moifying
+    std::cout << "After Modifying: " << std::endl;
+    for(uint32_t index {1}; auto item : todo_list_can_edited)
+    {
+        std::cout << index << ") " << item << std::endl;
+        ++index;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Not Allowed To Change To The First Character
+    // error: assignment of read-only location ‘* todo_list_can_edited[1]’
+    // *todo_list_can_edited[1] = 'S';    // compiler-error
+
+    // Allow to point to another const char array
+    const char * replaced_item {"Study The Pointers Well In C/C++."};
+    todo_list_can_edited[1] = replaced_item;
+
+    // After Modifying
+    std::cout << "After Modifying: " << std::endl;
+    for(uint32_t index {1}; auto item : todo_list_can_edited)
+    {
+        std::cout << index << ") " << item << std::endl;
+        ++index;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+}
+
 
 
 
