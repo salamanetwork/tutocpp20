@@ -676,6 +676,59 @@ void array_of_const_pointer_to_const_char()
 }
 
 
+/*
+    - Pointer and Array
+        - Array: is a special pointer has all info about the array and its value.
+        - Pointer: is a placeholder for an address that points to another container.
+        - Notes:
+            - We can not use An Array to refer to another container.
+            - We use on A Pointer to refer to any kind of container, vars, arrays ...
+            
+*/
+
+void arrays_and_pointers()
+{
+    int levels [15] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+    int * ptr_levels { nullptr };
+
+    int * ptr_some_level { nullptr };
+
+    // Assign An Array to A Pointer
+    ptr_levels = levels;
+
+    // Printing out
+    std::cout  << &ptr_levels    << " The Address of ptr_levels. " << std::endl;
+    std::cout  << ptr_levels     << " The Value of ptr_levels. "   << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout  << &levels        << " The Address of levels. "     << std::endl;
+    std::cout  << levels         << " The Value of levels. "       << std::endl;
+
+    std::cout << std::endl;
+    
+    std::cout  << levels[0]   << " The Actual Value of levels. "      << std::endl;
+    std::cout  << *ptr_levels << " The Actual Value of ptr_levels. "  << std::endl;
+
+    // error: incompatible types in assignment of ‘int*’ to ‘int [15]’
+    // levels = ptr_some_level;    // Can NOT assign ptr to an array
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
