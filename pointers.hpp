@@ -718,6 +718,109 @@ void arrays_and_pointers()
     std::cout << std::endl;
 }
 
+/*
+    - Demo [Swapping Arrays' Data]:
+*/
+
+void demo_swapping_arrays_data()
+{
+    int arr_01 [5] {1, 2, 3, 4, 5}, arr_02 [5] {6, 7, 8, 9, 10};
+
+    // std::cout << "Array Size (arr_01): " << std::size(arr_01) << std::endl;
+    // std::cout << "Array Size (arr_02): " << std::size(arr_02) << std::endl;
+
+    std::cout << "Before Swapping:-----------------------" << std::endl;
+    
+    std::cout << "(arr_01): " << std::endl;
+    for(auto index {0}; auto item : arr_01)
+    {
+        std::cout << item << " ";
+        ++index;
+    }
+
+    std::cout << std::endl;
+                    
+    std::cout << "(arr_02): " << std::endl;
+    for(auto index {0}; auto item : arr_02)
+    {
+        std::cout << item << " ";
+        ++index;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    // The Hard Way:
+    std::cout << "After Swapping:--------[The Hard Way]--------" << std::endl;
+    int temp_arr[std::size(arr_01)];
+
+    // 01) First Step: Move data from arr_01 to temp_arr
+    for(size_t i {0}; i < std::size(arr_01); ++i)
+        temp_arr[i] = arr_01[i];
+
+    // 02) Second Step: Move data from arr_01 to arr_02
+    for(size_t i {0}; i < std::size(arr_01); ++i)
+        arr_01[i] = arr_02[i];
+
+    // 03) Third Step: Move data from temp_arr to arr_02
+    for(size_t i {0}; i < std::size(arr_01); ++i)
+        arr_02[i] = temp_arr[i];
+
+    std::cout << "(arr_01): " << std::endl;
+    for(auto index {0}; auto item : arr_01)
+    {
+        std::cout << item << " ";
+        ++index;
+    }
+
+    std::cout << std::endl;
+                    
+    std::cout << "(arr_02): " << std::endl;
+    for(auto index {0}; auto item : arr_02)
+    {
+        std::cout << item << " ";
+        ++index;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    // The Easy Way:
+    std::cout << "After Swapping:--------[The Easy Way]--------" << std::endl;
+
+    // Using pointers
+    int * ptr_arr_01 { arr_01 };    // Pointer to arr_01
+    int * ptr_arr_02 { arr_02 };    // Pointer to arr_02
+    int * ptr_temp_arr;             // Pointer to temp_arr
+
+    // 01) First Step: Move data from arr_01 to temp_arr
+    ptr_temp_arr = ptr_arr_01;
+    
+    // 02) Second Step: Move data from arr_01 to arr_02
+    ptr_arr_01 = ptr_arr_02;
+    
+    // 03) Third Step: Move data from temp_arr to arr_02
+    ptr_arr_02 = ptr_temp_arr;
+
+    std::cout << "(arr_01): " << std::endl;
+    for(auto index {0}; auto item : arr_01)
+    {
+        std::cout << item << " ";
+        ++index;
+    }
+
+    std::cout << std::endl;
+                    
+    std::cout << "(arr_02): " << std::endl;
+    for(auto index {0}; auto item : arr_02)
+    {
+        std::cout << item << " ";
+        ++index;
+    }
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
 
 
 
