@@ -822,7 +822,73 @@ void demo_swapping_arrays_data()
     std::cout << std::endl;
 }
 
+/*
+    - Pointer Arithmetic:
+        - A series of operation applying to pointer.
+        - Operations:
+            - Navigation:
+                - Incrementing / Decrementing:
+                    - Moving the pointer address by the size of the data type pointed to by the pointer.
+                - Modifying the elements by the pointer
+                    - *(ptr + index_number) = new_value;
+                        - Equivalent to: array[index_number] = new_value;
+                    - ex:
+                        *(nums_ptr + 1) = 202;    // nums[1] = 202;
+                        *(nums_ptr + 2) = 303;    // nums[2] = 303;
+*/
 
+void pointer_arithm()
+{
+    // intialize the array with value
+    int nums [5] {10, 20, 30 , 40, 50};
+
+    // assign to the pointer
+    int *nums_ptr { nullptr };
+
+    std::cout << "Printing Out The Address && Value Of Each Nums: " << std::endl;
+    
+    for(int *nums_ptr { nums }; auto num : nums)
+    {
+        std::cout
+            << "\t\tAddress: " << nums_ptr
+            << "\t\tValue:  " << *nums_ptr
+            << std::endl;
+        ++nums_ptr;            // Incrementing by the size of the data type: int = 4 => [next = current_index + 4]
+
+        // OR Using Explicit Addition: Move forward by = 4 * sizeof(int)
+        // *(nums_ptr + 4);
+        
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Printing the array in reverse order
+    std::cout << "Printing Out The Address && Value Of Each Nums In Reverse Order: " << std::endl;
+
+    // nums_ptr = current_index(as nums) + (sizeof(data_type) - reduced_by_one)
+    // nums_ptr = 0  + (5 - 1) => 4        [At Index: 0]
+    // nums_ptr = 4  + (5 - 1) => 8        [At Index: 1]
+    // nums_ptr = 8  + (5 - 1) => 12       [At Index: 2]
+    // nums_ptr = 12 + (5 - 1) => 16       [At Index: 3]
+    // nums_ptr = 16 + (5 - 1) => 20       [At Index: 4]
+    // Why Reduced By One: Because already current index referring to the first item in the array means [nums] = first item.
+    nums_ptr = nums + (std::size(nums) - 1);
+    
+    for(size_t i { std::size(nums) }; i > 0; --i)
+    {
+        std::cout
+            << "\t\tAddress: " << nums_ptr
+            << "\t\tValue:  " << *nums_ptr--
+            << std::endl;
+        
+    }
+
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+}
 
 
 
