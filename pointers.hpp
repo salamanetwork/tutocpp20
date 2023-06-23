@@ -892,6 +892,120 @@ void pointer_arithm()
     
 }
 
+/*
+    - Distance between elements (Subtarcting Pointers):
+        - Another way to represent the arrays' index 
+        - Using std::ptrdiff_t -> A type for storing a pointer differences
+            - Better to avoid platform issues 
+            - Ex:
+                std::ptrdiff_t pos_diff_ptrs = ptr2 - ptr1;    // Positive
+                std::ptrdiff_t neg_diff_ptrs = ptr1 - ptr2;    // Negative
+*/
+
+void dist_pointers()
+{
+    int teams[] { 3784, 7468, 6789, 2763, 4785 };
+
+    // 001) Array Index Notation
+    // int * teams_ptr_00 { &teams[0] };
+    // int * teams_ptr_01 { &teams[1] };
+    // int * teams_ptr_02 { &teams[2] };
+    // int * teams_ptr_03 { &teams[3] };
+    // int * teams_ptr_04 { &teams[4] };
+
+    // 002) Pointer Arithmetic Notation - Same As (001) Above
+    int * teams_ptr_00 { teams + 0 };
+    int * teams_ptr_01 { teams + 1 };
+    int * teams_ptr_02 { teams + 2 };
+    int * teams_ptr_03 { teams + 3 };
+    int * teams_ptr_04 { teams + 4 };
+
+    std::cout 
+        << "teams_ptr_00 Address:\t" <<  teams_ptr_00
+        << "\t\t\tteams_ptr_00 Value:\t" <<  *teams_ptr_00
+        << std::endl;
+    std::cout 
+        << "teams_ptr_01 Address:\t" <<  teams_ptr_01
+        << "\t\t\tteams_ptr_01 Value:\t" <<  *teams_ptr_01
+        << std::endl;
+    std::cout 
+        << "teams_ptr_02 Address:\t" <<  teams_ptr_02
+        << "\t\t\tteams_ptr_02 Value:\t" <<  *teams_ptr_02
+        << std::endl;
+    std::cout 
+        << "teams_ptr_03 Address:\t" <<  teams_ptr_03
+        << "\t\t\tteams_ptr_03 Value:\t" <<  *teams_ptr_03
+        << std::endl;
+    std::cout 
+        << "teams_ptr_04 Address:\t" <<  teams_ptr_04
+        << "\t\t\tteams_ptr_04 Value:\t" <<  *teams_ptr_04
+        << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "Distance between pointers: " << std::endl;
+
+    std::cout 
+        << "teams_ptr_04 - teams_ptr_03 =\t"
+        << teams_ptr_04 - teams_ptr_03 << " Byte"
+        << std::endl;
+    std::cout 
+        << "teams_ptr_03 - teams_ptr_02 =\t"
+        << teams_ptr_03 - teams_ptr_02 << " Byte"
+        << std::endl;
+    std::cout 
+        << "teams_ptr_02 - teams_ptr_01 =\t"
+        << teams_ptr_02 - teams_ptr_01 << " Byte"
+        << std::endl;
+    std::cout 
+        << "teams_ptr_01 - teams_ptr_00 =\t"
+        << teams_ptr_01 - teams_ptr_00 << " Byte"
+        << std::endl;
+
+    // Using long distance (Positive, Negative)
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << "Long Distance between pointers: " << std::endl;
+    std::cout 
+        << "teams_ptr_03 - teams_ptr_00 =\t"
+        << teams_ptr_03 - teams_ptr_00 << " Byte"
+        << std::endl;
+    std::cout 
+        << "teams_ptr_01 - teams_ptr_04 =\t"
+        << teams_ptr_03 - teams_ptr_00 << " Byte"
+        << std::endl;
+    std::cout 
+        << "teams_ptr_02 - teams_ptr_04 =\t"
+        << teams_ptr_02 - teams_ptr_04 << " Byte" << "  Giving Negative!Reverse Way"
+        << std::endl;
+
+    // Using std::ptrdiff_t
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << "Using Pointer difference type std::ptrdiff_t: " << std::endl;
+
+    std::ptrdiff_t pos_teams_ptr = teams_ptr_02 - teams_ptr_01;    // Positive
+    std::ptrdiff_t neg_teams_ptr = teams_ptr_01 - teams_ptr_04;    // Negative
+
+    std::cout 
+        << "std::ptrdiff_t pos_teams_ptr:\t"
+        << pos_teams_ptr << " Byte"
+        << std::endl;
+    std::cout 
+        << "std::ptrdiff_t neg_teams_ptr:\t"
+        << neg_teams_ptr << " Byte"
+        << std::endl;
+    std::cout 
+        << "std::ptrdiff_t size:\t"
+        << sizeof(std::ptrdiff_t) << " Byte"
+        << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    
+}
 
 
 
