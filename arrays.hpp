@@ -281,10 +281,10 @@ void multi_dim_3d_array()
     int cube_3d [8] /* points: */ [2] /* area: w, h */ [3] /* location-axes: x, y, z*/ 
     {
         {
-            { 10, 11, 12 } /* area: 0 */, { 13, 14, 15 } /* area: 0 */
+            { 10, 11, 12 } /* area: 0 */, { 13, 14, 15 } /* area: 1 */
         },    // point: 0
         {
-            { 16, 17, 18 } /* area: 0 */, { 19, 20, 21 } /* area: 0 */
+            { 16, 17, 18 } /* area: 0 */, { 19, 20, 21 } /* area: 1 */
         },    // point: 1
         {
             { 22, 23, 24 } /* area: 0 */, { 25, 26, 27 } /* area: 1 */
