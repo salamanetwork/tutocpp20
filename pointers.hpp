@@ -840,7 +840,7 @@ void demo_swapping_arrays_data()
 void pointer_arithm()
 {
     // intialize the array with value
-    int nums [5] {10, 20, 30 , 40, 50};
+    int nums [] {10, 20, 30 , 40, 50, 60, 70, 80, 90, 100};
 
     // assign to the pointer
     int *nums_ptr { nullptr };
