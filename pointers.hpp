@@ -358,7 +358,7 @@ void arrays_of_pointer_to_chars()
                 int var1 {700};
                 int * const ptr_var { &var1 };    // We Can Not Point To Somewhere Else At Any Time.
        
-        - 04) Pointer To Const To Const Pointer (Opposite to Case (01)):
+        - 04) Const Pointer to Pointer to Const (Opposite to Case (01)):
             - We can not refer to another variables' address
             - We can not modify a variables' value
             - Apply 'const' keyword to a variable name & variable data
@@ -381,7 +381,7 @@ void arrays_of_pointer_to_chars()
             --------------------------------------------------------------------------------------------------------------------------------------------------------------
             |    3) Const Pointer                        |            No               |            Ye           |  const type * ptr_name { &the_address_of_var };       |
             --------------------------------------------------------------------------------------------------------------------------------------------------------------
-            |    4) Pointer to Const to Const Pointer    |            No               |            No           |  const type * const ptr_name { &the_address_of_var }; | 
+            |    4) Const Pointer to Pointer to Const    |            No               |            No           |  const type * const ptr_name { &the_address_of_var }; | 
             --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             - Samples:
@@ -391,7 +391,7 @@ void arrays_of_pointer_to_chars()
                 int * ptr_var_01 { &var_01 };                // Non Const Poiner [Refer to Another: Yes    Modify the Value: Yes]
                 const int * ptr_var_02 { &var_01 };          // Const Pointer [Refer to Another: Yes    Modify the Value: No]
                 int * const ptr_var_03 { &var_02 };          // Pointer To Const  [Refer to Another: No    Modify the Value: Yes]
-                const int * const ptr_var_04 { &var_02 };    // Pointer to Const to Const Pointer  [Refer to Another: No    Modify the Value: No]               
+                const int * const ptr_var_04 { &var_02 };    // Const Pointer to Pointer to Const  [Refer to Another: No    Modify the Value: No]               
                 
             - Notes:
                 - If 'const' keyword shows up on the left of  * : The Data Is Const. 
@@ -563,7 +563,7 @@ void const_pointer_and_pointer_to_const()
     std::cout << std::endl;
     std::cout << std::endl;
 
-    // 04) Pointer To Const To Const Pointer
+    // 04) Const Pointer to Pointer to Const
         // Disallow Modifyng The Address That Pointer Referring To.
         // Disallow Modifyng The Value Of That Variable That Pointer Referring To.
     
