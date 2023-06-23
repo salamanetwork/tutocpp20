@@ -874,7 +874,9 @@ void pointer_arithm()
     // nums_ptr = 16 + (5 - 1) => 20       [At Index: 4]
     // Why Reduced By One: Because already current index referring to the first item in the array means [nums] = first item.
     nums_ptr = nums + (std::size(nums) - 1);
-    
+
+    // We Can Using foor loop with initializer 
+    // OR: for(auto nums_ptr { nums + (std::size(nums) - 1) }; auto num : nums)
     for(size_t i { std::size(nums) }; i > 0; --i)
     {
         std::cout
