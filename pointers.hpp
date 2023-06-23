@@ -1013,7 +1013,7 @@ void dist_pointers()
         - We can use normal symbols for comparing:
         - Symbols: >, <, >=, <=, ==, !=,
         - Rule:
-            - The Farther we go in with the array, the bigger the address.
+            - The Farther we go in with in the array, the bigger the address.
 */
 
 void compr_ptrs()
