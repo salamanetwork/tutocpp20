@@ -1008,6 +1008,58 @@ void dist_pointers()
 }
 
 
+/*
+    - Comparing Pointers
+        - We can use normal symbols for comparing:
+        - Symbols: >, <, >=, <=, ==, !=,
+        - Rule:
+            - The Farther we go in with the array, the bigger the address.
+*/
+
+void compr_ptrs()
+{
+    int teams[] { 3784, 7468, 6789, 2763, 4785 };
+
+    // Pointer Arithmetic Notation
+    int * teams_ptr_00 { teams + 0 };
+    int * teams_ptr_01 { teams + 1 };
+    int * teams_ptr_02 { teams + 2 };
+    int * teams_ptr_03 { teams + 3 };
+    int * teams_ptr_04 { teams + 4 };
+
+    std::cout << "Comparing Pointers: " << std::endl;
+
+    std::cout << std::uppercase << std::boolalpha;
+    
+    std::cout
+        << "teams_ptr_00 > teams_ptr_02:\t" 
+        <<  (teams_ptr_00 > teams_ptr_02)
+        << std::endl;
+    std::cout 
+        << "teams_ptr_01 < teams_ptr_03:\t" 
+        <<  (teams_ptr_01 < teams_ptr_03)
+        << std::endl;
+    
+    std::cout 
+        << "teams_ptr_00 == teams_ptr_04:\t" 
+        <<  (teams_ptr_00 > teams_ptr_04)
+        << std::endl;
+    std::cout 
+        << "teams_ptr_02 >= teams_ptr_02:\t" 
+        <<  (teams_ptr_02 >= teams_ptr_02)
+        << std::endl;
+    std::cout 
+        << "teams_ptr_04 <= teams_ptr_03:\t" 
+        <<  (teams_ptr_04 <= teams_ptr_03)
+        << std::endl;
+    std::cout 
+        << "teams_ptr_03 != teams_ptr_03:\t" 
+        <<  (teams_ptr_03 != teams_ptr_03)
+        << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+}    
 
 
 
