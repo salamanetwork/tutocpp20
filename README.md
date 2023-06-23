@@ -2,8 +2,10 @@
 My Tutorial Journey On C++ 20 starts at 1 June 2023
 
 ## Utilities:
-  ### BASH:
+  ### bash:
      clear && g++ -std=c++2a *.cpp -o main && ./main
+  ### pwsh
+     cls && g++.exe -std=c++2a *.cpp -o main.exe && main.exe
 
 ## Log:
   ### These are the files I coded ordered by LIFO (The recent one is the last one in the list):
