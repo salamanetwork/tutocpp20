@@ -61,6 +61,7 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   2) Udemy - Complete Modern C++ (C++11/14/17) / Umar Lone
   3) LinkedIn - Master C Language Pointers / Dan Gookin
   3) LinkedIn - C: Data Structures, Pointers, and File Systems / Dan Gookin
+  4) Linkedin - Programming Foundations: Memory, Pointers, and Garbage Collection / Maaike van Putten
   
   #### Books, PDF's:
   1) Beginning C++20: From Novice to Professional / Ivor Horton and Peter Van Weert
