@@ -88,7 +88,8 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   6) https://learn.microsoft.com/en-us/dotnet/standard/io/memory-mapped-files
   7) https://techcommunity.microsoft.com/t5/ask-the-performance-team/memory-management-x86-virtual-address-space/ba-p/372536
   8) https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
-  9) 
+  9) https://www.guru99.com/stack-vs-heap.html
+  10) 
 
 
 
