@@ -55,6 +55,7 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   9) www.gcc.gnu.org
   10) www.clang.llvm.org
   11) www.overiq.com
+  12) https://www.educative.io
   
   #### Videos, Online Courses:
   1) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
@@ -69,3 +70,26 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   3) C++ Programming Language / Bjarne Stroustrup
   4) Professional C++ / Marc Gregoire 
   5) C++ How to Program / Paul Deitel and Harvey Deitel
+  6) Understanding the linux kernel 3rd Edition / Daniel P. Bovet and Marco Cesati
+  7) Linux Kernel Development 3rd Edition / Robert Love
+  8) Deep understanding of Linux kernel / Jim Green
+  9) Linux Kernel Programming A Comprehensive Guide To Kernel Internals, Writing Kernel Modules, and Kernel Synchronization / Kaiwan N Billimoria
+  10) Linux Internals Simplified: A beginners guide to Linux Internals / Haris Kundan Prasad
+  11) Windows Internals Seventh Edition / Pavel Yosifovich, Alex Ionescu, Mark E. Russinovich, and David A. Solomon
+  12) 
+
+  ### Blogs, Articles:
+  1) https://www.educative.io/blog/cpp-memory-management
+  2) https://linux-kernel-labs.github.io/refs/heads/master/labs/memory_mapping.html
+  3) https://www.mathworks.com/help/matlab/import_export/overview-of-memory-mapping.html
+  4) https://byjus.com/gate/cache-mapping-notes/
+  5) https://stackoverflow.com/questions/1401359/understanding-linux-proc-pid-maps-or-proc-self-maps/1401595#1401595
+  6) https://learn.microsoft.com/en-us/dotnet/standard/io/memory-mapped-files
+  7) https://techcommunity.microsoft.com/t5/ask-the-performance-team/memory-management-x86-virtual-address-space/ba-p/372536
+  8) 
+
+
+
+
+
+
