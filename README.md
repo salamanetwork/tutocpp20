@@ -87,7 +87,8 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   5) https://stackoverflow.com/questions/1401359/understanding-linux-proc-pid-maps-or-proc-self-maps/1401595#1401595
   6) https://learn.microsoft.com/en-us/dotnet/standard/io/memory-mapped-files
   7) https://techcommunity.microsoft.com/t5/ask-the-performance-team/memory-management-x86-virtual-address-space/ba-p/372536
-  8) 
+  8) https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
+  9) 
 
 
 
