@@ -89,7 +89,8 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   7) https://techcommunity.microsoft.com/t5/ask-the-performance-team/memory-management-x86-virtual-address-space/ba-p/372536
   8) https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
   9) https://www.guru99.com/stack-vs-heap.html
-  10) 
+  10) https://www.geeksforgeeks.org/difference-between-static-and-dynamic-memory-allocation-in-c/
+  11) 
 
 
 
