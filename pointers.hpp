@@ -724,7 +724,8 @@ void arrays_and_pointers()
 
 void demo_swapping_arrays_data()
 {
-    int arr_01 [5] {1, 2, 3, 4, 5}, arr_02 [5] {6, 7, 8, 9, 10};
+    int arr_01 [5] {1, 2, 3, 4, 5}; 
+    int arr_02 [5] {6, 7, 8, 9, 10};
 
     // std::cout << "Array Size (arr_01): " << std::size(arr_01) << std::endl;
     // std::cout << "Array Size (arr_02): " << std::size(arr_02) << std::endl;
