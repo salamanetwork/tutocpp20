@@ -96,7 +96,8 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   12) https://www.scaler.com/topics/c/dangling-pointer-in-c/
   13) https://en.wikipedia.org/wiki/Dangling_pointer
   14) https://interviewsansar.com/what-if-memory-allocation-using-new-fails-in-cpp-how-to-handle/
-  15) 
+  15) https://www.geeksforgeeks.org/if-memory-allocation-using-new-is-failed-in-c-then-how-it-should-be-handled/
+  16) 
 
 
 
