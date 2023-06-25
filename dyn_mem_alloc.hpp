@@ -452,6 +452,10 @@ void dyn_mem_alloc_fails()
             std::cout << "Memory Allocation Failed!" << std::endl;
         else
             std::cout << "Memory Allocation Succeeded!" << std::endl;
+
+        // Releasing & resetting
+        delete ptr_huge_array_size_sol_01;
+        ptr_huge_array_size_sol_01 = nullptr;
     }
     catch(std::exception& ex)
     {
@@ -473,8 +477,11 @@ void dyn_mem_alloc_fails()
     
     std::cout << std::endl;
     std::cout << std::endl;
-}
 
+    // Releasing & Resetting
+    delete ptr_huge_array_size_sol_02;
+    ptr_huge_array_size_sol_02 = nullptr;
+}
 
 
 
