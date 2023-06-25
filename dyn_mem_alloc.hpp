@@ -16,21 +16,22 @@ using namespace std;
 /*
     - Difference Between Stack and Heap:
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    Parameter	                      |                      STACK	                                      	|                          HEAP                            
+    Parameter	                      |                      STACK	                                      |                          HEAP                                 
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    - Basic	                               Memory is allocated in a contiguous block.	                       Memory is allocated in any random order.
-    - Allocation and De-allocation         Automatic by compiler instructions.	                               Manual by the programmer.
-    - Cost	                               Less	                                                               More
-    - Implementation	                   Easy	                                                               Hard
-    - Access time	                       Faster	                                                           Slower
-    - Main Issue	                       Shortage of memory	                                               Memory fragmentation
-    - Locality of reference	               Excellent	                                                       Adequate
-    - Safety	                           Thread safe, data stored can only be accessed by the owner	       Not Thread safe, data stored visible to all threads
-    - Flexibility	                       Fixed-size	                                                       Resizing is possible
-    - Data type structure	               Linear	                                                           Hierarchical
-    - Pr- eferred	                       Static memory allocation is preferred in an array.	               Heap memory allocation is preferred in the linked list.
-    - Size	                               Small than heap memory.	                                           Larger tha stack memory.
+        - Basic	                               Memory is allocated in a contiguous block.	                       Memory is allocated in any random order.
+        - Allocation and De-allocation         Automatic by compiler instructions.	                               Manual by the programmer.
+        - Cost	                               Less	                                                               More
+        - Implementation                       Easy	                                                               Hard
+        - Access time	                       Faster                                                              Slower
+        - Main Issue	                       Shortage of memory	                                               Memory fragmentation
+        - Locality of reference	               Excellent	                                                       Adequate
+        - Safety                               Thread safe, data stored can only be accessed by the owner	       Not Thread safe, data stored visible to all threads
+        - Flexibility	                       Fixed-size	                                                       Resizing is possible
+        - Data type structure	               Linear                                                              Hierarchical
+        - Pr- eferred	                       Static memory allocation is preferred in an array.	               Heap memory allocation is preferred in the linked list.
+        - Size	                               Small than heap memory.                                             Larger tha stack memory.
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
     - Difference Between Static and Dynamic Memory Allocation in C:
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
