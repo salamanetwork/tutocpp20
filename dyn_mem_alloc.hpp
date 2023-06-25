@@ -183,6 +183,57 @@ void dyn_mem()
     // std::cout << ptr_01 << std::endl;    // Invalid Data
     // std::cout << ptr_02 << std::endl;    // Invalid Data
     // std::cout << ptr_03 << std::endl;    // Invalid Data
+
+    // Outer scope
+    {
+        int *ptr_outer { new int {6009} };
+
+        // Inner scope
+        {
+            int *ptr_inner { new int {7007} };
+
+            std::cout 
+                << "ptr_inner Address: "
+                << ptr_inner
+                << "\tptr_inner Value: "
+                << *ptr_inner
+                << "\t\tptr_inner Size: "
+                << sizeof ptr_inner << " bytes."
+                << std::endl;
+        }
+
+        std::cout 
+            << "ptr_outer Address: "
+            << ptr_outer
+            << "\tptr_outer Value: "
+            << *ptr_outer
+            << "\t\tptr_outer Size: "
+            << sizeof ptr_outer << " bytes."
+            << std::endl;
+    
+        // std::cout // error: ‘ptr_inner’ was not declared in this scope; did you mean ‘ptr_outer’?
+        //     << "ptr_inner Address: "
+        //     << ptr_inner
+        //     << "\tptr_inner Value: "
+        //     << *ptr_inner
+        //     << "\t\tptr_inner Size: "
+        //     << sizeof ptr_inner << " bytes."
+        //     << std::endl;
+    }
+
+    // std::cout // error: ‘ptr_outer’ was not declared in this scope
+    //     << "ptr_outer Address: "
+    //     << ptr_03
+    //     << "\tptr_outer Value: "
+    //     << *ptr_outer
+    //     << "\t\tptr_outer Size: "
+    //     << sizeof ptr_outer << " bytes."
+    //     << std::endl;
+    
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
     
 }
 
