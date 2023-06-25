@@ -547,6 +547,54 @@ void mem_leaks()
 }
 
 
+/*
+    - Dynamic Arrays:
+        - Living on the Heap.
+        - Allocated with 'new' keyword and can using 'std::nothrow'
+        - Syntax:
+            - Allcoating:
+                - type_name *ptr_name { new type_name[SIZE] };
+                - type_name *ptr_name { new(std::nothrow) type_name[SIZE] };
+                - type_name *ptr_name { new type_name[SIZE] {1, 2, 3, 4, 5} };
+                - type_name *ptr_name { new(std::nothrow) type_name[SIZE] {1, 2, 3, 4, 5}};
+            - Releasing:
+                - delet[] ptr_name;
+            - Resetting
+                - ptr_name = nullptr;
+*/
+
+void dyn_arr_alloc()
+{
+    size_t size { 10 };
+
+    // 01) Allocate a new array dynamically with no value
+    double *ptr_arr_of_salaries { new double[size] };    // Initializing with garabage values
+
+    // 02) Allocate a new array dynamically with default value using 'std::nothrow' setting
+    int *ptr_arr_of_levels { new(std::nothrow) int[size] {} };    // Initializing with 0
+
+    // 03) Allocate a new array dynamically with some values using 'std::nothrow' setting
+    float *ptr_arr_of_shades { new(std::nothrow) float[size] { 0.9f, 5.9f, 6.7f} };    // Initializing on 3 values the remaining will be 0.0f
+
+    if(ptr_arr_of_shades)    // Check Null Safety Before Do Any Operations
+        for(int i = 0; i < size; ++i)
+            std::cout << i << ")\t"<< ptr_arr_of_shades[i] << std::endl;
+    else
+        std::cout << "Sorry! Invalid Allocation of An Array." << std::endl;
+
+    // Releasing
+    delete[] ptr_arr_of_salaries;
+    delete[] ptr_arr_of_levels;
+    delete[] ptr_arr_of_shades;
+
+    // Resetting
+    ptr_arr_of_salaries   = nullptr;
+    ptr_arr_of_levels     = nullptr;
+    ptr_arr_of_shades     = nullptr;
+    
+    
+}
+
 
 
 
