@@ -4,10 +4,14 @@
 #include <iostream>
 #include <iomanip>
 #include <ios>
+#include <array>
+#include <new>
+
 
 #include <ctime>
 #include <cstdlib>
 #include <cstdint>
+#include <climits>
 
 #include <bitset>
 
