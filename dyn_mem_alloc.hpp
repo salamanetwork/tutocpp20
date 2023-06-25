@@ -483,7 +483,24 @@ void dyn_mem_alloc_fails()
     ptr_huge_array_size_sol_02 = nullptr;
 }
 
+/*
+    - Null Pointer Safety:
+        - Guidelines:
+            - Do Not 'delete' any pointer before check it is null or not.
+            - Double Check 'nullptr' before any operations.
+*/
 
+void nullptr_safety()
+{
+    char *ptr_ch {};
+
+    delete ptr_ch;    // Must Check before Deletion
+
+    if(ptr_ch)    // if(ptr_ch != nullptr)
+        std::cout << "Pointer ptr_ch has a valid address." << std::endl;
+    else
+        std::cout << "Pointer ptr_ch has not a valid address." << std::endl;
+}
 
 
 
