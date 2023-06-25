@@ -23,7 +23,7 @@ My Tutorial's Journey On C++ 20 || Modern C++ starts at 1 June 2023
     cls && g++.exe -std=c++2a *.cpp -o main.exe && main.exe
 
 ## Log:
-  ### These are the files I coded ordered by LIFO (The recent one is the last one in the list):
+  ### These are the files I coded ordered by LIFO (The recent one is the last one on the below list):
     00001)    main.cpp
     00002)    std_ios.hpp
     00003)    data_types.hpp
