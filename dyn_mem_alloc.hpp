@@ -233,6 +233,49 @@ void dyn_mem()
 
     std::cout << std::endl;
     std::cout << std::endl;
+
+    // Testing Valid Declarations & Definitions for Some Types:
+    int             *test_ptr_int             { new int { 1000 } };
+    float           *test_ptr_float           { new float { 4.5f } };
+    double          *test_ptr_double          { new double { 9.7 } };
+    char            *test_ptr_char            { new char { 'c' } };
+    bool            *test_ptr_bool            { new bool { false } };
+    long            *test_ptr_long            { new long { 7863487L }};
+    long long       *test_ptr_long_long       { new long long { 7863487L }};
+    short           *test_ptr_short           { new short { 128 } };
+    unsigned        *test_ptr_unsigned        { new unsigned { 55 } };
+    signed          *test_ptr_signed          { new signed { -55 } };
+    std::string     *test_ptr_string          { new std::string { "String" } };
+
+    // We Can NOT Using 'void'
+    // void            *test_ptr_void            { new void { void } };
+
+    // Releasing
+    delete test_ptr_int;       
+    delete test_ptr_float;     
+    delete test_ptr_double;    
+    delete test_ptr_char;      
+    delete test_ptr_bool;      
+    delete test_ptr_long;      
+    delete test_ptr_long_long; 
+    delete test_ptr_short;     
+    delete test_ptr_unsigned;  
+    delete test_ptr_signed;    
+    delete test_ptr_string;
+
+    // Resetting
+    test_ptr_int           = nullptr;
+    test_ptr_float         = nullptr;
+    test_ptr_double        = nullptr;
+    test_ptr_char          = nullptr;
+    test_ptr_bool          = nullptr;
+    test_ptr_long          = nullptr;
+    test_ptr_long_long     = nullptr;
+    test_ptr_short         = nullptr;
+    test_ptr_unsigned      = nullptr;
+    test_ptr_signed        = nullptr;
+    test_ptr_string        = nullptr;
+    
     
     
 }
