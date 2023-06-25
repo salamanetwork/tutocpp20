@@ -417,6 +417,65 @@ void dangling_ptrs()
 }
 
 
+/*
+    - Handling a memory allocation failure:
+        - When?: 
+            - You do memory allocation using new in C++ and it fails.
+        - Explaination:
+            - Answer: 
+                When we allocate memory from heap dynamically in a C++ program using new operator,  
+                the program crashes when memory is not available, 
+                or the system is not able to allocate memory to a program, 
+                as it throws an exception. So, to prevent program crash, 
+                we need to handle the exception when memory allocation fails.
+        - Solutions:
+            - 01) Using Try Catch Block with 'std::bad_alloc' exception.
+            - 02) Using 'std::nothrow' setting version of “new” i.e. new(std::nothrow).
+        
+*/
+
+void dyn_mem_alloc_fails()
+{
+    // error: size ‘15503280078736850944’ of array exceeds maximum object size ‘9223372036854775807’
+    // int *ptr_huge_array_size { new int [9223372036854775807] }; // Fail!
+
+    // 01) Solution Using C++ Exception:
+    try
+    {
+        int *ptr_huge_array_size_sol_01 { new int [INT_MAX] };
+
+        if(ptr_huge_array_size_sol_01 == nullptr)
+            std::cout << "Memory Allocation Failed!" << std::endl;
+        else
+            std::cout << "Memory Allocation Succeeded!" << std::endl;
+    }
+    catch(std::exception& ex)
+    {
+        // printint out the exception message:
+        std::cout 
+            << "Oh Yeah!, We have an exception: "
+            << "\t"
+            << ex.what()
+            << std::endl;
+    }
+
+    // 02) Solution Using 'std::nothrow':
+    int *ptr_huge_array_size_sol_02 { new(std::nothrow) int [INT_MAX] };
+
+    if(ptr_huge_array_size_sol_02 == nullptr)
+        std::cout << "Memory Allocation Failed!" << std::endl;
+    else
+        std::cout << "Memory Allocation Succeeded!" << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
+
+
+
+
+
 
 
 
