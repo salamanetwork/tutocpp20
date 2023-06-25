@@ -281,6 +281,142 @@ void dyn_mem()
 }
 
 
+/*
+    - Dangling Pointers (Wild pointers ):
+        - Simple Definition: 
+            - The pointers pointing to a deallocated memory block are known as Dangling Pointers. 
+        - Occurs:
+            - when a pointer pointing to a variable goes out of scope or when an object/variable's memory gets deallocated.
+        - Side Effects:
+            - can result in some unexpected errors during the execution of a program, so we have to make sure to avoid them while writing a program.
+        - Types:
+            - Case 01): Uninitialized Pointer.
+            - Case 02): Deleted Pointer.
+            - Case 03): Multiple Pointer Pointing To The Same Memory Location.
+        - Solutions:
+            - Initialize your pointers.
+            - Reset the pointers after delete.
+            - For Multiple pointers to the same address, make sure the owner pointer is very clear.
+        - Golden Rule:
+            - With Each 'new' there is 'delete' & reset to 'nullptr'.
+*/
+
+void dangling_ptrs()
+{
+    // ---------------------------------------------------------------------
+    // Case 01): Uninitialized Pointer.
+    // ---------------------------------------------------------------------
+    int *ptr_num_uninitialized;    // Dangling Pointer.
+    
+    std::cout << "Case 01): Uninitialized Pointer: " << std::endl;
+    
+    std::cout 
+        << "\tptr_num_uninitialized Address: " 
+        << ptr_num_uninitialized                 // Pass
+        << std::endl;
+    
+    // Uncomment the next section will lead to crash the program!
+    // std::cout 
+    //     << "\tptr_num_uninitialized Value:" 
+    //     // Segmentation fault (core dumped)
+    //     << *ptr_num_uninitialized                // Fail & Crash!
+    //     << std::endl;
+
+    // Releasing & Resetting
+    delete ptr_num_uninitialized;
+    ptr_num_uninitialized = nullptr;
+    
+    // ---------------------------------------------------------------------
+    // Case 02): Deleted Pointer.
+    // ---------------------------------------------------------------------
+
+    std::cout << std::endl;
+
+    std::cout << "Case 02): Deleted Pointer: " << std::endl;
+
+    // Before Delete
+    int *ptr_num_ptr_should_deleted { new int { 789654123 } };
+
+    std::cout << "\tBefore Deleting: " << std::endl;
+    std::cout 
+        << "\t\tptr_num_ptr_should_deleted Address: " 
+        << ptr_num_ptr_should_deleted                 // Pass
+        << std::endl;
+
+    std::cout 
+        << "\t\tptr_num_ptr_should_deleted Value: " 
+        << *ptr_num_ptr_should_deleted                 // Pass
+        << std::endl;
+
+    // After Delete
+    delete ptr_num_ptr_should_deleted;
+    // ptr_num_ptr_should_deleted = nullptr;    // Resetting Result: Segmentation fault (core dumped)
+
+    std::cout << "\tAfter Deleting: " << std::endl;
+    std::cout 
+        << "\t\tptr_num_ptr_should_deleted Address: " 
+        << ptr_num_ptr_should_deleted                 // Pass
+        << std::endl;
+
+    std::cout 
+        << "\t\tptr_num_ptr_should_deleted Value: " 
+        << *ptr_num_ptr_should_deleted                 // Fail! Has Garbage Data
+        << std::endl;
+    
+    
+    // ---------------------------------------------------------------------
+    // Case 03): Multiple Pointer Pointing To The Same Memory Location.
+    // ---------------------------------------------------------------------
+
+    std::cout << std::endl;
+
+    std::cout << "Case 03): Multiple Pointer Pointing To The Same Memory Location: " << std::endl;
+
+    int *ptr_multi_x { new int (123654789) };    // Named: Owner Pointer
+    
+    // This pointer pointing to the same location of 'ptr_multi_x'
+    int *ptr_multi_y { ptr_multi_x };            // Named: Slave Pointer.
+
+    std::cout << "\tBefore Deleting: " << std::endl;
+    // Printing out ptr_multi_x, ptr_multi_y:
+    std::cout 
+        << "\t\tptr_multi_x Address: " 
+        << ptr_multi_x                 // Pass
+        << "\t\tptr_multi_x Value: "
+        << *ptr_multi_x                 // Pass
+        << std::endl;
+    std::cout 
+        << "\t\tptr_multi_y Address: " 
+        << ptr_multi_y                 // Pass
+        << "\t\tptr_multi_y Value: "
+        << *ptr_multi_y                // Pass
+        << std::endl;
+
+    std::cout << "\tAfter Deleting: " << std::endl;
+
+    // Deleting 'ptr_multi_x':
+    // Maybe leads to undefined behaviour: Garbage Value!, or Crashs!
+    delete ptr_multi_x;
+
+    // Printing out ptr_multi_x, ptr_multi_y:
+    std::cout 
+        << "\t\tptr_multi_x Address: " 
+        << ptr_multi_x                      // FAIL!
+        << "\t\tptr_multi_x Value: "
+        << *ptr_multi_x                     // FAIL!
+        << std::endl;
+    std::cout 
+        << "\t\tptr_multi_y Address: " 
+        << ptr_multi_y                      // FAIL!
+        << "\t\tptr_multi_y Value: "
+        << *ptr_multi_y                     // FAIL!
+        << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
+
 
 
 
