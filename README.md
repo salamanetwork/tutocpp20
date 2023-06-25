@@ -1,5 +1,15 @@
 # tutocpp20:
-My Tutorial Journey On C++ 20 starts at 1 June 2023
+My Tutorial's Journey On C++ 20 || Modern C++ starts at 1 June 2023
+
+###### Hints:
+        This is not my first attempt to start this journey, I think there are 10 or more attempts, by the way I completed many courses before, but I keep doing that since 2003. 
+        So, finally I decided to note down and keep logging my progress, maybe I hope it will help me and some people too.
+
+###### For Future Me:
+        - You Really, Done A good Job Here.
+        - You Love Classic Programming At The Most.
+        - You Love C-Style Syntax Programming Forever.
+        - Keep It Up, HALAL Way!
 
 ## Utilities:
     
