@@ -59,6 +59,7 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   12) https://www.educative.io
   13) www.cprogramming.com
   14) www.wikipedia.org
+  15) www.w3schools.com
   
   #### Videos, Online Courses:
   1) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
@@ -97,7 +98,9 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   13) https://en.wikipedia.org/wiki/Dangling_pointer
   14) https://interviewsansar.com/what-if-memory-allocation-using-new-fails-in-cpp-how-to-handle/
   15) https://www.geeksforgeeks.org/if-memory-allocation-using-new-is-failed-in-c-then-how-it-should-be-handled/
-  16) 
+  16) https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm
+  17) https://www.w3schools.com/cpp/cpp_exceptions.asp
+  18) 
 
 
 
