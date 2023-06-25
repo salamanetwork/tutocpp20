@@ -7,10 +7,12 @@ My Tutorial's Journey On C++ 20 || Modern C++ starts at 1 June 2023
         So, finally I decided to note down and keep logging my progress, maybe I hope it will help me and some people too.
 
 ###### For Future Me:
-        - You Really, Done A good Job Here.
-        - You Love Classic Programming At The Most.
-        - You Love C-Style Syntax Programming Forever.
-        - Keep It Up, HALAL Way!
+        - You Really, Did A Great Job Here 💪.
+        - You Should Know When You Must Stop! 🫷.
+        - You Love Classic Programming At The Most 😍.
+        - You Love C-Style Syntax Programming Forever 🥰.
+        - Keep It Up, HALAL Way! 😉.
+        - AI Keeps Eyes On You, But It Will Never Beat You 😜.
 
 ## Utilities:
     
