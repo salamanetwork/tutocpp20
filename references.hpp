@@ -72,6 +72,117 @@ using namespace std;
                     Choosing between references and pointers depends on the specific requirements and design of your program.
 */
 
+void references()
+{
+    int score = 10;
+
+    // reference to score
+    int& ref_to_score { score };
+
+    std::cout << "# Before Modifying: ------------------------------------" << std::endl << std::endl;
+    
+    std::cout << "\tOriginal Variable Information: " << std::endl;
+
+    std::cout 
+        << "\t\tscore Address:\t\t\t"
+        << &score
+        << std::endl
+        << "\t\tscore value:\t\t\t"
+        << score
+        << std::endl
+        << "\t\tscore Size:\t\t\t\t"
+        << sizeof(score)
+        << std::endl
+        << std::endl;
+
+    std::cout << "\tReference Information: " << std::endl;
+
+    std::cout 
+        << "\t\tref_to_score Address:\t"
+        << &ref_to_score 
+        << std::endl
+        << "\t\tref_to_score value:\t\t"
+        << ref_to_score 
+        << std::endl
+        << "\t\tref_to_score& Size:\t\t"
+        << sizeof(ref_to_score)
+        << std::endl
+        << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "# After Modifying with reference: ------------------------------------" << std::endl << std::endl;
+
+    std::cout << "\tOriginal Variable Information: " << std::endl;
+    
+    // Modifying the references will affect on the original variable and vice versa
+    ref_to_score = 8989;
+
+    // After Modifying
+    std::cout 
+        << "\t\tscore Address:\t\t\t"
+        << &score
+        << std::endl
+        << "\t\tscore value:\t\t\t"
+        << score
+        << std::endl
+        << "\t\tscore Size:\t\t\t\t"
+        << sizeof(score)
+        << std::endl
+        << std::endl;
+
+    std::cout << "\tReference Information: " << std::endl;
+
+    std::cout 
+        << "\t\tref_to_score Address:\t"
+        << &ref_to_score 
+        << std::endl
+        << "\t\tref_to_score value:\t\t"
+        << ref_to_score 
+        << std::endl
+        << "\t\tref_to_score& Size:\t\t"
+        << sizeof(ref_to_score)
+        << std::endl
+        << std::endl;
+
+    std::cout << "# After Modifying with original: ------------------------------------" << std::endl << std::endl;
+
+    std::cout << "\tOriginal Variable Information: " << std::endl;
+    
+    // Modifying the references will affect on the original variable and vice versa
+    score = 1234567;
+
+    // After Modifying
+    std::cout 
+        << "\t\tscore Address:\t\t\t"
+        << &score
+        << std::endl
+        << "\t\tscore value:\t\t\t"
+        << score
+        << std::endl
+        << "\t\tscore Size:\t\t\t\t"
+        << sizeof(score)
+        << std::endl
+        << std::endl;
+
+    std::cout << "\tReference Information: " << std::endl;
+
+    std::cout 
+        << "\t\tref_to_score Address:\t"
+        << &ref_to_score 
+        << std::endl
+        << "\t\tref_to_score value:\t\t"
+        << ref_to_score 
+        << std::endl
+        << "\t\tref_to_score& Size:\t\t"
+        << sizeof(ref_to_score)
+        << std::endl
+        << std::endl;
+
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
 
 
 
