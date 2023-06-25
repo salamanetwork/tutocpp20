@@ -72,6 +72,7 @@ My Tutorial's Journey On C++ 20 || Modern C++ starts at 1 June 2023
   13) www.cprogramming.com
   14) www.wikipedia.org
   15) www.w3schools.com
+  16) https://chat.openai.com
   
   #### Videos, Online Courses:
   1) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
