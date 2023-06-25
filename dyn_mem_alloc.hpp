@@ -502,6 +502,49 @@ void nullptr_safety()
         std::cout << "Pointer ptr_ch has not a valid address." << std::endl;
 }
 
+/*
+    - Memory Leaks
+        - What?:
+            - when programmers allocates memory by using new keyword and forgets to deallocate the memory by using delete() function or delete[] operator.
+        - Requires:
+            - We Must Release & Reset The Pointer Before Using Again.
+            - Instead of managing memory manually, try to use smart pointers where applicable.
+            - Never use a raw pointer unless it’s to interface with an older lib.
+            - Allocate memory by new keyword and deallocate memory by delete keyword and write all code between them.
+            - use std::string instead of char *. The std::string class handles all memory management internally, and it’s fast and well-optimized.
+            
+*/
+
+void mem_leaks()
+{
+    int *ptr_leak (new int(15));
+
+    std::cout 
+        << "ptr_leak Address:\t"
+        << ptr_leak
+        << "\tptr_leak Value:\t"
+        << *ptr_leak
+        << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // We Must Release & Reset The Pointer Before Using Again
+    // delete ptr_leak;
+    // ptr_leak = nullptr;
+    
+    ptr_leak = new int(51);    // Danger!!!: Memory Will Leaks Here
+
+    std::cout 
+        << "ptr_leak Address:\t"
+        << ptr_leak
+        << "\tptr_leak Value:\t"
+        << *ptr_leak
+        << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
 
 
 
