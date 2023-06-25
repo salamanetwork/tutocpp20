@@ -47,9 +47,9 @@ My Tutorial's Journey On C++ 20 || Modern C++ starts at 1 June 2023
 7) g++ (GCC) 13.1.1 20230511 (Red Hat 13.1.1-2)
 8) clang version 16.0.4 (Fedora 16.0.4-1.fc38)
 9) Microsoft Visual Studio Code
-10) Microsoft Visual Studio 2022
+10) Microsoft Visual Studio 2022  / Windows Only
 11) Windows 11
-12) Notepad++
+12) Notepad++ / Windows Only
 13) Eclipse IDE
 14) Code::Blocks
 15) www.cppinsights.io
