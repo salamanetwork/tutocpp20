@@ -57,6 +57,7 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   10) www.clang.llvm.org
   11) www.overiq.com
   12) https://www.educative.io
+  13) www.cprogramming.com
   
   #### Videos, Online Courses:
   1) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
@@ -90,7 +91,8 @@ My Tutorial Journey On C++ 20 starts at 1 June 2023
   8) https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
   9) https://www.guru99.com/stack-vs-heap.html
   10) https://www.geeksforgeeks.org/difference-between-static-and-dynamic-memory-allocation-in-c/
-  11) 
+  11) https://www.cprogramming.com/tutorial/function-pointers.html
+  12) 
 
 
 
