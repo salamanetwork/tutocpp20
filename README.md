@@ -12,7 +12,7 @@ My Tutorial's Journey On C++ 20 || Modern C++ starts at 1 June 2023
         - You Love Classic Programming At The Most 😍.
         - You Love C-Style Syntax Programming Forever 🥰.
         - Keep It Up, HALAL Way! 😉.
-        - AI Keeps Eyes On You, But It Will Never Beat You 😜.
+        - AI Keeps Eyes On You, But It Will Never Ever Beats You 😜.
 
 ## Utilities:
     
