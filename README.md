@@ -2,20 +2,21 @@
     ( My Tutorial's Journey On C++ 20 ) || ( Modern C++ ) = starts at 1 June 2023
 
 ###### Hints:
-        This is not my first attempt to start this journey.
-        I think there are 10 or more attempts.
-        By the way I completed many courses before, but I keep doing that since 2003. 
-        Finally I decided to note down and keep logging my progress, maybe I hope it will help me and some people too.
+    This is not my first attempt to start this journey.
+    I think there are 10 or more attempts.
+    By the way I completed many courses before, but I keep doing that since 2003. 
+    Finally I decided to note down and keep logging my progress. 
+    May I hope it will help me and some people too.
 
 ###### For Future Me:
-        - I Really, Did A Great Job Here 💪.
-        - I Should Know When I Must Stop! 🫷.
-        - I Love Classic Programming At The Most 😍.
-        - I Love C-Style Syntax Programming Forever 🥰.
-        - Keep It Up, HALAL Way! 😉.
-        - AI Keeps Its Eyes On You, But It Will Never Ever Beats You 😜.
-        - Python For Smart People. Let's Face The Truth "I Am Not!", But I Am Seeking Professionalism 😂.
-        - Love Myself Before Seeking Someone Loves Me 🤪.
+    - I Really, Did A Great Job Here 💪.
+    - I Should Know When I Must Stop! 🫷.
+    - I Love Classic Programming At The Most 😍.
+    - I Love C-Style Syntax Programming Forever 🥰.
+    - Keep It Up, HALAL Way! 😉.
+    - AI Keeps Its Eyes On You, But It Will Never Ever Beats You 😜.
+    - Python For Smart People. Let's Face The Truth "I Am Not!", But I Am Seeking Professionalism 😂.
+    - Love Myself Before Seeking Someone Loves Me 🤪.
 
 ## Utilities:
     
