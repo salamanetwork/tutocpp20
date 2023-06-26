@@ -59,7 +59,7 @@ void chr_str_manip()
     std::cout << "Alphas: "       << c_alphas        << std::endl;
     std::cout << "Uppers: "       << c_uppers        << std::endl;
     std::cout << "Lowers: "       << c_lowers        << std::endl;
-    std::cout << "Alphanums: "    << c_alnums        << std::endl;
+    std::cout << "Alnums: "       << c_alnums        << std::endl;
     std::cout << "Graphs: "       << c_graphs        << std::endl;
     std::cout << "Puncts: "       << c_puncts        << std::endl;
 
