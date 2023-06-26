@@ -42,6 +42,7 @@
     00012)    pointers.hpp
     00013)    dyn_mem_alloc.hpp
     00014)    references.hpp
+    00015)    strings.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
