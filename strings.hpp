@@ -83,6 +83,88 @@ void chr_str_manip()
     std::cout << std::endl;
 }
 
+/*
+    - Using 'cstring' standard library:
+        - https://en.cppreference.com/w/cpp/header/cstring
+            - strlen, strcmp, strncmp, strchr, strrchr, 
+*/
+
+void std_cstring()
+{
+    // cstings applied only on 'const char*'
+    const char* manip_text { "https://en.cppreference.com/w/cpp/header/cstring" };
+
+    // Printing out the length of the manip_text
+    std::cout 
+        << "length of the manip_text: " 
+        << std::strlen(manip_text) 
+        << std::endl;
+
+    // Comparing 2 strings
+    const char* 
+        str_city_01 { "Alexandria" };
+    
+    const char* 
+        str_city_02 { "Dubai" };
+    /*
+        - Result One Of:
+            - Negative value if 'lhs' appears before 'rhs' in lexicographical order.
+            - Zero if 'lhs' and 'rhs' compare equal.
+            - Positive value if 'lhs' appears after 'rhs' in lexicographical order. 
+    */
+
+    std::cout << "Comparing between str_city_01 & str_city_02: ";
+    switch(std::strcmp(str_city_01, str_city_02))
+    {
+        case 0:
+            std::cout 
+                << str_city_01 
+                << " & " << str_city_02 
+                << " are Equals."
+                << std::endl;
+            break;
+        case -1:
+            std::cout 
+                << str_city_01 
+                << " Appears Before "
+                << str_city_02 
+                << std::endl;
+            break;
+        case 1:
+            std::cout 
+                << str_city_02 
+                << " Appears Before "
+                << str_city_01 
+                << std::endl;
+            break;
+        default:
+            std::cout 
+                << " Invalid Comaprison!" 
+                << std::endl;
+            break;
+    }
+
+    // Finds the first occurrence of the character: Search for '/' in manip_text
+    // Sorry!, I'm Lazy: https://en.cppreference.com/w/cpp/string/byte/strchr
+    const char *str = "Try not. Do, or do not. There is no try.";
+    char target = 'T';
+    const char *result = str;
+ 
+    while ((result = std::strchr(result, target)) != nullptr)
+    {
+        std::cout << "Found '" << target
+                  << "' starting at '" << result << "'\n";
+ 
+        // Increment result, otherwise we'll find target at the same location
+        ++result;
+    }
+        
+
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
 
 
 
