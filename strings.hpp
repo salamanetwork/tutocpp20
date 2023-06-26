@@ -33,7 +33,7 @@ void chr_str_manip()
     std::string manip_text = "Using, and Manipulating String & Chars manipulation with C/C++20 Standard Library.";
 
     int c_graphs { 0 }, c_blanks { 0 }, c_uppers { 0 }, c_lowers { 0 }, 
-        c_digits { 0 }, c_alphanums { 0 }, c_alphas { 0 }, c_spaces { 0 },
+        c_digits { 0 }, c_alnums { 0 }, c_alphas { 0 }, c_spaces { 0 },
         c_puncts { 0 };
     
     std::cout << "Text: " << manip_text << std::endl;
@@ -43,7 +43,7 @@ void chr_str_manip()
         if(std::isdigit(c)) ++c_digits;
         if(std::isblank(c)) ++c_blanks;
         if(std::isalpha(c)) ++c_alphas;
-        if(std::isalnum(c)) ++c_alphanums;
+        if(std::isalnum(c)) ++c_alnums;
         if(std::isupper(c)) ++c_uppers;
         if(std::islower(c)) ++c_lowers;
         if(std::isspace(c)) ++c_spaces;
@@ -59,7 +59,7 @@ void chr_str_manip()
     std::cout << "Alphas: "       << c_alphas        << std::endl;
     std::cout << "Uppers: "       << c_uppers        << std::endl;
     std::cout << "Lowers: "       << c_lowers        << std::endl;
-    std::cout << "Alphanums: "    << c_alphanums     << std::endl;
+    std::cout << "Alphanums: "    << c_alnums        << std::endl;
     std::cout << "Graphs: "       << c_graphs        << std::endl;
     std::cout << "Puncts: "       << c_puncts        << std::endl;
 
