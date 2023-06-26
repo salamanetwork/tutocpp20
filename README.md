@@ -1,5 +1,5 @@
 # tutocpp20:
-My Tutorial's Journey On C++ 20 || Modern C++ starts at 1 June 2023
+    ( My Tutorial's Journey On C++ 20 ) || ( Modern C++ ) = starts at 1 June 2023
 
 ###### Hints:
         This is not my first attempt to start this journey.
