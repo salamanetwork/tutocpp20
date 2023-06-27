@@ -9,7 +9,6 @@
 #include <new>
 #include <string>
 #include <string_view>
-#include <string_literals>
 
 
 #include <ctime>
