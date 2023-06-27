@@ -166,6 +166,49 @@ void std_cstring()
     std::cout << std::endl;
 }
 
+/*
+    - Using some useful functions of strings
+    - strcat, strcpy, strncat, strncpy
+*/
+
+void std_cstring_02()
+{
+    constexpr int bound { 30 };
+    
+    char* str_01 { new char[bound] { "Hello, " } };
+    char* str_02 { new char[bound] { "World!" } };
+    
+    // Remember: 'str_01' the length will change afte using 'strcat'
+    // Because: 'str_01' will be the distenation for new 'strcat' output.
+    char* str_03 { std::strcat(str_01, str_02) };
+
+    std::cout << str_03 << std::endl;
+    std::cout << "-------------------------(sizeof)" << std::endl;
+    std::cout << "sizeof str_01: " << sizeof str_01 << std::endl;
+    std::cout << "sizeof str_02: " << sizeof str_02 << std::endl;
+    std::cout << "sizeof str_03: " << sizeof str_03 << std::endl;
+    std::cout << "-------------------------(length)" << std::endl;
+    std::cout << "length of str_01: " << std::strlen(str_01) << std::endl;
+    std::cout << "length of str_02: " << std::strlen(str_02) << std::endl;
+    std::cout << "length of str_03: " << std::strlen(str_03) << std::endl;
+
+    // Releasing && Resetting
+    delete[] str_01;    str_01 = nullptr;
+    delete[] str_02;    str_02 = nullptr;
+
+    // Notes: In C++, the strcat function modifies the destination string in-place by appending the characters from the source string. 
+    
+    // Check Null Safety, Then Delete, Then Reset 
+    if(!str_03)    // Because, We Deleted The Distenation 'str_01' Before.
+    {
+        delete[] str_03;    
+        str_03 = nullptr;
+    }
+        
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
 
 
 
