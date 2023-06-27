@@ -324,6 +324,341 @@ void cpp_string_01()
 
 }
 
+/*
+    - Using some useful functions of strings
+        -You can perform various operations and apply numerous functions on std::string objects in C++. 
+            -Here are some common operations and functions you can apply:
+
+                - 01) Accessing and Modifying:
+                    - Access individual characters: str[index]
+                    - Modifying characters: str[index] = new_char
+                    - Appending characters: str.push_back(new_char)
+                    - Concatenating strings: str1 + str2 or str1.append(str2)
+                    - Clearing the string: str.clear()
+                    - Resizing the string: str.resize(new_size)
+                
+                - 02) String Manipulation:
+                    - Extracting substrings: str.substr(start_pos, length)
+                    - Finding a substring or character: str.find(substring) or str.find(character)
+                    - Replacing a substring: str.replace(start_pos, length, new_str)
+                    - Erasing a portion of the string: str.erase(start_pos, length)
+                    - Swapping the contents of two strings: str1.swap(str2)
+
+                - 03) String Information and Properties:
+                    - Getting the length: str.length() or str.size()
+                    - Checking if the string is empty: str.empty()
+                    - Checking if the string starts or ends with a specific substring: str.startswith(substring) or str.endswith(substring)
+                    - Comparing strings: str1 == str2, str1 != str2, str1 < str2, etc.
+                
+                - 04) String Conversion and I/O:
+                    - Converting to a C-style string: str.c_str()
+                    - Converting to other numeric or data types: std::stoi(str), std::stof(str), etc.
+                    - Input/output operations using std::cin and std::cout
+*/
+
+bool startsWith(const std::string& str, const std::string& prefix) {
+    return str.substr(0, prefix.length()) == prefix;
+}
+
+bool endsWith(const std::string& str, const std::string& suffix) {
+    if (str.length() < suffix.length()) {
+        return false;
+    }
+    return str.substr(str.length() - suffix.length(), suffix.length()) == suffix;
+}
+
+void cpp_string_02()
+{
+    // 01) Accessing and Modifying: ----------------------------------
+    
+    // Access individual characters: str[index]
+    std::string str11 = "Hello, World!";
+    
+    char firstChar11 = str11[0];
+    char fifthChar11 = str11[4];
+
+    std::cout << "First character: " << firstChar11 << std::endl;
+    std::cout << "Fifth character: " << fifthChar11 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Modifying characters: str[index] = new_char
+    std::string str12 = "Hello, World!";
+
+    std::cout << "Original string: " << str12 << std::endl;
+
+    str12[0] = 'J';
+    str12[7] = 'F';
+    
+    std::cout << "Modified string: " << str12 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Appending characters: str.push_back(new_char)
+    std::string str13 = "Hello";
+
+    std::cout << "Original string: " << str13 << std::endl;
+
+    str13.push_back('!');
+    str13.push_back(' ');
+
+    std::cout << "Appended string: " << str13 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Concatenating strings: str1 + str2 or str1.append(str2)
+    std::string str114 = "Hello";
+    std::string str214 = " World!";
+
+    std::string concatenated114 = str114 + str214;
+    std::string concatenated214 = str114;
+    concatenated214.append(str214);
+
+    std::cout << "Concatenated string 1: " << concatenated114 << std::endl;
+    std::cout << "Concatenated string 2: " << concatenated214 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Clearing the string: str.clear()
+    std::string str15 = "Hello, World!";
+
+    std::cout << "Original string: " << str15 << std::endl;
+
+    str15.clear();
+
+    std::cout << "Cleared string: " << str15 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Resizing the string: str.resize(new_size)
+    std::string str16 = "Hello";
+
+    std::cout << "Original string: " << str16 << std::endl;
+
+    str16.resize(10);
+
+    std::cout << "Resized string (to length 10): " << str16 << std::endl;
+
+    str16.resize(3);
+
+    std::cout << "Resized string (to length 3): " << str16 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    
+    // 02) String Manipulation: ----------------------------------
+    
+    // Extracting substrings: str.substr(start_pos, length)
+    std::string str21 = "Hello, World!";
+
+    std::string substring121 = str21.substr(0, 5);     // Extracts "Hello"
+    std::string substring221 = str21.substr(7, 5);     // Extracts "World"
+    std::string substring321 = str21.substr(7);        // Extracts "World!"
+
+    std::cout << "Substring 1: " << substring121 << std::endl;
+    std::cout << "Substring 2: " << substring221 << std::endl;
+    std::cout << "Substring 3: " << substring321 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Finding a substring or character: str.find(substring) or str.find(character)
+    std::string str22 = "Hello, World!";
+
+    std::size_t position122 = str22.find("World");     // Finds the position of "World"
+    std::size_t position222 = str22.find('o');         // Finds the position of the first 'o'
+    std::size_t position322 = str22.find("Universe");  // Finds the position of "Universe" (not found)
+
+    std::cout << "Position of \"World\": " << position122 << std::endl;
+    std::cout << "Position of 'o': " << position222 << std::endl;
+
+    if (position322 == std::string::npos) {
+        std::cout << "\"Universe\" not found in the string." << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Replacing a substring: str.replace(start_pos, length, new_str)
+    std::string str23 = "Hello, World!";
+
+    std::cout << "Original string: " << str23 << std::endl;
+
+    str23.replace(7, 5, "Universe");
+
+    std::cout << "Modified string: " << str23 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Erasing a portion of the string: str.erase(start_pos, length)
+    std::string str24 = "Hello, World!";
+
+    std::cout << "Original string: " << str24 << std::endl;
+
+    str24.erase(7, 6);
+
+    std::cout << "Modified string: " << str24 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Swapping the contents of two strings: str1.swap(str2)
+    std::string str125 = "Hello";
+    std::string str225 = "World";
+
+    std::cout << "Before swap:" << std::endl;
+    std::cout << "\tstr125: " << str125 << std::endl;
+    std::cout << "\tstr225: " << str225 << std::endl;
+
+    str125.swap(str225);
+
+    std::cout << "After swap:" << std::endl;
+    std::cout << "\tstr125: " << str125 << std::endl;
+    std::cout << "\tstr225: " << str225 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // 03) String Information and Properties: ----------------------------------
+    
+    // Getting the length: str.length() or str.size()
+    std::string str31 = "Hello, World!";
+
+    std::cout << "String length using length(): " << str31.length() << std::endl;
+    std::cout << "String length using size(): " << str31.size() << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    // Checking if the string is empty: str.empty()
+    std::string str132 = "Hello";
+    std::string str232 = "";
+
+    if (str132.empty()) {
+        std::cout << "str1 is empty." << std::endl;
+    } else {
+        std::cout << "str1 is not empty. It contains: " << str132 << std::endl;
+    }
+
+    if (str232.empty()) {
+        std::cout << "str2 is empty." << std::endl;
+    } else {
+        std::cout << "str2 is not empty. It contains: " << str232 << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    // Checking if the string starts or ends with a specific substring: str.startswith(substring) or str.endswith(substring)
+
+    std::string str33 = "Hello, World!";
+
+    if (startsWith(str33, "Hello")) {
+        std::cout << "String starts with \"Hello\"" << std::endl;
+    } else {
+        std::cout << "String does not start with \"Hello\"" << std::endl;
+    }
+
+    if (endsWith(str33, "World!")) {
+        std::cout << "String ends with \"World!\"" << std::endl;
+    } else {
+        std::cout << "String does not end with \"World!\"" << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    // Comparing strings: str1 == str2, str1 != str2, str1 < str2, etc.
+    std::string str134 = "Hello";
+    std::string str234 = "World";
+    std::string str334 = "Hello";
+    std::string str434 = "hello";
+
+    if (str134 == str234) {
+        std::cout << "str134 is equal to str234" << std::endl;
+    } else {
+        std::cout << "str134 is not equal to str234" << std::endl;
+    }
+
+    if (str134 != str334) {
+        std::cout << "str134 is not equal to str334" << std::endl;
+    } else {
+        std::cout << "str134 is equal to str334" << std::endl;
+    }
+
+    if (str134 < str434) {
+        std::cout << "str134 is less than str434" << std::endl;
+    } else {
+        std::cout << "str134 is not less than str434" << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    // 04) String Conversion and I/O: ----------------------------------
+    
+    // Converting to a C-style string: str.c_str()
+    std::string str41 = "Hello, World!";
+
+    const char* cStr41 = str41.c_str();
+
+    std::cout << "Original string: " << str41 << std::endl;
+    std::cout << "C-style string: " << cStr41 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    // Converting to other numeric or data types: std::stoi(str), std::stof(str), etc.
+    /*
+        std::stoi(str)    converts a string to an int value.
+        std::stol(str)    converts a string to a long value.
+        std::stoll(str)   converts a string to a long long value.
+        std::stoul(str)   converts a string to an unsigned long value.
+        std::stoull(str)  converts a string to an unsigned long long value.
+        std::stof(str)    converts a string to a float value.
+        std::stod(str)    converts a string to a double value.
+        std::stold(str)   converts a string to a long double value.
+    */
+    
+    std::string str4141 = "123";
+    std::string str4241 = "3.14";
+
+    int intValue441 = std::stoi(str4141);
+    float floatValue441 = std::stof(str4241);
+
+    std::cout << "String: " << str4141 << ", Converted Integer: " << intValue441 << std::endl;
+    std::cout << "String: " << str4241 << ", Converted Float: " << floatValue441 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    // Input/output operations using std::cin and std::cout
+    /*
+    int num;
+    std::string name;
+
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+
+    std::cout << "Enter your name: ";
+    std::cin.ignore(); // Ignore the newline character left in the input buffer
+    std::getline(std::cin, name);
+
+    std::cout << "You entered: " << num << std::endl;
+    std::cout << "Your name is: " << name << std::endl;
+    */
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+}
+
 
 
 
