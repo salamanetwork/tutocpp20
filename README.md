@@ -21,7 +21,8 @@
     - AI Keeps Its Eyes On You, But It Will Never Ever Beats You 😜.
     - Python For Smart People. Let's Face The Truth "I Am Not!", But I Am Seeking Professionalism 😂.
     - Love Myself Before Seeking Someone Loves Me 🤪.
-    - CTRL+S: Saves Lives After Every One Line Of The Code, But It Keeps Destroying The Keyboards 🖕.
+    - CTRL+S: Saves Lives After Every One Line Of The Code, But It Keeps Destroying The Keyboards 💸.
+    - Cleopatra was a white queen!, I Am Not Racist, But Facts!. Say, No For Afrocentrism! 🧔‍♀️ 🧔🏻‍♀️ 🧔🏼‍♀️ 🧔🏽‍♀️ 🧔🏾‍♀️ 🧔🏿‍♀️ 🧔‍♂️ 🧔🏻‍♂️ 🧔🏼‍♂️ 🧔🏽‍♂️ 🧔🏾‍♂️ 🧔🏿‍♂️.
 
 ## Utilities:
     
