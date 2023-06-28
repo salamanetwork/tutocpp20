@@ -1105,7 +1105,69 @@ void cpp_string_modif_funcs()
     str114.insert(5, str214, 2, 3);
 }
 
+/*
+    - C++ Compare Strings:
+        - Using the comparison operators (==, !=, <, <=, >, >=).
+        - Using the compare() function.
+*/
 
+void cpp_string_comparison()
+{
+    std::string str1 = "apple";
+    std::string str2 = "banana";
+    
+    // Equality comparison
+    if (str1 == str2) {
+        std::cout << "Strings are equal" << std::endl;
+    } else {
+        std::cout << "Strings are not equal" << std::endl;
+    }
+    
+    // Inequality comparison
+    if (str1 != str2) {
+        std::cout << "Strings are not equal" << std::endl;
+    } else {
+        std::cout << "Strings are equal" << std::endl;
+    }
+    
+    // Less-than comparison
+    if (str1 < str2) {
+        std::cout << "str1 is less than str2" << std::endl;
+    } else {
+        std::cout << "str1 is not less than str2" << std::endl;
+    }
+    
+    // Less-than or equal-to comparison
+    if (str1 <= str2) {
+        std::cout << "str1 is less than or equal to str2" << std::endl;
+    } else {
+        std::cout << "str1 is not less than or equal to str2" << std::endl;
+    }
+    
+    // Greater-than comparison
+    if (str1 > str2) {
+        std::cout << "str1 is greater than str2" << std::endl;
+    } else {
+        std::cout << "str1 is not greater than str2" << std::endl;
+    }
+    
+    // Greater-than or equal-to comparison
+    if (str1 >= str2) {
+        std::cout << "str1 is greater than or equal to str2" << std::endl;
+    } else {
+        std::cout << "str1 is not greater than or equal to str2" << std::endl;
+    }
+    
+    // compare() function
+    int result = str1.compare(str2);
+    if (result == 0) {
+        std::cout << "Strings are equal" << std::endl;
+    } else if (result < 0) {
+        std::cout << "str1 is less than str2" << std::endl;
+    } else {
+        std::cout << "str1 is greater than str2" << std::endl;
+    }
+}
 
 
 
