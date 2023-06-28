@@ -7,6 +7,7 @@
 #include <ios>
 #include <array>
 #include <new>
+#include <algorithm>
 #include <string>
 #include <string_view>
 
