@@ -1279,6 +1279,54 @@ void cpp_string_searching()
     }
 }
 
+/*
+    - C++ String To Numbers
+        - Converting a string to an integer using std::stoi().
+        - Converting a string to a floating-point number using std::stof().
+        - Converting an integer to a string using std::to_string().
+        - Converting a floating-point number to a string using std::to_string().
+        - Converting a string to an integer using std::stringstream.
+        - Converting an integer to a string using std::stringstream.
+*/
+
+void cpp_string_to_num()
+{
+    // Example 1: Converting string to integer
+    std::string str1 = "12345";
+    int num1 = std::stoi(str1);
+    std::cout << "String to Integer Conversion: " << num1 << std::endl;
+
+    // Example 2: Converting string to floating-point number
+    std::string str2 = "3.14";
+    float num2 = std::stof(str2);
+    std::cout << "String to Float Conversion: " << num2 << std::endl;
+
+    // Example 3: Converting integer to string
+    int num3 = 42;
+    std::string str3 = std::to_string(num3);
+    std::cout << "Integer to String Conversion: " << str3 << std::endl;
+
+    // Example 4: Converting floating-point number to string
+    float num4 = 2.71828;
+    std::string str4 = std::to_string(num4);
+    std::cout << "Float to String Conversion: " << str4 << std::endl;
+
+    // Example 5: Converting string to integer using stringstream
+    std::string str5 = "98765";
+    int num5;
+    std::stringstream ss1(str5);
+    ss1 >> num5;
+    std::cout << "String to Integer Conversion using stringstream: " << num5 << std::endl;
+
+    // Example 6: Converting integer to string using stringstream
+    int num6 = 99999;
+    std::stringstream ss2;
+    ss2 << num6;
+    std::string str6 = ss2.str();
+    std::cout << "Integer to String Conversion using stringstream: " << str6 << std::endl;
+
+}
+
 
 
 
