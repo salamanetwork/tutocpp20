@@ -1358,7 +1358,42 @@ void cpp_string_esc_seq()
     std::cout << "This will produce a sound \a" << std::endl;
 }
 
+/*
+    - C++ String / Raw String Literals:
+*/
 
+void cpp_string_raw_str_literals()
+{
+    // Example 1: Basic raw string literal
+    std::string str1 = R"(This is a raw string literal)";
+    std::cout << "Example 1: " << str1 << std::endl;
+
+    // Example 2: Raw string literal with escaped characters
+    std::string str2 = R"(C:\Windows\System32\\)";
+    std::cout << "Example 2: " << str2 << std::endl;
+
+    // Example 3: Multiline raw string literal
+    std::string str3 = R"(
+        Line 1
+        Line 2
+        Line 3
+    )";
+    std::cout << "Example 3: " << str3 << std::endl;
+
+    // Example 4: Raw string literal with parentheses
+    std::string str4 = R"###((This is a raw string literal with parentheses))###";
+    std::cout << "Example 4: " << str4 << std::endl;
+
+    // Example 5: Raw string literal with embedded newline
+    std::string str5 = R"(Line 1
+Line 2
+Line 3)";
+    std::cout << "Example 5: " << str5 << std::endl;
+
+    // Example 6: Raw string literal with trailing backslash
+    std::string str6 = R"(This is a raw string literal with a trailing backslash\\)";
+    std::cout << "Example 6: " << str6 << std::endl;
+}
 
 
 
