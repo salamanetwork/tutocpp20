@@ -1327,6 +1327,36 @@ void cpp_string_to_num()
 
 }
 
+/*
+    - C++ String Escape Sequence:
+*/
+
+void cpp_string_esc_seq()
+{
+    // Example 1: Newline (\n)
+    std::cout << "Hello, World!" << std::endl;
+    std::cout << "This is a new line.\n";
+
+    // Example 2: Tab (\t)
+    std::cout << "Name:\tJohn Doe\n";
+    std::cout << "Age:\t25\n";
+
+    // Example 3: Backslash (\\)
+    std::cout << "This is a backslash: \\\\" << std::endl;
+
+    // Example 4: Single Quote (\')
+    std::cout << "I'm happy.\n";
+
+    // Example 5: Double Quote (\")
+    std::cout << "She said, \"Hello!\"\n";
+
+    // Example 6: Carriage Return (\r) and Vertical Tab (\v)
+    std::cout << "Hello, World!\r";
+    std::cout << "Vertical Tab\vTest\n";
+
+    // Example 7: Alert/Bell (\a)
+    std::cout << "This will produce a sound \a" << std::endl;
+}
 
 
 
