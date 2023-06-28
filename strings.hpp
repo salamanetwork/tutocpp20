@@ -1395,6 +1395,34 @@ Line 3)";
     std::cout << "Example 6: " << str6 << std::endl;
 }
 
+/*
+    - C++ String / Copied Strings:
+        - When you copy a string in C++, the new string object is a separate entity with its own memory allocation.
+        - However, if you want to obtain a different memory address for the copied string's character data, you can use pointers and create a new dynamically allocated string. 
+        - It's important to note that when you copy a string using the assignment operator or other standard string operations, the string data is automatically managed by the string object. 
+        - The underlying memory allocation and deallocation are handled transparently. 
+        - If you explicitly allocate memory using pointers, you need to ensure proper memory management by releasing the dynamically allocated memory using delete[] to avoid memory leaks.
+        - In general, obtaining different memory addresses for copied string data can be achieved through pointers and dynamically allocating memory. 
+        -  it's essential to carefully manage memory and consider the necessity and implications of such an approach.
+*/
+
+void cpp_string_copied_strings()
+{
+    // Original string
+    std::string original = "Hello, World!";
+
+    // Copying the string using assignment operator
+    std::string copy = original;
+
+    // Pointers to the original and copied string data
+    const char* originalData = original.c_str();
+    const char* copyData = copy.c_str();
+
+    // Printing the memory addresses
+    std::cout << "Original string address: " << static_cast<const void*>(originalData) << std::endl;
+    std::cout << "Copied string address: " << static_cast<const void*>(copyData) << std::endl;
+
+}
 
 
 
