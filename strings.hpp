@@ -1231,6 +1231,53 @@ void cpp_string_copying()
 }
 
 
+/*
+    - C++ String Searching & Finding
+        - Using std::string::find() function.
+        - Using std::string::find_first_of() function.
+        - Using std::string::npos() function.
+            - Is a static member constant of the std::string class that represents the maximum value for the size type std::string::size_type. It is typically used to indicate the absence of a valid position or index.
+            - The usage of std::string::npos allows us to handle cases where a substring is not found, providing a convenient way to check for absence or invalid positions.
+*/
+
+void cpp_string_searching()
+{
+    std::string str = "Hello, World!";
+
+    std::cout << "Source string: " << str << std::endl;
+
+    // Variant 1: Find the position of the substring "World" starting from index 0
+    size_t pos1 = str.find("World", 0);
+    if (pos1 != std::string::npos) {
+        std::cout << "Variant 1: Found 'World' at position " << pos1 << std::endl;
+    } else {
+        std::cout << "Variant 1: 'World' not found" << std::endl;
+    }
+
+    // Variant 2: Find the position of the substring "l" starting from index 3
+    size_t pos2 = str.find('l', 3);
+    if (pos2 != std::string::npos) {
+        std::cout << "Variant 2: Found 'l' at position " << pos2 << std::endl;
+    } else {
+        std::cout << "Variant 2: 'l' not found" << std::endl;
+    }
+
+    // Variant 3: Find the position of the first occurrence of any character in "oe" starting from index 0
+    size_t pos3 = str.find_first_of("oe", 0);
+    if (pos3 != std::string::npos) {
+        std::cout << "Variant 3: Found 'o' or 'e' at position " << pos3 << std::endl;
+    } else {
+        std::cout << "Variant 3: 'o' or 'e' not found" << std::endl;
+    }
+
+    // Variant 4: Find the position of the first occurrence of a character not in "Helo" starting from index 0
+    size_t pos4 = str.find_first_not_of("Helo", 0);
+    if (pos4 != std::string::npos) {
+        std::cout << "Variant 4: Found a character not in 'Helo' at position " << pos4 << std::endl;
+    } else {
+        std::cout << "Variant 4: No character not in 'Helo' found" << std::endl;
+    }
+}
 
 
 
