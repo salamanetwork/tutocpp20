@@ -18,7 +18,7 @@
     - I Love Classic Programming At The Most 😍.
     - I Love C-Style Syntax Programming Forever 🥰.
     - Keep It Up, HALAL Way! 😉.
-    - ChatGPT is Your Friend, Not Your Enemy 😉.
+    - ChatGPT Is Your Friend, Not Your Enemy 😉.
     - AI Keeps Its Eyes On You, But It Will Never Ever Beats You 😜.
     - Python For Smart People. Let's Face The Truth "I Am Not!", But I Am Seeking Professionalism 😂.
     - Love Myself Before Seeking Someone Loves Me 🤪.
