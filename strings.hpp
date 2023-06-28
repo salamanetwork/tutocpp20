@@ -967,7 +967,143 @@ void cpp_string_size_n_capacity()
     
 }
 
+/*
+    - Modifying std::strings:
+        - Assigning a new value:
+            - operator=: Assigns a new value to the string.
+            - assign(): Assigns a new value to the string, replacing the current contents.
+        
+        - Appending to the string:
+            - operator+=: Appends a string or character to the end of the string.
+            - append(): Appends a string or character to the end of the string.
 
+        - Inserting into the string:
+            - insert(): Inserts a substring or character into the string at a specified position.
+
+        - Erasing from the string:
+            - erase(): Erases a portion of the string, specified by position or range.
+
+        - Replacing part of the string:
+            - replace(): Replaces a portion of the string with a new value.
+
+        - Swapping string contents:
+            - swap(): Swaps the contents of two strings.
+
+        - Resizing the string:
+            -resize(): Resizes the string, either truncating or padding with a specified character.
+
+        - Removing whitespace:
+            - erase(): Erases whitespace characters from the beginning and end of the string.
+            - std::remove_if() with std::isspace(): Removes whitespace characters based on a predicate.
+*/
+
+void cpp_string_modif_funcs()
+{
+    //  Assigning a new value:
+    std::string str11 = "Hello";
+    std::string str21;
+
+    str21 = str11;
+    // or
+    str21.assign(str11);
+
+    std::cout << str21 << std::endl;
+
+    //  Appending to the string:
+    std::string str22 = "Hello";
+
+    str22 += " World";
+    // or
+    str22.append(" World");
+
+    std::cout << str22 << std::endl;
+    
+    //  Inserting into the string:
+    std::string str33 = "Hello";
+
+    str33.insert(5, " World");
+
+    std::cout << str33 << std::endl;
+    
+    //  Erasing from the string:
+    std::string str44 = "Hello World";
+
+    str44.erase(6, 5);
+
+    std::cout << str44 << std::endl;
+    
+    //  Replacing part of the string:
+    std::string str55 = "Hello World";
+
+    str55.replace(6, 5, "Universe");
+
+    std::cout << str55 << std::endl;
+
+    //  Swapping string contents:
+    std::string str16 = "Hello";
+    std::string str26 = "World";
+
+    str16.swap(str26);
+
+    std::cout << str16 << std::endl;
+
+    //  Resizing the string:
+    std::string str77 = "Hello";
+
+    str77.resize(10, '!');
+
+    std::cout << str77 << std::endl;
+
+    //  Removing whitespace:
+    std::string str99 = "  Hello World   ";
+
+    std::cout << str99 << std::endl;
+
+    //  Erasing whitespace at the beginning and end
+    str99.erase(0, str99.find_first_not_of(" "));
+    str99.erase(str99.find_last_not_of(" ") + 1);
+
+    std::cout << str99 << std::endl;
+
+    //  Removing whitespace using remove_if and isspace
+    str99.erase(std::remove_if(str99.begin(), str99.end(), ::isspace), str99.end());
+
+    std::cout << str99 << std::endl;
+
+    // Inserting Variants:
+    std::string str10 = "Hello";
+
+    //  str.insert(pos, substr);
+    str10.insert(3, "lo");
+
+    //  Inserting a portion of a C-style string:
+    std::string str111 = "Hello";
+
+    //  str.insert(pos, cstr, count);
+    const char* cstr = "lo";
+    str111.insert(3, cstr, 2);
+
+    //  Inserting a character multiple times:
+    std::string str12 = "Hello";
+
+    //  str.insert(pos, count, ch);
+    char ch12 = '!';
+    str12.insert(5, 3, ch12);
+
+    //  Inserting a character:
+    // std::string str13 = "Hello";
+
+    // //  str.insert(pos, ch);
+    // char ch13 = '!';
+    // str13.insert(5, ch13);
+
+    //  Inserting a range of characters from another string:
+    std::string str114 = "Hello";
+    std::string str214 = "World";
+
+    //  str1.insert(pos, str2, subpos, sublen);
+    str114.insert(5, str214, 2, 3);
+}
 
 
 
