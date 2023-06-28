@@ -1437,6 +1437,127 @@ void cpp_string_copied_strings()
 
 }
 
+/*
+    - C++ String View:
+        - Is a lightweight non-owning reference to a sequence of characters within a std::string or any other character array. 
+        - It provides a read-only view of the underlying character data without owning or copying it. 
+        - Is part of the C++17 standard and is designed to improve the efficiency and flexibility of working with string-like data.
+        - We can perform various operations on the std::string_view, such as accessing individual characters using the [] operator or the back() function. 
+        - We can also obtain the length of the view using the length() member function.
+        - Here are some key aspects and benefits of std::string_view:
+            - Non-owning view: 
+                - Unlike std::string, which owns and manages its own memory, std::string_view does not own the underlying character data. 
+                - It simply acts as a reference or "view" to an existing string or character array.
+            - Lightweight: 
+                - std::string_view is a lightweight object that typically consists of just two members: a pointer to the start of the character data and a size or length value. 
+                - This makes it efficient to pass and manipulate std::string_view objects by value.
+            - Read-only operations: 
+                - std::string_view provides a range of read-only operations similar to std::string. 
+                - You can access individual characters, obtain the length of the view, compare two std::string_view objects, find substrings, and perform other operations without modifying the underlying data.
+            - Interoperability: 
+                - std::string_view can be constructed from various sources, including std::string, C-style strings (const char*), and other character arrays. 
+                - This allows you to seamlessly work with std::string_view alongside existing code that uses different string representations.
+            - Efficiency and reduced memory overhead: 
+                - Since std::string_view does not own the data it references, it can be used to efficiently work with large strings without incurring the memory overhead of copying or allocating new memory. 
+                - It is particularly useful when passing strings to functions or when dealing with substrings of larger strings.
+        
+        - Comparison between `std::string` and `std::string_view` in tabular form:
+        |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | Feature                    |                                     `std::string`                                         |                                     `std::string_view`                                                    |
+        |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | Memory Ownership           | Owns and manages its own memory                                                           | Non-owning view of existing string or character array                                                     |
+        | Modifiability              | Can be modified                                                                           | Read-only, cannot be modified                                                                             |
+        | Memory Overhead            | Additional memory for storing characters and control data                                 | Minimal memory overhead, as it is a lightweight view                                                      |
+        | Construction               | Can be constructed from C-style strings, other `std::string` objects, literals, etc.      | Can be constructed from `std::string`, C-style strings, character arrays, literals, etc.                  |
+        | Accessing Characters       | Mutable character access using `operator[]`, `at()`, etc.                                 | Immutable character access using `operator[]`, `at()`, etc.                                               |
+        | Substring Extraction       | `substr()` function available                                                             | `substr()` function available                                                                             |
+        | String Comparison          | Various comparison operators (`==`, `!=`, `<`, `>`, etc.)                                 | Various comparison operators (`==`, `!=`, `<`, `>`, etc.)                                                 |
+        | String Concatenation       | `+` operator, `append()`, `+=` operators, etc.                                            | Not directly supported, requires construction of a new `std::string`                                      |
+        | Memory Efficiency          | Memory allocated for each string object                                                   | No additional memory allocation required                                                                  |
+        | Interoperability           | Interoperable with C-style strings and other string representations                       | Interoperable with C-style strings, `std::string`, character arrays, etc.                                 |
+        | Usage Scenarios            | General-purpose string manipulation and ownership                                         | Efficiently working with existing string data, substring operations, passing strings to functions, etc.   |   
+        |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        
+        - Notes:
+            - std::string_view provides a convenient and efficient way to work with string-like data without the need for ownership or unnecessary copying. 
+            - It is particularly useful in scenarios where read-only access to string data is required, such as string parsing, substring extraction, or passing string data to functions.
+            - It's important to choose the appropriate type (std::string or std::string_view) based on your specific requirements. 
+            - If you need ownership and the ability to modify the string content, std::string is suitable. 
+            - If you only require a non-owning view to the string data and read-only operations, std::string_view is a more lightweight option that avoids unnecessary memory overhead.
+
+
+        - Here is a list of commonly used member functions of `std::string_view`:
+            - `size()`, `length()`: Returns the number of characters in the string view.
+            - `empty()`: Checks if the string view is empty.
+            - `data()`: Returns a pointer to the underlying character array.
+            - `front()`, `back()`: Returns references to the first and last characters of the string view.
+            - `begin()`, `end()`: Returns iterators pointing to the beginning and end of the character sequence.
+            - `cbegin()`, `cend()`: Returns constant iterators pointing to the beginning and end of the character sequence.
+            - `substr(pos, count)`: Returns a new string view representing a substring of the original string view.
+            - `find(substring, pos)`: Finds the first occurrence of `substring` within the string view starting from position `pos`.
+            - `rfind(substring, pos)`: Finds the last occurrence of `substring` within the string view starting from position `pos`.
+            - `find_first_of(chars, pos)`: Finds the first occurrence of any character in `chars` within the string view starting from position `pos`.
+            - `find_last_of(chars, pos)`: Finds the last occurrence of any character in `chars` within the string view starting from position `pos`.
+            - `find_first_not_of(chars, pos)`: Finds the first occurrence of a character not in `chars` within the string view starting from position `pos`.
+            - `find_last_not_of(chars, pos)`: Finds the last occurrence of a character not in `chars` within the string view starting from position `pos`.
+            - `operator==`, `operator!=`, `operator<`, `operator<=`, `operator>`, `operator>=`: Comparison operators for comparing string views.
+            - `remove_prefix(n)`: Removes the first `n` characters from the string view.
+            - `remove_suffix(n)`: Removes the last `n` characters from the string view.
+            - `swap(other)`: Swaps the contents of two string views.
+
+            - Note that `std::string_view` does not provide functions for modifying the underlying string or appending characters, as it is a read-only view of existing string data.                
+            - These are the main member functions of `std::string_view`, providing operations for querying and manipulating the view of a string-like data without owning the memory.
+            
+*/
+
+// Function to process a string view
+void processStringView(std::string_view strView) {
+    std::cout << "String View: " << strView << std::endl;
+    std::cout << "Length: " << strView.length() << std::endl;
+
+    // Find the position of a substring
+    std::size_t pos = strView.find("world");
+    if (pos != std::string_view::npos) {
+        std::cout << "Substring 'world' found at position: " << pos << std::endl;
+    } else {
+        std::cout << "Substring 'world' not found." << std::endl;
+    }
+
+    // Iterate over each character in the view
+    std::cout << "Characters:";
+    for (char ch : strView) {
+        std::cout << " " << ch;
+    }
+    std::cout << std::endl;
+
+    // Create a new string using a substring of the view
+    std::string subStr = std::string(strView.substr(7, 5));
+    std::cout << "Substring: " << subStr << std::endl;
+}
+
+void cpp_string_view()
+{
+    std::string str = "Hello, world!";
+
+    // Create a string view from a std::string
+    std::string_view strView(str);
+
+    // Pass the string view to a function for processing
+    processStringView(strView);
+
+    // Create a string view directly from a string literal
+    std::string_view literalView("Hello");
+
+    // Modify the original string
+    str += " Welcome";
+
+    // Print the modified string view
+    std::cout << "Modified Literal View: " << literalView << std::endl;
+
+    // Create a string view from a substring of the original string
+    std::string_view subStrView(strView.substr(0, 5));
+    std::cout << "Substring View: " << subStrView << std::endl;
+}
 
 
 #endif
