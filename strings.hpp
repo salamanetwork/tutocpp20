@@ -1198,6 +1198,39 @@ void cpp_string_resizing()
 
 }
 
+/*
+    - C++ String Copying
+        - Using std::string::copy() function.
+*/
+
+void cpp_string_copying()
+{
+    std::string source = "Hello, World!";
+    std::string destination(10, ' ');
+
+    std::cout << "Before copy: " << std::endl;
+    std::cout << "Source: " << source << std::endl;
+    std::cout << "Destination: " << destination << std::endl;
+
+    // Variant 1: Copy the entire source string to the destination
+    source.copy(&destination[0], source.length(), 0);
+    std::cout << "After variant 1 copy: " << destination << std::endl;
+
+    // Variant 2: Copy a substring from the source to the destination
+    source.copy(&destination[0], 5, 7);
+    std::cout << "After variant 2 copy: " << destination << std::endl;
+
+    // Variant 3: Copy a substring from the middle of the source to the destination
+    source.copy(&destination[5], 5, 2);
+    std::cout << "After variant 3 copy: " << destination << std::endl;
+
+    // Variant 4: Copy a substring and handle truncation
+    source.copy(&destination[0], 20, 0);
+    std::cout << "After variant 4 copy: " << destination << std::endl;
+
+}
+
+
 
 
 
