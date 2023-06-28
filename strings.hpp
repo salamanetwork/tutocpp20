@@ -282,6 +282,38 @@ void std_cstring_02()
     
         - These are some common ways to initialize an std::string object in C++. 
         - Choose the method that suits your requirements and coding style.
+
+        - Here is a list of functions provided by the <string> header in C++:
+            std::string (class): Represents a sequence of characters.
+            operator+ (overload): Concatenates two strings.
+            operator+= (overload): Appends a string to another string.
+            operator== (overload): Compares two strings for equality.
+            operator!= (overload): Compares two strings for inequality.
+            operator< (overload): Performs lexicographical comparison of two strings.
+            operator> (overload): Performs lexicographical comparison of two strings.
+            operator<= (overload): Performs lexicographical comparison of two strings.
+            operator>= (overload): Performs lexicographical comparison of two strings.
+            operator[] (overload): Accesses an individual character of the string.
+            at(): Accesses an individual character of the string with bounds checking.
+            size(): Returns the number of characters in the string.
+            length(): Returns the number of characters in the string.
+            empty(): Checks if the string is empty.
+            clear(): Clears the contents of the string.
+            substr(): Extracts a substring from the string.
+            compare(): Compares two strings.
+            find(): Searches for a substring within the string.
+            rfind(): Searches for a substring within the string in reverse.
+            find_first_of(): Finds the first occurrence of any character from a set of characters within the string.
+            find_last_of(): Finds the last occurrence of any character from a set of characters within the string.
+            find_first_not_of(): Finds the first occurrence of a character not present in a given set of characters within the string.
+            find_last_not_of(): Finds the last occurrence of a character not present in a given set of characters within the string.
+            replace(): Replaces a portion of the string with another string.
+            erase(): Erases a portion of the string.
+            insert(): Inserts characters into the string.
+            push_back(): Appends a character to the end of the string.
+            pop_back(): Removes the last character from the string.
+            resize(): Changes the size of the string.
+            c_str(): Returns a pointer to a null-terminated character array representing the string.
 */
 
 void cpp_string_01()
@@ -724,7 +756,22 @@ void cpp_string_literals()
     
 }
 
+/*
+    - std::to_string():
+        - Function is used to convert numeric values to their corresponding string representations.
+*/
 
+void cpp_string_to_sting() {
+    int num = 42;
+    double pi = 3.14159;
+
+    std::string numStr = std::to_string(num);
+    std::string piStr = std::to_string(pi);
+
+    std::cout << "Number: " << numStr << std::endl;
+    std::cout << "Pi: " << piStr << std::endl;
+
+}
 
 
 
