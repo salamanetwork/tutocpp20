@@ -1422,6 +1422,19 @@ void cpp_string_copied_strings()
     std::cout << "Original string address: " << static_cast<const void*>(originalData) << std::endl;
     std::cout << "Copied string address: " << static_cast<const void*>(copyData) << std::endl;
 
+    // Check Nullabilty & Releaseing & Resetting
+    if(!originalData)
+    {
+        delete[] originalData;
+        originalData = nullptr;        
+    }
+
+    if(!copyData)
+    {
+        delete[] copyData;
+        copyData = nullptr;
+    }
+
 }
 
 
