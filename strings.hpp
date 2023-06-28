@@ -773,7 +773,88 @@ void cpp_string_to_sting() {
 
 }
 
+/*
+    - Accessing & Modification & Looping Through std::string:
+        - [], at(), front(), back(), data()
+        - Range Based For Loop, and Traditional For Loop
+*/
 
+void cpp_string_access_modif_loop()
+{
+    // Accessing std:string by traditional for loop
+    std::string str1 = "Hello, World!";
+
+    for (size_t i = 0; i < str1.size(); ++i) {
+        std::cout << str1[i] << " ";
+    }
+
+    // accessing std:string by range based for loop
+    std::string str2 = "Hello, World!";
+
+    for (char ch : str2) {
+        std::cout << ch << " ";
+    }
+
+    // Accesing std::string by at() function
+    std::string str3 = "Hello, World!";
+
+    for (size_t i = 0; i < str3.size(); ++i) {
+        char ch = str3.at(i);
+        std::cout << ch << " ";
+    }
+
+    // Accesing std::string by data() function
+    std::string str4 = "Hello, World!";
+    
+    const char* charPtr4 = str4.data();
+    for (size_t i = 0; i < str4.size(); ++i) {
+        std::cout << charPtr4[i] << " ";
+    }
+
+    // Accessing std::str with front() and back() functions:
+    std::string str5 = "Hello, World!";
+
+    char firstChar = str5.front();
+    char lastChar = str5.back();
+
+    std::cout << "First character: " << firstChar << std::endl;
+    std::cout << "Last character: " << lastChar << std::endl;
+
+    // Modifying std::string by at() function:
+    std::string str6 = "Hello, World!";
+
+    str6.at(0) = 'J';
+    str6.at(7) = '-';
+    str6.at(str6.size() - 1) = '?';
+
+    std::cout << str6 << std::endl;
+
+    // Modifying std::string by data() function
+    std::string str7 = "Hello, World!";
+
+    char* charPtr7 = str7.data();
+    charPtr7[0] = 'J';  // Modifying through data() pointer
+
+    std::cout << str7 << std::endl;
+
+    // Modifying std::string by Array Access Operator []:
+    std::string str8 = "Hello, World!";
+
+    str8[0] = 'J';
+    str8[7] = '-';
+    str8[str8.size() - 1] = '?';
+
+    std::cout << str8 << std::endl;
+
+    // Modifying std::string by push_back() & pop_back()  functions:
+    std::string str9 = "Hello";
+
+    str9.push_back('!');
+    std::cout << str9 << std::endl;
+
+    str9.pop_back();
+    std::cout << str9 << std::endl;
+}
 
 
 
