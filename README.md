@@ -1,5 +1,6 @@
 # tutocpp20:
     ( My Tutorial's Journey On C++ 20 ) || ( Modern C++ ) = starts at 1 June 2023
+    Notes: This Code Repository Is Available As A Free To Use For Everyone, Permission Granted.
 
 ###### Hints:
     This is not my first attempt to start this journey.
