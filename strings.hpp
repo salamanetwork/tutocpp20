@@ -857,6 +857,115 @@ void cpp_string_access_modif_loop()
 }
 
 
+/*
+    - Size & The Capacity of std::string:
+        - the size and capacity are two important properties that describe the string's length and memory allocation.
+        - Size:
+            - The size of a std::string refers to the number of characters currently stored in the string. 
+            - You can obtain the size using the member functions size() or length(). 
+            - Both functions return the same value, representing the size of the string.
+            - The size represents the number of characters stored in the std::string. 
+            - It reflects the actual length of the string and provides a measure of its content.
+            - By accessing the size, you can determine the length of the string and perform operations based on its character count.
+        - Capacity:
+            - The capacity of a std::string refers to the amount of memory allocated to store the string. 
+            - It represents the maximum number of characters that can be held without requiring reallocation. 
+            - You can retrieve the capacity using the capacity() member function.
+            - It indicates the maximum number of characters that can be stored without requiring reallocation. 
+            - The capacity is often larger than the size to allow for future growth and avoid frequent memory reallocations when appending characters.
+            - It helps optimize the performance of string operations by reducing the need for memory management operations.
+        - Notes:
+            - The size and capacity of a std::string are dynamic properties that can change during its lifetime. 
+            - For example, when characters are added to the string using concatenation or append operations, the size increases. If the size exceeds the capacity, the string may need to reallocate memory to accommodate the additional characters.
+            - Understanding the size and capacity of a std::string allows you to manage memory efficiently, estimate memory usage, and optimize operations based on the string's length and potential growth.
+
+        ------------------------------------------------------------------------------------------------------------------------------------
+        |               Size                                       |                           Capacity                                   |
+        ------------------------------------------------------------------------------------------------------------------------------------
+        - Represents the number of characters in the string.       |      Represents the amount of memory allocated for the string.
+        - Obtained using the size() or length() member function.   |      Obtained using the capacity() member function.
+        - Indicates the actual length of the strin.                |      Indicates the maximum number of characters without reallocation.
+        - Can change as characters are added or remove.            |      Can change as the string grows or shrinks.
+        - Can be equal to or smaller than the capacit.             |      Equal to or greater than the size.
+        - Influences the behavior of string operations.            |      Influences memory management and reallocation.
+        - Used to access individual characters in the string.      |      Used to optimize memory usage and reduce reallocations.
+        ------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+void cpp_string_size_n_capacity()
+{
+    // std::size() & std::length()
+    std::string str1 = "Hello, World!";
+    
+    std::cout << "Size of the string: " << str1.size() << std::endl;
+    std::cout << "Length of the string: " << str1.length() << std::endl;
+
+    // capacity()
+    std::string str2 = "Hello, World!";
+    
+    std::cout << "Capacity of the string: " << str2.capacity() << std::endl;
+
+    // empty()
+    std::string str3; // Uninitialized string
+
+    if (str3.empty()) {
+        std::cout << "The string is empty." << std::endl;
+    } else {
+        std::cout << "The string is not empty." << std::endl;
+    }
+
+    // max_size(), std::string::max_size()
+    /* 
+        - The actual value of <max_size> will vary depending on the implementation, platform, and available memory.
+            - Ex: 9223372036854775807
+        - It's important to note that the maximum size represents an upper limit and does not necessarily mean that the std::string can always reach that size due to practical constraints. 
+        - The maximum size provides information about the maximum capacity that can be allocated for the string, but it may be limited by factors such as available memory, system resources, or other implementation-specific considerations.
+    */
+    std::string str4;
+
+    std::cout << "Maximum size of the string: " << str4.max_size() << std::endl;
+
+    // std::string::reserve()
+    /*
+        - Is used to allocate memory in advance for a std::string object, allowing you to potentially avoid frequent memory reallocations during string operations.
+        - By reserving the memory in advance, you can ensure that the string has enough capacity to hold a certain number of characters without requiring reallocation.
+        - After reserving the memory, you can assign a string to str or perform other string operations. The std::string object will have the specified capacity, which can be accessed using the std::string::capacity() member function.
+        - It's important to note that reserve() only increases the capacity of the std::string and does not affect the size or content of the string. The actual size of the string can still be smaller than the reserved capacity.
+    */
+    std::string str5;
+
+    str5.reserve(100); // Reserve memory for 100 characters
+
+    // Check the capacity before and after reserving
+    std::cout << "Capacity before reserve: " << str5.capacity() << std::endl;
+
+    str5 = "Hello, World!";
+
+    std::cout << "Capacity after reserve: " << str5.capacity() << std::endl;
+
+    // std::string::shrink_to_fit()
+    /*
+        - Is used to reduce the capacity of a std::string object to fit its actual size. It requests the string to reduce its capacity to the minimum necessary to hold its current contents. 
+        - It requests the string to reduce its capacity to the minimum necessary to hold its current contents.
+        - This can be useful when you want to minimize memory usage and free up any excess memory that was allocated but is no longer needed.
+        - The actual values of <some_value> and <smaller_value> will vary depending on the implementation and the specific situation.
+        - After calling shrink_to_fit(), the std::string attempts to reduce its capacity to fit its actual size. 
+        - The capacity may be decreased, but it's not guaranteed to reach the exact size of the string. The resulting capacity depends on various factors, such as the underlying implementation and any memory fragmentation.
+        - It's important to note that shrink_to_fit() is a non-binding request, meaning that the implementation may choose to ignore the request and keep the capacity unchanged. 
+        - Additionally, calling shrink_to_fit() does not affect the size or content of the string itself; it only adjusts the capacity.
+    */
+    std::string str7 = "Hello, World!";
+    
+    // Check the capacity before and after shrinking
+    std::cout << "Capacity before shrink: " << str7.capacity() << std::endl;
+    
+    str7.shrink_to_fit();
+    
+    std::cout << "Capacity after shrink: " << str7.capacity() << std::endl;
+    
+    
+}
+
 
 
 
