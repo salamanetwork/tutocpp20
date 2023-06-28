@@ -1169,6 +1169,34 @@ void cpp_string_comparison()
     }
 }
 
+/*
+    - C++ String Resizeing
+        - Using std::string::resize() function.
+*/
+
+void cpp_string_resizing()
+{
+    std::string str = "Hello";
+
+    std::cout << "Before resize: " << str << std::endl;
+    std::cout << "Size before resize: " << str.size() << std::endl;
+    std::cout << "Capacity before resize: " << str.capacity() << std::endl;
+
+    // Increase the size of the string to 10 characters
+    str.resize(10);
+
+    std::cout << "After resize: " << str << std::endl;
+    std::cout << "Size after resize: " << str.size() << std::endl;
+    std::cout << "Capacity after resize: " << str.capacity() << std::endl;
+
+    // Decrease the size of the string to 5 characters
+    str.resize(5);
+
+    std::cout << "After resize again: " << str << std::endl;
+    std::cout << "Size after resize again: " << str.size() << std::endl;
+    std::cout << "Capacity after resize again: " << str.capacity() << std::endl;
+
+}
 
 
 
