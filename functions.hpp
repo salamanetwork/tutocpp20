@@ -305,7 +305,37 @@ void cpp_func_params_passed_by_pointer()
     std::cout << "After function call: " << num << std::endl;
 }
 
+/*
+    - Passing by pointer to const:
+        - Is a method of passing arguments to a function in C++ where the parameter is a pointer to a constant value. 
+        - It allows you to pass a pointer to data that cannot be modified within the function. 
+        - The const qualifier ensures that the value pointed to cannot be modified within the function. 
+        - If we attempt to modify the value pointed to by, it will result in a compilation error.
+        - Passing by pointer to const allows you to provide a pointer to data that should not be modified within the function, ensuring that the original value is not changed. 
+        - It's useful when you want to pass data by pointer for performance reasons but want to enforce immutability of the data within the function.
+        - Notes: 
+            - When passing by pointer to const, it's important to ensure that the pointer is valid and points to a valid memory location. 
+            - Additionally, the function can still access and read the value pointed by the pointer, but it cannot modify it.
+*/
 
+// Function that accepts a pointer to a constant string
+void func_passed_by_pointer_to_const(const char* message) 
+{
+    std::cout << "Inside the function: " << message << std::endl;
+    // Attempting to modify the value pointed by 'message' will result in a compilation error
+    // message[0] = 'H';  // Error: assignment of read-only location '* message'
+}
+
+void cpp_func_params_passed_by_pointer_to_const()
+{
+    const char* message = "Hello, world!";
+    std::cout << "Before function call: " << message << std::endl;
+
+    func_passed_by_pointer_to_const(message);  // Pass the pointer to the constant string to the function
+
+    std::cout << "After function call: " << message << std::endl;
+
+}
 
 
 
