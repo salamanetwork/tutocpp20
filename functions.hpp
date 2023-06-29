@@ -337,6 +337,35 @@ void cpp_func_params_passed_by_pointer_to_const()
 
 }
 
+/*
+    - Passing by reference:
+        - Is a method of passing arguments to a function in C++ by providing a reference to the original data rather than making a copy of it. 
+        - By passing arguments by reference, any modifications made to the parameter within the function directly affect the original data. 
+        - To pass an argument by reference, you simply specify the reference type in the function parameter declaration by using the & symbol. 
+        - This allows you to work directly with the original data rather than creating a copy.
+        - Passing by reference is useful when you want to modify the original value of the argument within the function and have those changes reflected outside the function.
+        - It provides a more efficient way of working with data compared to passing by value because it avoids the overhead of copying large objects or data structures.
+        - Notes: 
+            - When passing by reference, the original data must be valid and accessible within the scope of the function call. 
+            - Additionally, passing by reference allows for more efficient and natural-looking code, but it requires careful consideration to ensure that unintended modifications or lifetime issues do not arise.
+*/
+
+// Function that accepts an integer parameter by reference
+void func_passed_by_reference(int& numRef)
+{
+    numRef++;  // Modify the original value directly
+}
+
+void cpp_func_params_passed_by_reference()
+{
+    int num = 10;
+    std::cout << "Before function call: " << num << std::endl;
+
+    func_passed_by_reference(num);  // Pass 'num' by reference to the function
+
+    std::cout << "After function call: " << num << std::endl;
+}
+
 
 
 
