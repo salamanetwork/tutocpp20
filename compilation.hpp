@@ -23,7 +23,7 @@
 using namespace std;
 
 /*
-    - Functions In C/C++:
+    - Compilation In C/C++:
         
 */
 
