@@ -243,7 +243,37 @@ void cpp_func_params_passed_by()
     std::cout << "After function call: " << num << std::endl;
 }
 
+/*
+    - Pass by const value:
+        - Is a variation of pass by value, where the parameter is declared as a constant value within the function. 
+        - It allows you to pass arguments by value, ensuring that the function cannot modify the parameter. 
+        - Is useful when you want to pass arguments by value but also ensure that the function does not modify the parameter.
+        - It provides a level of safety and guarantees that the original value remains unchanged.
+        - Notes:
+            - Passing large objects or complex data structures by const value can still involve the overhead of copying the entire object.
+            - In such cases, passing by const reference or const pointer may be more efficient.
+*/
 
+// Function that accepts a string parameter by const value
+void func_passed_by_const_value(const std::string message) 
+{
+    // Attempting to modify 'message' will result in a compilation error
+    // message = "Updated message";  // Error: assignment of read-only parameter 'message'
+    std::cout << "Inside the function: " << message << std::endl;
+}
+
+
+void cpp_func_params_passed_by_const_value()
+{
+    std::string message = "Hello, world!";
+    std::cout << "Before function call: " << message << std::endl;
+
+    func_passed_by_const_value(message);  // Pass 'message' by const value to the function
+
+    std::cout << "After function call: " << message << std::endl;
+
+    
+}
 
 
 
