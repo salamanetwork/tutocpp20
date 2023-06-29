@@ -212,6 +212,43 @@ using namespace std;
 
 
 /*
+    - The different parameter passing methods in C++:
+        - Pass by Value: 
+            - In pass by value, a copy of the argument is made and passed to the function. 
+            - Modifications made to the parameter within the function do not affect the original argument.
+
+        - Pass by Const Value: 
+            - Pass by const value is similar to pass by value, but the parameter is declared as const. 
+            - This means that the function cannot modify the value of the parameter.
+
+        - Pass by Pointer: 
+            - Pass by pointer involves passing the memory address of the argument to the function. 
+            - This allows the function to directly access and modify the value pointed to by the pointer. 
+            - It also allows passing a null pointer to indicate the absence of a valid value.
+
+        - Pass by Pointer to Const: 
+            - Pass by pointer to const is similar to pass by pointer, but the parameter is declared as a const pointer. 
+            - This means that the function cannot modify the value pointed to by the pointer.
+
+        - Pass by Reference: 
+            - Pass by reference involves passing a reference to the argument. 
+            - This allows the function to directly access and modify the original value of the argument. 
+            - Any changes made to the parameter within the function are reflected outside the function.
+
+        - Pass by Const Reference: 
+            - Pass by const reference is similar to pass by reference, but the parameter is declared as a const reference. 
+            - This means that the function cannot modify the original value of the argument.
+    
+    - Each passing method has its use cases depending on the specific requirements of the function and the desired behavior. 
+        - Pass by value is used when you want to work with a local copy of the argument. 
+        - Pass by const value and pass by const reference are used when you want to prevent modifications to the argument. 
+        - Pass by pointer and pass by pointer to const are used when you need to work with memory addresses or when you want to allow the argument to be optional (null pointer). 
+        - Pass by reference is used when you want to directly modify the original argument and have the changes reflected outside the function.
+
+    - It's important to choose the appropriate passing method based on factors such as efficiency, data size, desired behavior, and the need for modification.
+*/
+
+/*
     - Passed By Value:
         - Value Copying:
             - When the function is called, the value of the argument is copied into the function's parameter. 
