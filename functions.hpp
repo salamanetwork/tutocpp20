@@ -22,6 +22,196 @@
 
 using namespace std;
 
+/*
+    - Functions In C/C++:
+        - Are a fundamental building block of a program.
+        - They allow you to encapsulate a block of code that can be reused and executed whenever needed. 
+        - Provide modularity, code organization, and allow you to break down complex tasks into smaller, more manageable pieces. 
+        - Here's an overview of functions in C++:
+            - Function Declaration/Prototype:
+                - At the beginning of your program or in a separate header file, you need to declare or prototype the function. 
+                - It specifies the function's name, return type, and parameter list (if any). 
+                - Syntax:
+                    - returned_type function_name(Parameters_list_if_any_with_its_data_type);
+                - Ex:
+                    int add(int a, int b);
+            - Function Definition:
+                - The function definition contains the actual implementation of the function. 
+                - It includes the return type, function name, parameter list, and the code to be executed when the function is called.
+                - Syntax:
+                     - returned_type function_name(Parameters_list_if_any_with_its_data_type)
+                       {
+                            // The Body Of The Function That Conatins The Code & Implementation.
+                       }
+                - Ex:
+                    int add(int a, int b)
+                    {
+                        int sum = a + b;
+                        return sum;
+                    }
+            - Function Call:
+                - To execute a function, you need to call it by using its name followed by parentheses.
+                - If the function has parameters, you pass the required values inside the parentheses. 
+                - The return value, if any, can be stored in a variable or used directly. 
+                - Syntax:
+                    - function_name(Parameters_list_that_represents_parameters_list_data_type)
+                - Ex:
+                    add(1, 4);                    // Direct Output: 5
+                    int result = add(1, 4));      // Indirect Output: 5
+            - Function Parameters:
+                - Functions can accept zero or more parameters.
+                - Parameters act as placeholders for values that are passed to the function when it is called. 
+                - They allow you to provide input to the function or specify the data on which the function will operate. 
+                - Ex:
+                    // Function declaration with parameters
+                    void greet(std::string name);
+                    
+                    // Function definition with parameters
+                    void greet(std::string name) {
+                        std::cout << "Hello, " << name << "!" << std::endl;
+                    }
+                    
+                    // Function call with argument
+                    greet("Alice");  // Output: Hello, Alice!
+            - Return Type:
+                - Functions can have a return type, which specifies the type of the value the function will return after execution.
+                - It can be any valid C++ data type, including fundamental types, user-defined types, or even void (indicating no return value). 
+                - Ex:
+                    // Function declaration with return type
+                    int multiply(int a, int b);
+                    
+                    // Function definition with return type
+                    int multiply(int a, int b) {
+                        return a * b;
+                    }
+                    
+                    // Function call with return value
+                    int result = multiply(4, 5);  // result = 20
+            - Void Functions:
+                - Void functions do not return a value. 
+                - They are typically used for performing actions or tasks without producing any output. 
+                - Ex:
+                    // Void function declaration
+                    void printMessage();
+                    
+                    // Void function definition
+                    void printMessage() {
+                        std::cout << "This is a void function." << std::endl;
+                    }
+                    
+                    // Void function call
+                    printMessage();  // Output: This is a void function.
+            - Function arguments:
+                - Function arguments allow you to customize the behavior of a function by providing different values each time you call it. 
+                - They enable functions to work with different inputs and perform various operations based on the provided data.
+
+            - Differences between parameters and arguments:
+            |--------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+            |                                     Parameter                                        |                                     Argument                                          |
+            |--------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+            | Parameters are declared in the function declaration or definition.                   | Arguments are the values or variables passed to a function during its call.           |
+            | Parameters act as placeholders within the function.                                  | Arguments are the actual data that is supplied to the function.                       |
+            | Parameters define the type and name of the data that a function expects to receive.  | Arguments provide the values that correspond to the parameters of the function.       |
+            | Parameters are used to specify the input requirements of a function.                 | Arguments fulfill the input requirements of a function.                               |
+            | Parameters are part of the function's declaration or definition.                     | Arguments are part of the function call.                                              |
+            | Parameters are local variables within the function.                                  | Arguments are values or variables from the calling code.                              |
+            | Parameters receive the values passed as arguments during the function call.          | Arguments are assigned to the parameters of the function when it is called.           |
+            |--------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|             
+
+        - The scope of an argument :
+            - Refers to the region of the code where the argument is accessible and can be used. 
+            - Is typically limited to the body of the function where it is declared as a parameter.
+            - Is confined to the function where it is declared as a parameter. 
+            - Once the function completes its execution, the argument goes out of scope, and its visibility and accessibility are limited to the function's body.
+            
+        - A simple diagram illustrating the input, processing, and output of a function:
+
+            ```
+                    +-----------------+
+            Input:  |    Function     |
+            --------|   Processing    |
+                    |                 |
+                    +-----------------+
+                            |
+                            V
+                    +-----------------+
+            Output: |                 |
+                    |   Result        |
+                    +-----------------+
+            ```
+            
+            In this diagram:
+            
+            - The input represents the data or values that are provided to the function as arguments.
+            - The function performs the processing or computations on the input data.
+            - The output represents the result or return value produced by the function.
+
+        - Passing Methods: 
+            - By choosing the appropriate parameter passing method, you can control how data is accessed and modified within a function, allowing for flexibility and efficient programming.
+            - Passing Values/Data Through Parameters To The Function:
+                - 01) Passing By Value:
+                    - The default behavior is known as "passing by value." This means that the function receives a copy of the argument's value, and any modifications made to the parameter within the function do not affect the original argument. 
+                    - Providing data safety and isolation. 
+                    -  If you want to modify the original argument within the function, you can pass it by reference or by pointer.
+                    - Ex:
+                        void printNumber(int num) {
+                            std::cout << "Inside the function: " << num << std::endl;
+                        }
+                        
+                        int main() {
+                            int number = 10;
+                            printNumber(number);  // Value of 'number' is passed by value
+                            return 0;
+                        }
+                    
+                - 02) Passing By Reference:
+                    - When you pass a value by reference, you provide the function with direct access to the original argument. 
+                    - Any modifications made to the parameter inside the function will affect the original argument. 
+                    - This method is useful when you want to modify the original argument within the function or when dealing with larger data structures.
+                    - Ex:
+                        void addFive(int& num) {
+                            num += 5;
+                        }
+                        
+                        int main() {
+                            int number = 10;
+                            addFive(number);  // Value of 'number' is passed by reference
+                            std::cout << "After the function: " << number << std::endl;
+                            return 0;
+                        }
+                    
+                - 02) Passing By Reference:
+                    - When you pass a value by pointer, you pass the memory address of the argument to the function. 
+                    - The function can then access and modify the argument using pointer dereferencing. 
+                    - This method is similar to passing by reference but allows for more flexibility, as you can pass null pointers or dynamically allocate memory.
+                     Ex:
+                        void squareValue(int* numPtr) {
+                            if (numPtr != nullptr) {
+                                *numPtr = (*numPtr) * (*numPtr);
+                            }
+                        }
+                        
+                        int main() {
+                            int number = 5;
+                            int* numberPtr = &number;
+                            squareValue(numberPtr);  // Address of 'number' is passed by pointer
+                            std::cout << "After the function: " << number << std::endl;
+                            return 0;
+                        }
+                
+                - The different methods of passing arguments to a function in C++:
+                |--------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------|
+                | Passing Method     |                     Description                                                |                     Access to Original Argument                             |             Modifications Affect Original Argument       |
+                |--------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------|
+                | Pass by Value      | A copy of the argument's value is passed to the function.                      | No access to the original argument.                                         | Modifications do not affect the original argument.       |
+                | Pass by Reference  | The function receives a reference to the original argument.                    | Direct access to the original argument.                                     | Modifications affect the original argument.              |
+                | Pass by Pointer    | The function receives a pointer to the original argument (memory address).     | Indirect access to the original argument through pointer dereferencing.     | Modifications affect the original argument.              |
+                |--------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------|
+                    
+                
+
+
+*/
 
 
 
