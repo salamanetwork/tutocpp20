@@ -207,11 +207,42 @@ using namespace std;
                 | Pass by Reference  | The function receives a reference to the original argument.                    | Direct access to the original argument.                                     | Modifications affect the original argument.              |
                 | Pass by Pointer    | The function receives a pointer to the original argument (memory address).     | Indirect access to the original argument through pointer dereferencing.     | Modifications affect the original argument.              |
                 |--------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------|
-                    
-                
-
 
 */
+
+
+/*
+    - Passed By Value:
+        - Value Copying:
+            - When the function is called, the value of the argument is copied into the function's parameter. 
+            - This creates a separate memory space for the parameter within the function.
+        - Local Parameter Usage:
+            - Inside the function, the parameter acts as a local variable. 
+            - Any modifications made to the parameter are performed on this local copy, not on the original value.
+        - Scope Limitation:
+            - Since the parameter is a local variable within the function, it is only accessible within the function's scope. 
+            - Changes made to the parameter do not affect the original value in the calling code.
+    
+    - Passing by value allows you to work with local copies of the arguments within the function, providing a level of isolation and ensuring that the original values are not modified.
+*/
+
+// Function that accepts an integer parameter by value
+void func_passed_by_value(int num) 
+{
+    num++;  // Modify the local copy of 'num'
+    std::cout << "Inside the function: " << num << std::endl;
+}
+
+void cpp_func_params_passed_by()
+{
+    int num = 10;
+    std::cout << "Before function call: " << num << std::endl;
+    
+    func_passed_by_value(num);  // Pass 'num' by value to the function
+    
+    std::cout << "After function call: " << num << std::endl;
+}
+
 
 
 
