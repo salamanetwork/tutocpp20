@@ -276,6 +276,34 @@ void cpp_func_params_passed_by_const_value()
 }
 
 
+/*
+    -  Pass by pointer:
+        - Is a method of passing arguments to a function in C++ by providing the memory address of the argument. 
+        - By passing arguments by pointer, you can directly modify the original data within the function. 
+        - The pointer is dereferenced using the * operator to modify the value pointed to.
+        - By modifying the value at the memory address passed to the function, the original value will be changing too.
+        - To pass an argument by pointer, the address of the argument is obtained using the & operator in the function call. 
+        - This allows the function to work directly with the memory location of the original data.
+        - Passing by pointer is useful when you want to modify the original value of the argument within the function and have those changes reflected outside the function. 
+        -  It allows for more direct manipulation of data and can be particularly useful when working with large objects or dynamically allocated memory.
+        - However, it requires careful handling of memory addresses and pointer operations to avoid potential issues such as null pointers or invalid memory access.
+*/
+
+// Function that accepts an integer parameter by pointer
+void func_passed_by_pointer(int* numPtr) 
+{
+    (*numPtr) *= (*numPtr);  // Dereference the pointer to square the value
+}
+
+void cpp_func_params_passed_by_pointer()
+{
+    int num = 5;
+    std::cout << "Before function call: " << num << std::endl;
+
+    func_passed_by_pointer(&num);  // Pass the address of 'num' to the function
+
+    std::cout << "After function call: " << num << std::endl;
+}
 
 
 
