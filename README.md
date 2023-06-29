@@ -50,6 +50,7 @@
     00014)    references.hpp
     00015)    strings.hpp
     00016)    functions.hpp
+    00017)    compilation.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
