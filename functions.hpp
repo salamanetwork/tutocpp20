@@ -529,6 +529,28 @@ void array_parameters_pass_by_pointer_to_const()
 }
 
 
+// - 04) Pass by Array:
+// Function takes an array arr[] as a parameter, along with the size of the array size. 
+// By passing the array as a pointer to the first element, you effectively pass the array to the function. 
+// The function can access the elements using pointer arithmetic. 
+// Note that the size of the array is required to properly iterate over its elements inside the function.
+void array_function_parameters_pass_by_array(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+void array_parameters_pass_by_array()
+{
+    int myArray[] = {1, 2, 3, 4, 5};
+
+    // Call the function and pass the array by array pointer
+    array_function_parameters_pass_by_array(myArray, ARRAY_SIZE(myArray));
+}
+
 
 
 
