@@ -508,6 +508,29 @@ void array_parameters_pass_by_reference()
     array_function_parameters_pass_by_reference(myArray, ARRAY_SIZE(myArray));
 }
 
+// - 03) Pass by Pointer to const:
+// Function that takes an array as a parameter using pass by pointer to const
+// The const qualifier ensures that the elements of the array are read-only and cannot be modified inside the function. 
+void array_function_parameters_pass_by_pointer_to_const(const int* arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+void array_parameters_pass_by_pointer_to_const()
+{
+    int myArray[] = {1, 2, 3, 4, 5};
+
+    // Call the function and pass the array by pointer to const
+    array_function_parameters_pass_by_pointer_to_const(myArray, ARRAY_SIZE(myArray));
+}
+
+
+
+
 
 
 
