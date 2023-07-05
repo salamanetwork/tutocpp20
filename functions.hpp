@@ -439,6 +439,12 @@ void cpp_func_params_passed_by_reference()
 */
 
 // Use the ARRAY_SIZE macro to get the size of the array
+// !!!!! IMPORTANT NOTE !!!!!
+//    I Used The Macro C-Style "The Hard Way". Because I want to explain
+//    What is going on the behind of the scene in details.
+//    BTW, I Can use std::size(arrayName) from <array> header.
+//    But, It will prevent me to have more knowledge How its done.
+//    Also, Because, I Like C-Style Programming.
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
     /*
         - The ARRAY_SIZE macro is a commonly used macro in C and C++ to determine the size of an array. 
