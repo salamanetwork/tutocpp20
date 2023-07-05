@@ -557,7 +557,50 @@ void array_parameters_pass_by_array()
     array_function_parameters_pass_by_array(myArray, ARRAY_SIZE(myArray));
 }
 
+/*
+    - Sized array function parameters:
+        - In C and C++, you can pass sized arrays as function parameters using a feature known as array function parameters. 
+        -  This feature allows you to specify the size of the array directly in the function parameter declaration.
+        - Syntax:
+            - void functionName(type parameterName[size]);
+        - Usage:
+            - Sized array function parameters provide a way to indicate the expected size of the array directly in the function signature. 
+            - This can serve as documentation to other developers using the function.
+        - Array Decay:
+            - When an array is passed to a function, it typically decays into a pointer to its first element. 
+            - However, with sized array function parameters, the size information is retained, allowing the function to know the expected size of the array.
+        - Compile-Time Checking:
+            - Using a sized array function parameter allows the compiler to perform some compile-time checks.
+            - It can issue warnings or errors if you try to pass an array of incompatible size or if the array size does not match the expected size specified in the function parameter.
+        - Limitations:
+            - While sized array function parameters provide a way to indicate the size of an array, they have limitations. 
+            - For example, the size information is not enforced by the language, and the function can still be called with arrays of different sizes. 
+            - Additionally, using sized array function parameters can make the code less flexible and harder to maintain if the array size needs to change.
+        - Alternative Approaches:
+            - Instead of relying solely on sized array function parameters, 
+              alternative approaches include passing arrays along with their sizes as separate parameters or using pointer-based approaches, 
+              such as passing a pointer to the array and the size of the array as separate parameters.
+        - Notes:
+            - It's important to note that sized array function parameters are less commonly used in practice compared to other methods of passing arrays and their sizes. 
+            - The choice of passing arrays depends on the specific requirements of the code and the desired flexibility.
+*/
+// Function takes an array parameter arr with a specified size of [5]. Inside the function, a loop is used to iterate over the elements of the array and print them.
+void print_with_sized_array(int arr[5])
+{
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
 
+void func_with_sized_array()
+{
+    int myArray[] = {5, 6, 7, 8, 9};
+
+    // Call the function and pass the sized array
+    print_with_sized_array(myArray);
+}
 
 
 
