@@ -438,7 +438,39 @@ void cpp_func_params_passed_by_reference()
             - Therefore, the size information is typically required to properly iterate over the elements of the array inside the function.
 */
 
+// Use the ARRAY_SIZE macro to get the size of the array
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
+    /*
+        - The ARRAY_SIZE macro is a commonly used macro in C and C++ to determine the size of an array. 
+        - The ARRAY_SIZE macro is used to avoid hard-coding the size of the array manually and allows for automatic calculation based on the number of elements present.
+        - It is a convenient way to determine the size of an array, especially when dealing with arrays of varying lengths or dynamic arrays.
+        - The macro provides a concise and efficient way to determine the size of an array without explicitly specifying it.
+        - It calculates the number of elements in an array by dividing the total size of the array by the size of a single element.
+        - sizeof(arr): 
+            - The sizeof operator is used to determine the total size of the array arr in bytes.
+            -  It calculates the size based on the number of elements multiplied by the size of each element.
+        - sizeof(arr[0]):
+            - The sizeof operator is also used to determine the size of a single element in the array arr. 
+            - By accessing arr[0], which represents the first element of the array, we can get the size of that element in bytes.
+        - (sizeof(arr) / sizeof(arr[0])): 
+            - This division operation calculates the number of elements in the array by dividing the total size of the array by the size of a single element. 
+            - It yields the result as an integer value, representing the number of elements in the array.
 
+        - Example:
+            #include <iostream>
+
+            #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
+            
+            int main()
+            {
+                int myArray[] = {1, 2, 3, 4, 5};
+                int size = ARRAY_SIZE(myArray);
+            
+                std::cout << "Array size: " << size << std::endl;
+            
+                return 0;
+            }
+    */
 
 
 
