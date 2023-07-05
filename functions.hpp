@@ -490,6 +490,36 @@ void array_function_parameters_pass_by_pointer()
     array_parameters_pass_by_pointer(myArray, ARRAY_SIZE(myArray));
 }
 
+// - 02) Pass by Reference:
+// Function that takes an array as a parameter using pass by reference
+void array_function_parameters_pass_by_reference(int (&arr)[], int size)
+{
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+void array_parameters_pass_by_reference()
+{
+    int myArray[] = {1, 2, 3, 4, 5};
+
+    // Call the function and pass the array by reference
+    array_function_parameters_pass_by_reference(myArray, ARRAY_SIZE(myArray));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
