@@ -403,7 +403,40 @@ void cpp_func_params_passed_by_reference()
     std::cout << "After function call: " << num << std::endl;
 }
 
+/*
+    - Array function parameters:
+        - In C++, arrays can be passed as function parameters using different methods. 
+        - Here are the commonly used ways to pass arrays as function parameters:
+            - 01) Pass by Pointer:
+                - Syntax: 
+                    void functionName(type* arrayName, size);
+                - In this method, you pass a pointer to the first element of the array as the function parameter.
+                - The function can access and modify the elements of the array using pointer arithmetic. 
+            
+            - 02) Pass by Reference:
+                - Syntax: 
+                    void functionName(type (&arrayName)[size]);
+                - In this method, you pass the array by reference to the function. 
+                - The function can directly access and modify the elements of the array. 
+            
+            - 03) Pass by Pointer to const:
+                - Syntax: 
+                    void functionName(const type* arrayName, size);
+                - If you want to pass the array to a function without allowing the function to modify the elements, you can pass a pointer to const. 
+                - he function can access the elements but cannot modify them. 
+            
+            - 04) Pass by Array:
+                - Syntax: 
+                    void functionName(type arrayName[size]);
+                - In this method, you can pass the array by specifying its size in the function parameter. 
+                - This method is mostly used when dealing with fixed-size arrays. 
 
+        - Notes:
+            - Note that specifying the size of the array in the function parameter is optional, and it can be omitted. 
+            - However, it can provide additional information to the function about the array's size.
+            - It's important to remember that arrays in C++ decay to pointers when passed as function arguments. 
+            - Therefore, the size information is typically required to properly iterate over the elements of the array inside the function.
+*/
 
 
 
