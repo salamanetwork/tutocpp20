@@ -649,6 +649,74 @@ void func_with_sized_array_passed_by_ref()
     print_with_sized_array_passed_by_ref(myArray);
 }
 
+/*
+    - Multi dimensional array function parameter:
+        - In C and C++, you can pass multi-dimensional arrays as function parameters. 
+        - When passing multi-dimensional arrays, the size of all dimensions except the first one must be specified. 
+        - By passing the 2D array as a function parameter, you can perform operations on the array inside the function while preserving its dimensions and element values.
+        - Note that when passing multi-dimensional arrays as function parameters, you must specify the sizes of all dimensions except the first one. 
+        - The first dimension's size is optional, as it is automatically deduced from the size of the array being passed.
+        - Here are some additional details about passing multi-dimensional arrays as function parameters:
+            - Array Size Deduction: 
+                - When passing a multi-dimensional array to a function, the size of the first dimension is usually deduced automatically. 
+                - This means you don't need to specify the size of the first dimension explicitly. 
+                - However, you must specify the sizes of all subsequent dimensions.
+            
+            - Row-Major Order: 
+                - Multi-dimensional arrays in C and C++ are typically stored in row-major order. 
+                - This means that the elements of each row are stored consecutively in memory. 
+                - When passing a multi-dimensional array to a function, you can access its elements using nested loops, iterating over the rows and columns.
+            
+            - Array Decay: 
+                - When passing a multi-dimensional array to a function, it decays into a pointer to its first element. 
+                - This pointer can be used to access and manipulate the array elements inside the function. 
+                - However, note that the size information of the dimensions other than the first one is lost during array decay.
+            
+            - Flexibility: 
+                - The size of the first dimension of a multi-dimensional array passed to a function can be dynamic or determined at runtime. 
+                - However, the sizes of subsequent dimensions must be known at compile-time. 
+                - This allows you to work with multi-dimensional arrays of different sizes within the function.
+            
+            - Memory Efficiency: 
+                - When passing multi-dimensional arrays as function parameters, keep in mind that the entire array is typically copied into the function's stack frame. 
+                - If the array is large, this can result in increased memory usage. 
+                - In such cases, passing the array by pointer or using dynamic memory allocation might be more memory-efficient.
+            
+            - Type Safety: 
+                - When passing multi-dimensional arrays as function parameters, it's important to ensure that the array dimensions match between the function declaration and the function call. 
+                - Mismatched dimensions can lead to undefined behavior or runtime errors.
+            
+            - Alternative Approaches: 
+                - In addition to passing multi-dimensional arrays directly, you can also pass arrays of pointers to arrays. 
+                - This approach allows for more flexibility in handling multi-dimensional arrays of varying sizes, but it involves additional memory management.
+        
+        - Remember to consider the requirements of your specific program and choose the appropriate approach for passing multi-dimensional arrays based on factors such as memory usage, flexibility, and type safety.
+*/
+
+void print_with_multi_dim_passed_as_params(int matrix[][3], int rows)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void func_with_multi_dim_passed_as_params()
+{
+    int myMatrix[][3] = {{1, 2, 3},
+                         {4, 5, 6},
+                         {7, 8, 9}};
+
+    // Call the function and pass the 2D array
+    print_with_multi_dim_passed_as_params(myMatrix, 3);
+}
+
+
+
 
 
 
