@@ -602,6 +602,52 @@ void func_with_sized_array()
     print_with_sized_array(myArray);
 }
 
+/*
+    - Passing sized arrays by reference
+        - In C++, you can pass a sized array by reference using a reference to an array type. 
+        - By passing the array by reference, you provide the function direct access to the original array without making a copy. 
+        - The sized array reference parameter ensures that the function works with arrays of the expected size.
+        - It's important to note that passing arrays by reference in this way is a C++ feature and not available in the C language.
+        - Passing sized arrays by reference in C++ provides several advantages and features.
+        - Here are some additional details about passing sized arrays by reference:
+            - 01) Direct Access and Modifiability: 
+                - By passing the array by reference, the function gains direct access to the original array. 
+                - This allows the function to read and modify the array elements directly without making a copy. 
+                - Any changes made to the array inside the function will be reflected in the original array.
+            - 02) Size Enforcement: 
+                - By specifying the size of the array in the reference parameter, you enforce that only arrays of the specified size can be passed to the function. 
+                - This can provide compile-time safety by preventing accidental usage of arrays with different sizes.
+            - 03) Avoiding Array Decay: 
+                - In C++, arrays passed by reference do not decay into pointers. 
+                - Unlike passing arrays by pointer, passing by reference retains the array's original type and size information. 
+                - This can be useful when you need to work with the actual array type, such as when using array-specific operations or when preserving multidimensional array dimensions.                
+            - 04) Flexibility: 
+                - When passing arrays by reference, you can easily work with arrays of varying sizes. 
+                - By changing the size in the reference parameter, you can adapt the function to handle arrays of different sizes, as long as the sizes are known at compile-time.
+            - 05) Simplified Syntax: 
+                - Using a reference to an array as a function parameter provides a concise and clear syntax.
+                -  It allows you to work with the array in a natural manner without the need for pointer dereferencing or explicit size calculations.
+            - 06) Readability and Documentation: 
+                - Passing arrays by reference with a specified size in the function parameter enhances code readability and serves as self-documentation.
+                - It communicates the expected size of the array to other developers using the function.
+*/
+
+void print_with_sized_array_passed_by_ref(int (&arr)[5])
+{
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+void func_with_sized_array_passed_by_ref()
+{
+    int myArray[] = {1, 2, 3, 4, 5};
+
+    // Call the function and pass the sized array by reference
+    print_with_sized_array_passed_by_ref(myArray);
+}
 
 
 
