@@ -715,6 +715,76 @@ void func_with_multi_dim_passed_as_params()
     print_with_multi_dim_passed_as_params(myMatrix, 3);
 }
 
+/*
+    - Default function arguments:
+        - In C++ allow you to specify default values for function parameters. 
+        - These default values are used when the corresponding arguments are not provided during function calls. 
+        - Here are some additional details about default function arguments in C++:
+            - 01) Placement and Declaration: 
+                - Default function arguments are specified in the function declaration or prototype, typically in the corresponding header file. 
+                - They are not repeated in the function definition. 
+                - Default arguments are placed at the end of the argument list, meaning that all arguments to the right of the default argument must also have default values.
+        
+            - 02) Default Values: 
+                - Default values can be of any valid type in C++, including fundamental types (e.g., int, float), pointers, references, and even user-defined types. 
+                - The default value can be a constant, a variable, or an expression.
+        
+            - 03) Function Overloading: 
+                - Default arguments are often used in conjunction with function overloading to provide multiple versions of a function with different sets of default values. 
+                - This allows callers to choose which arguments to provide explicitly and which ones to use the defaults for.
+        
+            - 04) Order of Evaluation: 
+                - The default arguments are evaluated at the point of the function call. 
+                - This means that if a default argument is an expression involving other arguments, those arguments are evaluated before the default argument is determined.
+        
+            - 05) Forward Declaration: 
+                - If a function with default arguments is forward declared in a header file, the default argument values must be provided in the header file itself. 
+                - The values cannot be specified in a separate source file.
+        
+            - 06) Changing Default Values: 
+                - It's possible to change the default values of function arguments by redeclaring the function with different default values. 
+                - However, be cautious when changing default values, as it can affect existing code that relies on the original defaults.
+        
+            - 07) Avoiding Default Arguments in Headers: 
+                - It's generally recommended to avoid default arguments in function declarations placed in header files to prevent potential compatibility issues. 
+                - Instead, consider using function overloading or separate functions with different names to achieve similar behavior.
+        
+            - 08) Default Arguments and Function Pointers: 
+                - When using function pointers, it's important to note that the default arguments are not part of the function type. 
+                - Therefore, if you pass a function pointer to a function with default arguments, you need to ensure that the correct number and types of arguments are provided.
+
+        - Note:
+            - Default function arguments in C++ provide a convenient way to define functions with flexible parameter sets. 
+            - They allow you to specify default values that are used when the corresponding arguments are omitted during function calls, enhancing code readability and reducing the need for repetitive argument specifications.
+*/
+
+void print_message_with_default_argument(const std::string& message = "Hello, World!")
+{
+    std::cout << message << std::endl;
+}
+
+void print_numbers_with_default_argument(int start, int end = 10, int step = 1)
+{
+    for (int i = start; i <= end; i += step)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+}
+
+void func_print_message_and_numbers_with_default_argument()
+{
+    // Example 1: Default argument for print_message_with_default_argument
+    print_message_with_default_argument();                     // Prints "Hello, World!"
+    print_message_with_default_argument("Greetings!");         // Prints "Greetings!"
+
+    // Example 2: Default arguments for print_numbers_with_default_argument
+    print_numbers_with_default_argument(1);                    // Prints numbers from 1 to 10 with a step of 1
+    print_numbers_with_default_argument(2, 20);                 // Prints numbers from 2 to 20 with a step of 1
+    print_numbers_with_default_argument(10, 100, 10);           // Prints numbers from 10 to 100 with a step of 10
+
+}
+
 
 
 
