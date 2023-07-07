@@ -102,15 +102,19 @@
   3) C++ Programming Language / Bjarne Stroustrup
   4) C: A Reference Manual, 5th Edition 5th Edition /  Samuel Harbison, Guy Steele Jr.
   5) C Programming: A Modern Approach 2nd Edition / K. N King
-  6) Professional C++ / Marc Gregoire 
-  7) C++ How to Program / Paul Deitel and Harvey Deitel
-  8) Understanding the linux kernel 3rd Edition / Daniel P. Bovet and Marco Cesati
-  9) Linux Kernel Development 3rd Edition / Robert Love
-  10) Deep understanding of Linux kernel / Jim Green
-  11) Linux Kernel Programming A Comprehensive Guide To Kernel Internals, Writing Kernel Modules, and Kernel Synchronization / Kaiwan N Billimoria
-  12) Linux Internals Simplified: A beginners guide to Linux Internals / Haris Kundan Prasad
-  13) Windows Internals Seventh Edition / Pavel Yosifovich, Alex Ionescu, Mark E. Russinovich, and David A. Solomon
-  14) 
+  6) C: The Complete Reference, 4th Edition / Herbert Schildt
+  7) C++: A Beginner's Guide, Second Edition / Herbert Schildt
+  8) C++: The Complete Reference, Fourth Edition / Herbert Schildt
+  9) C++ from the Ground Up (From the Ground Up) 3rd Edition / Herbert Schildt
+  10) Professional C++ / Marc Gregoire 
+  11) C++ How to Program / Paul Deitel and Harvey Deitel
+  12) Understanding the linux kernel 3rd Edition / Daniel P. Bovet and Marco Cesati
+  13) Linux Kernel Development 3rd Edition / Robert Love
+  14) Deep understanding of Linux kernel / Jim Green
+  15) Linux Kernel Programming A Comprehensive Guide To Kernel Internals, Writing Kernel Modules, and Kernel Synchronization / Kaiwan N Billimoria
+  16) Linux Internals Simplified: A beginners guide to Linux Internals / Haris Kundan Prasad
+  17) Windows Internals Seventh Edition / Pavel Yosifovich, Alex Ionescu, Mark E. Russinovich, and David A. Solomon
+  18) 
 
   ### Blogs, Articles:
   1) https://www.educative.io/blog/cpp-memory-management
