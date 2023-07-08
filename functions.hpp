@@ -898,6 +898,55 @@ void func_fibonacci_by_constexpr_function()
 }
 
 
+/*
+    - consteval function:
+        - consteval is a new keyword introduced in C++20 to specify that a function must be evaluated at compile-time. 
+        - It is similar to constexpr functions but with more stringent requirements and guarantees. 
+        - Evaluation at Compile-Time:
+            - A consteval function is explicitly specified to be evaluated at compile-time, ensuring that it is only called in contexts where compile-time evaluation is required.
+            - Unlike constexpr functions, which can be evaluated at either compile-time or runtime, consteval functions must be evaluated strictly at compile-time.
+        - Limited Use in Constant Expressions:
+            - consteval functions can only be used in constant expressions, ensuring that they are evaluated during the compilation phase.
+            - They enable the generation of constant values and computations that can be known and determined at compile-time.
+        - Stringent Requirements:
+            - consteval functions have more stringent requirements than constexpr functions:
+                - The function must be defined as consteval in both its declaration and definition.
+                - The function body should consist of a single return statement and must not contain any statements or operations that cannot be evaluated at compile-time.
+                - The parameters and return types of consteval functions must be literal types.
+        - Compile-Time Error Checking:
+            - consteval functions provide compile-time error checking for their arguments and expressions.
+            - This allows the compiler to catch errors and issue diagnostic messages during the compilation process, preventing potential issues at runtime.
+        - Explicit Compile-Time Behavior:
+            - By using consteval, you explicitly communicate your intent to have the function evaluated strictly at compile-time.
+            - This can improve program efficiency by ensuring that the function is only called in contexts where compile-time evaluation is required.
+        - Performance and Optimization:
+            - consteval functions offer potential performance benefits by allowing computations to be performed during compilation, reducing the need for runtime calculations.
+            - They enable the generation of efficient code by leveraging compile-time evaluation for constant expressions.
+        - Limitations and Trade-offs:
+            - The stringent requirements of consteval functions impose restrictions on their usage, as they must adhere to compile-time evaluation rules strictly.
+            - The trade-off is that some computations or operations that are valid in constexpr functions may not be allowed in consteval functions.
+
+        - Notes:
+            - It's important to note that consteval is a C++20 feature and may not be supported in earlier versions of the language. 
+            - The introduction of consteval expands the possibilities for compile-time evaluation and empowers developers to explicitly control when and where computations occur during the compilation process.
+*/
+
+// consteval function to calculate the factorial of a number
+consteval int fibonacci_by_consteval_function(int n)
+{
+    if (n <= 1)
+        return 1;
+    else
+        return n * fibonacci_by_consteval_function(n - 1);
+}
+
+void func_fibonacci_by_consteval_function()
+{
+    constexpr int num = 5;
+    constexpr int result = fibonacci_by_consteval_function(num);
+
+    std::cout << "Factorial of " << num << " is: " << result << std::endl;
+}
 
 
 
