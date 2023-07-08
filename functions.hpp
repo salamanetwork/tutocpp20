@@ -837,6 +837,66 @@ void func_string_view_passed_as_a_param() {
 }
 
 
+/*
+    - constexpr function:
+        - Compile-Time Evaluation: 
+            - A constexpr function is evaluated at compile-time rather than runtime. 
+            - This means that its result is computed during the compilation process, and the computed value is used wherever the function is called with constant expressions as arguments.
+        - Compile-Time Constants:
+            - constexpr functions enable the generation of compile-time constants, which can be used in various parts of the program.
+            - These constants are known and determined during the compilation process, providing efficiency and the ability to use them in other compile-time computations.
+        - Requirements for constexpr Functions:
+            - The function must have a literal type, which includes fundamental types, arrays, structures, and classes that meet certain criteria (e.g., having a constexpr constructor).
+            - The function must be defined in a way that allows the compiler to evaluate it at compile-time. 
+            - This includes having a body that consists of a single return statement and performing only computationally deterministic operations.
+        - Constant Expressions: 
+            - A constexpr function can be used in constant expressions, meaning that it can participate in compile-time computations. 
+            - This allows you to perform calculations, initialize variables, and create compile-time constants using the constexpr function.
+        - Improving Performance: 
+            - Using constexpr functions can lead to improved performance by enabling computations to be done at compile-time instead of runtime. 
+            - This reduces the need for the same calculations to be performed repeatedly during program execution.
+        - Expanded Functionality: 
+            - constexpr functions can perform operations that are not typically allowed in regular runtime functions. 
+            - They can use if-statements, loops, and other control flow constructs, as long as they can be evaluated at compile-time.
+        - Recursive constexpr Functions: 
+            - C++ allows constexpr functions to be recursive, meaning they can call themselves. 
+            - However, the recursion must be done in a way that allows the compiler to evaluate the function at compile-time, such as using conditional statements to terminate the recursion.
+        - Usage Examples: 
+            - Common use cases for constexpr functions include computing mathematical constants, generating lookup tables, performing compile-time validations, and providing compile-time configurations.
+        - Non-constexpr Contexts:
+            - Although constexpr functions are evaluated at compile-time, they can still be used in non-constexpr contexts where runtime execution is required.
+            - In such cases, the constexpr function behaves like a regular function and is evaluated at runtime.
+        - Performance Benefits:
+            - Using constexpr functions can improve program performance by allowing computations to be done at compile-time.
+            - This reduces the need for the same calculations to be performed repeatedly at runtime.
+        
+        - Notes:
+            - It's important to note that the constexpr keyword is a hint to the compiler, indicating that the function can be evaluated at compile-time. 
+            - The compiler may choose to evaluate the function at compile-time or fall back to runtime evaluation if necessary.
+            - By utilizing constexpr functions effectively, you can leverage compile-time evaluation to improve performance, create compile-time constants, and perform complex computations during the compilation process rather than at runtime.
+            - constexpr functions can also be used in non-constexpr contexts, where they are evaluated at runtime like regular functions.
+*/
+// Fibonacci function using constexpr
+constexpr int fibonacci_by_constexpr_function(int n)
+{
+    // Base cases: Fibonacci sequence starts with 0 and 1
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        // Recursive call to calculate the Fibonacci number
+        return fibonacci_by_constexpr_function(n - 1) + fibonacci_by_constexpr_function(n - 2);
+}
+
+void func_fibonacci_by_constexpr_function()
+{
+    // Calculate Fibonacci number at compile-time
+    constexpr int fibNum = fibonacci_by_constexpr_function(10);
+
+    std::cout << "The 10th Fibonacci number is: " << fibNum << std::endl;
+}
+
 
 
 
