@@ -786,6 +786,55 @@ void func_print_message_and_numbers_with_default_argument()
 }
 
 
+/*
+    - String View as a Parameter:
+        - In C++, std::string_view is a lightweight class introduced in C++17 that provides a non-owning, read-only view of a sequence of characters. 
+        - It serves as an alternative to passing strings by value or const reference, allowing you to efficiently work with string data without the need for memory allocation or copying.
+        - Benefits:
+            - Efficient: 
+                - std::string_view avoids the overhead of copying or allocating memory since it does not own the underlying data.
+            - Lightweight: 
+                - It only consists of a pointer to the data and a size, resulting in a small object size.
+            - Flexibility: 
+                - It can be used to represent a substring or a view into a larger string.
+        - Common operations:
+            - Accessing data: 
+                - Use the data() member function to obtain a pointer to the underlying character data. 
+                - The size() member function gives you the length of the string vi
+            - Comparisons: 
+                - You can compare std::string_view objects using comparison operators (==, !=, <, >, etc.) or use the compare() member function.
+            - Substring operations: 
+                - std::string_view supports substring extraction using the substr() member function, allowing you to obtain a new string view representing a portion of the original string view.
+            - Iteration: 
+                - You can iterate over the characters of a std::string_view using standard iterators.
+        - Lifetime considerations:
+            - It's important to ensure that the lifetime of the underlying string data is valid and longer than the std::string_view itself. 
+            - std::string_view does not manage the memory or lifetime of the data it refers to, so it's crucial to avoid accessing invalidated or freed memory.
+
+        -Notes:
+            - By using std::string_view as a parameter, you can pass strings or substrings efficiently, minimizing memory overhead and potentially improving the performance of your code. 
+            - It's particularly useful when you need read-only access to the string data within a function or when passing string-like data to functions without making unnecessary copies.
+*/
+
+void process_substring_string_view_passed_as_a_param(std::string_view str) {
+    std::cout << "Processing substring: " << str << std::endl;
+    // Perform operations on the string view
+    std::cout << "Length of substring: " << str.length() << std::endl;
+    std::cout << "First character: " << str.front() << std::endl;
+    std::cout << "Last character: " << str.back() << std::endl;
+}
+
+void func_string_view_passed_as_a_param() {
+    std::string fullString = "Hello, World!";
+
+    // Pass a substring to the function
+    std::string_view substring1(fullString.data() + 7, 5);
+    process_substring_string_view_passed_as_a_param(substring1);
+
+    // Pass the full string
+    std::string_view substring2(fullString);
+    process_substring_string_view_passed_as_a_param(substring2);
+}
 
 
 
