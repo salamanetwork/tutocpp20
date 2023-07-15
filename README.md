@@ -95,6 +95,7 @@
   3) LinkedIn - Master C Language Pointers / Dan Gookin
   3) LinkedIn - C: Data Structures, Pointers, and File Systems / Dan Gookin
   4) Linkedin - Programming Foundations: Memory, Pointers, and Garbage Collection / Maaike van Putten
+  5) InfiniteSkills - C++ Programming Bundle Training Video / Brook Monroe
   
   #### Books, PDF's:
   1) Beginning C++20: From Novice to Professional / Ivor Horton and Peter Van Weert
