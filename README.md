@@ -1,5 +1,5 @@
 # tutocpp20:
-                    ( My Tutorial's Journey On C++ 20 ) || ( Modern C++ ) = starts at 1 June 2023
+                ( My Tutorial's Journey On C++ 20 ) || ( Modern C++ ) = starts at 1 June 2023
     Notes:
     - I Like To Document Every Steps I Have Been Done. Therefore, I Wrote A Heavy Commentaries On Each File.
     - I Kept All The Source Code Files Naked To Your Eyes As '.hpp' Header Files, You Do NOT Need To Compile It.
@@ -68,6 +68,10 @@
 13) Eclipse IDE
 14) Code::Blocks
 15) www.cppinsights.io
+16) cppcheck
+17) clazy
+18) clang-tidy
+19) valgrind
 
 # References:
   
