@@ -100,6 +100,7 @@
   3) LinkedIn - C: Data Structures, Pointers, and File Systems / Dan Gookin
   4) Linkedin - Programming Foundations: Memory, Pointers, and Garbage Collection / Maaike van Putten
   5) InfiniteSkills - C++ Programming Bundle Training Video / Brook Monroe
+  6) Udemy - Garbage Collection Algorithms 2020 / Dmitry Soshnikov
   
   #### Books, PDF's:
   1) Beginning C++20: From Novice to Professional / Ivor Horton and Peter Van Weert
