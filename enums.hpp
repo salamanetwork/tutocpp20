@@ -142,6 +142,106 @@ void enum_class_cpp_style()
     }
 }
 
+/*
+    - Enumeration Features in C++20:
+        - Scoped Enumarations with enum class:
+            - C++20 continues to support the enum class syntax introduced earlier. 
+            - Using enum class, enumerators are strongly typed and scoped within the enum's name. 
+            - This helps prevent name clashes and provides better type safety.
+        - Improved Explicit Conversion:
+            - In C++20, you can use enum types in a more flexible and expressive way when it comes to explicit conversions. 
+            - You can now use enum types in static_cast and reinterpret_cast, making it easier to convert between enum types and other compatible types.
+        - Bitmask Enums:
+            - C++20 introduces a new syntax for defining bitmask enumerations, also known as flag enums. 
+            - This allows you to represent combinations of enum values as bitwise flags. 
+            - You can use the bitwise OR operator to combine multiple enum values.
+            - In C++20, the enum class bitwise operations require explicit overloading of the operators. 
+                - The error you encountered indicates that the bitwise OR (|), AND (&) operator is not defined for the enum class type in the way we attempted to use it.
+        - Enum Reflection:
+            - C++20 introduces a reflection mechanism called "reflection traits" that enables querying information about enum types at compile-time. 
+            - This allows you to obtain information such as the number of enumerators, the names of the enumerators, and more.           
+*/
+
+// Using for bitmask
+enum class Permissions : unsigned int {
+    None = 0,
+    Read = 1 << 0,
+    Write = 1 << 1,
+    Execute = 1 << 2
+};
+
+// In C++20, the enum class bitwise operations require explicit overloading of the operators:
+Permissions operator|(Permissions lhs, Permissions rhs) {
+    return static_cast<Permissions>(
+        static_cast<unsigned int>(lhs) | static_cast<unsigned int>(rhs)
+    );
+}
+
+// In C++20, the enum class bitwise operations require explicit overloading of the operators:
+Permissions operator&(Permissions lhs, Permissions rhs) {
+    return static_cast<Permissions>(
+        static_cast<unsigned int>(lhs) & static_cast<unsigned int>(rhs)
+    );
+}
+
+void PrintPermissions(Permissions permissions) {
+    std::bitset<3> bits(static_cast<unsigned int>(permissions));
+    std::cout << "Permissions: " << bits << std::endl;
+}
+
+
+void enum_cpp20()
+{
+    // Scoped Enumarations with enum class:
+    enum class Colors {
+        Red,
+        Green,
+        Blue
+    };
+
+    // Improved Explicit Conversion:
+    enum class Animal {
+        Cat,
+        Dog,
+        Elephant
+    };
+    
+    enum class Sound {
+        Meow,
+        Bark,
+        Trumpet
+    };
+    
+    Animal animal = Animal::Cat;
+    Sound sound = static_cast<Sound>(animal);
+
+    // Bitmask Enums:
+    Permissions userPermissions = Permissions::Read | Permissions::Write;
+
+    if ((userPermissions & Permissions::Read) == Permissions::Read) {
+        std::cout << "User has read permission." << std::endl;
+    }
+
+    if ((userPermissions & Permissions::Write) == Permissions::Write) {
+        std::cout << "User has write permission." << std::endl;
+    }
+
+    if ((userPermissions & Permissions::Execute) == Permissions::Execute) {
+        std::cout << "User has execute permission." << std::endl;
+    }
+
+    PrintPermissions(userPermissions);
+    
+    // Enum Reflection:
+    constexpr std::size_t enumSize = std::extent_v<std::remove_reference_t<decltype(Colors::Blue)>> + 1;
+    
+    std::cout << "Number of enumerators: " << enumSize << std::endl;
+
+    if constexpr (std::is_enum_v<Colors>) 
+    {
+        std::cout << "Colors is an enum type." << std::endl;
+    }
+}
 
 
 
