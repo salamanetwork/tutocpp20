@@ -51,6 +51,7 @@
     00015)    strings.hpp
     00016)    functions.hpp
     00017)    compilation.hpp
+    00018)    enums.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
