@@ -75,6 +75,72 @@ void enum_c_style()
 
 }
 
+/*
+    - Enumeration Class In C++:
+        - In C++, the enum class (also known as a scoped enumeration or strongly-typed enum) is an improved version of the traditional enum construct. 
+        - It provides better type safety, scoping, and control over underlying types.
+        - Here are some key characteristics and features of enum class:
+            - Strongly Typed: 
+                - Enumerators within an enum class are strongly typed, meaning they have their own distinct type. 
+                - This prevents unintended type conversions and helps catch potential bugs at compile time.
+
+            - Scoped: 
+                - Enumerators in an enum class are scoped within the enum class name. 
+                - This allows multiple enum class declarations to have enumerators with the same names without conflicts. 
+                - You need to qualify the enumerator with the enum class name or use the using directive to bring specific enumerators into the local scope.
+
+            - No Implicit Conversions: 
+                - Enumerators in an enum class are not implicitly convertible to integers or other enumerators. 
+                - This helps avoid accidental misuse and promotes explicit conversions when necessary.
+
+            - Specifying Underlying Type: 
+                - With enum class, you can explicitly specify the underlying integral type that represents the enumerators. 
+                - This provides control over the range, size, and signedness of the underlying values. 
+                - If not explicitly specified, the underlying type defaults to int.
+
+            - Forward Declaration: 
+                - enum class can be forward-declared without defining the underlying enumerators. 
+                - This is useful in scenarios where you want to declare a type but define its enumerators later.
+
+            - Improved Compiler Diagnostics: 
+                - enum class generates better error messages and compiler diagnostics compared to the traditional enum. 
+                - It helps catch potential errors like comparing different enumeration types or performing invalid operations on enumerators. 
+        - Synatx:
+            enum class EnumName : underlying_type {
+                Enumerator1,
+                Enumerator2,
+                Enumerator3,
+                // ...
+            };
+        
+*/
+
+void enum_class_cpp_style()
+{
+    enum class Month : int {
+        January = 1,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
+    };
+
+    Month currentMonth = Month::July;
+    int monthValue = static_cast<int>(currentMonth);
+
+    std::cout << "Current month: " << monthValue << std::endl;
+
+    if (currentMonth == Month::December) {
+        std::cout << "It's the holiday season!" << std::endl;
+    }
+}
 
 
 
