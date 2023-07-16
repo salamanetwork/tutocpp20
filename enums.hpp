@@ -243,7 +243,49 @@ void enum_cpp20()
     }
 }
 
+/*
+    - Enumeration Features In C++:
+        - In C++20, you can use the using enum declaration to avoid repeating the enum class name when using its enumerators. 
+        - This feature allows you to introduce all the enumerators of an enum class into the local scope.
+        - The using enum declaration simplifies the code and improves readability, especially when working with enum values extensively.
+        - we can directly reference the enumerators without explicitly prefixing them with the enum class name. 
+        - This avoids the need to repeat the enum class name multiple times.
+*/
 
+void enum_cpp20_using_no_repeat()
+{
+    enum class Month {
+        January,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
+    };
+
+    using enum Month;
+
+    Month currentMonth = January;
+
+    switch (currentMonth) {
+        case January:
+            std::cout << "It's January." << std::endl;
+            break;
+        case February:
+            std::cout << "It's February." << std::endl;
+            break;
+        // ... other cases for the remaining months
+        default:
+            std::cout << "It's another month." << std::endl;
+            break;
+    }
+}
 
 
 
