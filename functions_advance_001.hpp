@@ -107,6 +107,39 @@ void func_compute_sum_and_product()
 
 }
 
+/*
+    - Returning from functions (by value):
+        - In general, the memory addresses of variables within different functions are separate and distinct. 
+        - Each function has its own stack frame, which contains its local variables and function parameters. 
+        - When a function is called, a new stack frame is created, and the variables within that function are allocated memory within its stack frame.
+        - Therefore, the variable sum in the calculate_sum function and the variable result in the main function are stored in different memory addresses because they belong to different stack frames. 
+        - They are separate instances of the variable with their own memory locations.
+*/
+
+int calculate_sum(int a, int b)
+{
+    int sum = a + b;
+    std::cout << "Address of 'sum' in calculate_sum: " << &sum << std::endl;
+    return sum;
+}
+
+void func_calculate_sum()
+{
+    int x = 5;
+    int y = 3;
+
+    int result = calculate_sum(x, y);
+    std::cout << "Address of 'result' in main: " << &result << std::endl;
+
+}
+
+
+
+
+
+
+
+
 
 
 
