@@ -164,6 +164,39 @@ void func_increment_by_reference()
     std::cout << "Address of 'result': " << &result << std::endl;
 }
 
+/*
+    - Returning by pointer:
+        - Returning by pointer involves returning the memory address of a variable from a function. 
+        - This allows the calling function to access the variable indirectly by dereferencing the returned pointer. 
+        - Note that it is essential to deallocate the dynamically allocated memory using delete to prevent memory leaks.
+        
+*/
+
+// Function that creates and returns a dynamically allocated integer
+int* create_dynamic_integer()
+{
+    int* dynamic_integer = new int(42);  // Dynamically allocate an integer with value 42
+    return dynamic_integer;              // Return the memory address of the dynamically allocated integer
+}
+
+void func_create_dynamic_integer()
+{
+    int* result = create_dynamic_integer();
+    // Call the function 'create_dynamic_integer' and store the returned pointer in 'result'
+
+    // Print the value stored at the memory address pointed by 'result'
+    std::cout << "Value: " << *result << std::endl;
+
+    // Print the memory address of the original variable and the returned pointer
+    std::cout << "Address of original variable: " << &result << std::endl;
+    std::cout << "Address returned by the function: " << result << std::endl;
+
+    delete result;  // Deallocate the dynamically allocated integer
+}
+
+
+
+
 
 
 
