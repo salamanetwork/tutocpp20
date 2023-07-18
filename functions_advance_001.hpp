@@ -133,6 +133,38 @@ void func_calculate_sum()
 
 }
 
+/*
+    - Returning by reference:
+        - Running this code will show that both x and result are located at the same memory address, indicating that they refer to the same variable.
+    - Reminder:
+        - Do return a reference to a local variable.
+*/
+
+// Function that increments a value by 1 and returns it by reference
+int& increment_by_reference(int& num)
+{
+    num++; // Increment the value of 'num' by 1
+    return num; // Return 'num' by reference
+}
+
+void func_increment_by_reference()
+{
+    int x = 5; // Declare and initialize variable 'x' with the value 5
+
+    int& result = increment_by_reference(x);
+    // Call the function 'increment_by_reference' passing 'x' by reference
+    // and store the returned reference in 'result'
+
+    // Print the value of 'x' and the value stored at the reference 'result'
+    std::cout << "x: " << x << std::endl;
+    std::cout << "result: " << result << std::endl;
+
+    // Print the memory addresses of 'x' and the reference 'result'
+    std::cout << "Address of 'x': " << &x << std::endl;
+    std::cout << "Address of 'result': " << &result << std::endl;
+}
+
+
 
 
 
