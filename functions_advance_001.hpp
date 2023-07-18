@@ -1,5 +1,5 @@
-#ifndef __FUNCTIONS_ADVANCED_001_H
-#define __FUNCTIONS_ADVANCED_001_H
+#ifndef __FUNCTIONS_ADVANCE_001_H
+#define __FUNCTIONS_ADVANCE_001_H
 
 #include <iostream>
 #include <iomanip>
