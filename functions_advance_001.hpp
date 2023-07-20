@@ -260,6 +260,62 @@ void func_bare_auto_type_deduction()
     std::cout << "flag:\t\t"     << flag     << "\t\t\ttype:\t\t" << typeid(flag).name()     << std::endl;
 }
 
+/*
+    - typeid Operator:
+        - The typeid operator in C++ is used to obtain the std::type_info object that represents the type of a given expression or a type.
+        - It is part of the <typeinfo> header in the C++ Standard Library. 
+        - The std::type_info object provides information about the type at runtime, such as its name, comparison with other types, and checking for type compatibility.
+        - Here's a brief explanation of how the typeid function works:
+            - For an expression: 
+                - If you pass an expression to the typeid function, it returns a const std::type_info& object representing the type of the expression.
+            - For a type: 
+                - If you pass a type name to the typeid operator using the typeid(type) syntax, it returns a const std::type_info& object representing that type.
+            - Type comparison: 
+                - You can use typeid to compare the types of two expressions or types using the == operator. 
+                - It returns true if the types are the same and false otherwise.
+*/
+
+void func_typeid_typeinfo()
+{
+    int num = 42;
+    double pi = 3.14;
+    const char* name = "John";
+    bool flag = true;
+
+    // Using typeid with expressions
+    std::cout << "Type of num: " << typeid(num).name() << std::endl;
+    std::cout << "Type of pi: " << typeid(pi).name() << std::endl;
+    std::cout << "Type of name: " << typeid(name).name() << std::endl;
+    std::cout << "Type of flag: " << typeid(flag).name() << std::endl;
+
+    // Using typeid with type names
+    std::cout << "Type of int: " << typeid(int).name() << std::endl;
+    std::cout << "Type of double: " << typeid(double).name() << std::endl;
+    std::cout << "Type of const char*: " << typeid(const char*).name() << std::endl;
+    std::cout << "Type of bool: " << typeid(bool).name() << std::endl;
+
+    // Type comparison
+    if (typeid(num) == typeid(int))
+    {
+        std::cout << "num is an integer." << std::endl;
+    }
+
+    if (typeid(pi) == typeid(double))
+    {
+        std::cout << "pi is a double." << std::endl;
+    }
+
+    if (typeid(name) == typeid(const char*))
+    {
+        std::cout << "name is a const char*." << std::endl;
+    }
+
+    if (typeid(flag) == typeid(bool))
+    {
+        std::cout << "flag is a bool." << std::endl;
+    }
+
+}
 
 
 
