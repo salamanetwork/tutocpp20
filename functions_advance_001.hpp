@@ -317,6 +317,30 @@ void func_typeid_typeinfo()
 
 }
 
+/*
+    - Bare auto reference deduction:
+        - auto reference deduction always includes the reference qualifier when deducing the type of the variable.
+        - The reference qualifier is part of the type deduction process when using auto with references.
+        
+*/
+
+void func_bare_auto_ref_deduct()
+{
+    int num = 42;
+    int& ref_num = num; // Standard reference
+
+    auto auto_ref1 = num; // Auto reference, deduces to int&
+    auto& auto_ref2 = ref_num; // Auto reference, deduces to int&
+
+    std::cout << "num: " << num << ", ref_num: " << ref_num << std::endl;
+    std::cout << "auto_ref1: " << auto_ref1 << ", auto_ref2: " << auto_ref2 << std::endl;
+
+    // Modify the value through the auto references
+    auto_ref1 = 100;
+    auto_ref2 = 200;
+    std::cout << "After modification: num: " << num << ", ref_num: " << ref_num << std::endl;
+
+}
 
 
 
