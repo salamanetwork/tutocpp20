@@ -391,7 +391,52 @@ void func_proper_reference_deduct()
 
 }
 
+/*
+    - Const Qualifiers:
+        - In C++, const qualifiers are used to specify that an object or variable should not be modified. 
+        - When you declare a variable as const, it means the value stored in that variable cannot be changed after initialization. 
+        - This is a key feature for ensuring data integrity and const correctness in your code.
+        - Here are some examples of how const qualifiers can be used in C++:
+            - 01) Constant variables.
+            - 02) Constant pointers.
+            - 03) Constant references.
+            - 04) Constant member functions.
+            - 05) Constant function parameters.
+            - 06) Constant objects.
+        - Using const qualifiers helps ensure that variables, pointers, references, and member functions are not accidentally modified, enhancing the safety and maintainability of your code. 
+        - It also allows the compiler to perform certain optimizations and enables better const correctness.
+            
+*/
 
+void func_const_qualifiers()
+{
+    // 01) Constant variables.
+    const int MAX_VALUE = 100; // Declares a constant variable with value 100
+    const double PI = 3.14159; // Declares a constant variable with value 3.14159
+
+    // 02) Constant pointers.
+    int num = 42;
+    const int* ptr1 = &num; // Pointer to a constant integer, value cannot be modified through ptr1
+    int* const ptr2 = &num; // Constant pointer to an integer, pointer address cannot be modified
+    const int* const ptr3 = &num; // Constant pointer to a constant integer
+
+    // 03) Constant references.
+    int x = 10;
+    const int& ref1 = x; // Reference to a constant integer, value cannot be modified through ref1
+
+    // 04) Constant member functions.
+    class MyClass {
+    public:
+        void doSomething() const; // This member function promises not to modify the object's state
+    };
+
+    // 05) Constant function parameters.
+    void printArray(const int arr[], size_t size); // The function cannot modify the elements of arr
+    
+    // 06) Constant objects.
+    const MyClass obj; // obj is a constant object, calling non-const member functions is not allowed
+    // obj.doSomething(); // Only const member functions can be called on a constant object
+}
 
 
 
