@@ -342,6 +342,54 @@ void func_bare_auto_ref_deduct()
 
 }
 
+/*
+    - Proper Reference Deduction:
+        - In C++, reference deduction can occur in several scenarios, depending on whether the variable is declared with auto, const auto, auto&, const auto&, or auto&&. 
+        - Let's go through each case to understand proper reference deduction:
+            - 01) auto:
+                - When you use auto to declare a variable without any reference or const qualifiers, the compiler performs value deduction. 
+                - The type of the variable will be the same as the initializer's type, but any reference and const qualifiers will be ignored.
+            - 02) const auto:
+                - Using const auto will deduce the type, including const qualifiers, but without any reference.
+            - 03) auto&:
+                - When you use auto&, reference deduction occurs, and the type of the variable will match the initializer, including reference and const qualifiers.
+            - 04) const auto&:
+                - Using const auto& deduces the type with both reference and const qualifiers.
+            - 05) auto&& (Universal Reference):
+                - auto&& is a universal reference, which means it can bind to both lvalues and rvalues. 
+                - In this case, reference collapsing occurs, and the type will be either an lvalue reference or an rvalue reference, depending on the initializer.
+                
+        - Notes:
+            - Reference deduction is powerful and allows C++ to handle different scenarios with the correct reference and const qualifiers, making it easier to work with variables while avoiding unnecessary copying and maintaining const correctness.
+*/
+
+void func_proper_reference_deduct()
+{
+    // 01) auto:
+    auto var1 = 42; // var1 is deduced as int
+    auto var2 = "Hello"; // var2 is deduced as const char*
+
+    // 02) const auto:
+    const auto var3 = 3.14; // var3 is deduced as const double
+
+    // 03) auto&:
+    int num = 42;
+    auto& ref1 = num; // ref1 is deduced as int&
+    const auto& ref2 = num; // ref2 is deduced as const int&
+
+    // 04) const auto&:
+    double pi = 3.14;
+    const auto& ref3 = pi; // ref3 is deduced as const double&
+
+    // 05) auto&&:
+    int x = 42;
+    const int y = 10;
+    
+    auto&& ref4 = x; // ref4 is deduced as int&
+    auto&& ref5 = y; // ref5 is deduced as const int&
+    auto&& ref6 = 100; // ref6 is deduced as int&&
+
+}
 
 
 
