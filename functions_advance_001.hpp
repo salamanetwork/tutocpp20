@@ -194,6 +194,42 @@ void func_create_dynamic_integer()
     delete result;  // Deallocate the dynamically allocated integer
 }
 
+/*
+    - Returning array element pointer:
+        - The function takes the array, its size, and the desired index as parameters and returns a pointer to the element if the index is within bounds; otherwise, it returns nullptr. 
+*/
+// Function that returns a pointer to an element in the integer array
+const int* get_array_element(const int arr[], size_t size, size_t index)
+{
+    // Check if the index is within the array bounds
+    if (index < size)
+    {
+        return &arr[index]; // Return a pointer to the element at the specified index
+    }
+    else
+    {
+        return nullptr; // Return nullptr if the index is out of bounds
+    }
+}
+
+void func_get_array_element()
+{
+    int intArray[] = {13250, 232550, 312440, 1234523, 3452346};
+
+    // Get a pointer to the element at index 2 in the integer array
+    const int* ptr_to_element = get_array_element(intArray, std::size(intArray), 2);
+
+    if (ptr_to_element != nullptr)
+    {
+        // Print the value of the element using the pointer
+        std::cout << "Element at index 2: " << *ptr_to_element << std::endl;
+    }
+    else
+    {
+        std::cout << "Index out of bounds!" << std::endl;
+    }
+
+}
 
 
 
