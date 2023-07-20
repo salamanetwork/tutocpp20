@@ -231,6 +231,34 @@ void func_get_array_element()
 
 }
 
+/*
+    - Bare auto type deduction:
+        - 'auto' type deduction allows the compiler to automatically determine the type of a variable based on its initializer expression.
+*/
+void func_bare_auto_type_deduction()
+{
+    // Example 1: Integer type
+    auto num1 = 42; // Compiler deduces 'num1' as an integer
+
+    // Example 2: Double type
+    auto num2 = 3.14; // Compiler deduces 'num2' as a double
+
+    // Example 3: Character type
+    auto letter = 'A'; // Compiler deduces 'letter' as a char
+
+    // Example 4: String type
+    auto name = "John"; // Compiler deduces 'name' as a const char*
+
+    // Example 5: Boolean type
+    auto flag = true; // Compiler deduces 'flag' as a bool
+
+    // Print the deduced types and their values
+    std::cout << "num1:\t\t"     << num1     << "\t\t\ttype:\t\t" << typeid(num1).name()     << std::endl;
+    std::cout << "num2:\t\t"     << num2     << "\t\ttype:\t\t" << typeid(num2).name()     << std::endl;
+    std::cout << "letter:\t\t"   << letter   << "\t\t\ttype:\t\t" << typeid(letter).name()   << std::endl;
+    std::cout << "name:\t\t"     << name     << "\t\ttype:\t\t" << typeid(name).name()     << std::endl;
+    std::cout << "flag:\t\t"     << flag     << "\t\t\ttype:\t\t" << typeid(flag).name()     << std::endl;
+}
 
 
 
