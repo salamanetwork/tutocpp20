@@ -736,6 +736,66 @@ void func_get_value()
     std::cout << "Value (or default): " << optionalValue.value_or(defaultValue) << std::endl;
 }
 
+/*
+    - Optional output with stdoptional from function:
+        - When using std::optional for optional output from functions, here are some important details to consider:
+            - Return Type: 
+                - When a function has the possibility of not producing a valid result, the return type should be std::optional<T>, where T is the type of the value that may or may not be present.
+            - std::nullopt: 
+                - To indicate the absence of a value, you can use std::nullopt, which is a constant representing an empty std::optional. Returning std::nullopt from the function signifies that the function was not able to produce a valid result.
+            - std::optional Methods:
+                - has_value(): 
+                    - It is used to check if the std::optional contains a valid value. 
+                    - It returns true if a value is present and false otherwise.
+                - value(): It is used to extract the value contained in the std::optional. 
+                    - However, it should be used with caution because calling value() on an empty std::optional will lead to a runtime error (exception). 
+                    - Always check has_value() before calling value() to avoid such situations.
+                - value_or(): 
+                    - This method is used to extract the value from the std::optional, or provide a default value if the std::optional is empty.
+                - Safe Access: 
+                    - When using std::optional, it's essential to ensure that you check if a value is present before accessing it. 
+                    - This prevents potential undefined behavior and exceptions that may occur when trying to access an empty std::optional.
+                - Expressive Code: 
+                    - Using std::optional improves code expressiveness and makes the presence or absence of a value explicit. 
+                    - It eliminates the need for using null pointers or special error codes for representing missing values.
+                - Error Handling: 
+                    - By using std::optional, you can handle errors in a cleaner way compared to using exceptions or error codes. 
+                    - Functions can return std::nullopt to indicate a failure, and the caller can check for the absence of a value to handle the error gracefully.
+            - By employing std::optional for optional output, your code becomes more readable and self-documenting, and it provides a more robust way of dealing with functions that may not always return a valid result. 
+            - It is especially useful for cases where the absence of a value is a valid and expected outcome.
+*/
+
+// Function that calculates the square root of a number and returns it in an optional
+std::optional<double> calculate_square_root_02(double number) {
+    if (number >= 0) {
+        return std::sqrt(number);
+    } else {
+        return std::nullopt; // Return an empty optional to indicate an error or absence of value
+    }
+}
+
+void func_calculate_square_root_02() {
+    double x = 25.0;
+    double y = -4.0;
+
+    // Calculate square root for x
+    std::optional<double> result_x = calculate_square_root_02(x);
+
+    if (result_x.has_value()) {
+        std::cout << "Square root of " << x << " is " << result_x.value() << std::endl;
+    } else {
+        std::cout << "Cannot calculate square root of " << x << ", the number is negative." << std::endl;
+    }
+
+    // Calculate square root for y
+    std::optional<double> result_y = calculate_square_root_02(y);
+
+    if (result_y.has_value()) {
+        std::cout << "Square root of " << y << " is " << result_y.value() << std::endl;
+    } else {
+        std::cout << "Cannot calculate square root of " << y << ", the number is negative." << std::endl;
+    }
+}
 
 
 
