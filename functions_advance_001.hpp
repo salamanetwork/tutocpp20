@@ -438,7 +438,51 @@ void func_const_qualifiers()
     // obj.doSomething(); // Only const member functions can be called on a constant object
 }
 
+/*
+    - Function return type deduction:
+        - Function return type deduction is a C++ feature introduced in C++14.
+        - It allows the compiler to deduce the return type of a function based on the return statement. 
+        - This enables you to use auto as the return type, making your code more concise and flexible, especially when dealing with complex or templated return types.
+        - The key benefit of using function return type deduction with auto is that it allows the function to return different types based on the logic within the function.
+        - This flexibility can be quite handy when dealing with various scenarios where the return type might vary based on input parameters or conditions.
+*/
 
+// Function with return type deduction using auto
+auto calculate_average(const std::vector<int>& numbers)
+{
+    if (numbers.empty()) {
+        // Return a message if the vector is empty
+        return std::string("Vector is empty");
+    }
+
+    // Calculate the sum of numbers
+    int sum = 0;
+    for (int num : numbers) {
+        sum += num;
+    }
+
+    // Calculate the average and return it as a string
+    double average = static_cast<double>(sum) / numbers.size();
+    std::ostringstream oss;
+    
+    oss << std::fixed << std::setprecision(2) << "Average: " << average;
+    return oss.str();
+}
+
+void func_calculate_average()
+{
+    std::vector<int> data1 = {10, 20, 30, 40, 50};
+    std::vector<int> data2; // An empty vector
+
+    // Calculate the average for data1
+    auto avg1 = calculate_average(data1);
+    std::cout << avg1 << std::endl;
+
+    // Calculate the average for data2
+    auto avg2 = calculate_average(data2);
+    std::cout << avg2 << std::endl;
+
+}
 
 
 
