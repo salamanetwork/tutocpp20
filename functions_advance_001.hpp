@@ -485,6 +485,33 @@ void func_calculate_average()
 }
 
 
+/*
+    - Return type deduction with references:
+        - Function return type deduction with references follows the same principle as regular function return type deduction using auto. 
+        - When you use auto as the return type for a function, the compiler deduces the return type based on the return statements in the function body, including references.
+        
+*/
+// Function with return type deduction using auto&
+auto& get_larger(int& value1, int& value2)
+{
+    return (value1 > value2) ? value1 : value2;
+}
+
+void func_get_larger()
+{
+    int a = 10;
+    int b = 5;
+
+    // Get the larger integer by reference
+    auto& larger_value = get_larger(a, b);
+
+    // Modify the larger integer through the reference
+    // This will modify 'a' since 'a' is the larger value
+    // returned by the get_larger function.
+    larger_value = 15;
+
+    std::cout << "a: " << a << ", b: " << b << std::endl;
+}
 
 
 
