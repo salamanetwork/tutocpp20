@@ -625,6 +625,55 @@ void func_find_student() {
     }
 }
 
+/*
+    - std::nulopt:
+        - std::nullopt is a constant introduced in C++11 and is part of the C++ Standard Library <optional> header. 
+        - It is used to represent the absence of a value in std::optional objects.
+        - When an std::optional does not contain a value (i.e., it is empty), you can use std::nullopt to signify that there is no valid value present. 
+        - It provides a clear and standardized way to indicate an optional value that is not set or has no meaningful data.
+        - Here are some key points about std::nullopt:
+            - Purpose:
+                - std::nullopt is used as a sentinel value to represent the absence of a value in std::optional objects.
+                - It helps distinguish between an std::optional that contains a valid value and an std::optional that is empty or has no meaningful data.
+            - Type:
+                - std::nullopt is of type std::nullopt_t.
+                - std::nullopt_t is an empty type specifically designed to represent the concept of "no value."
+            - Usage with std::optional:
+                - When initializing an std::optional, you can use std::nullopt to create an empty std::optional that does not contain a value.
+                - You can also use std::nullopt to reset an existing std::optional to an empty state, removing any value it may have contained.
+        - std::nullopt is a useful tool for handling optional values with std::optional. 
+        - It provides a standardized and self-documenting way to represent the absence of a value, making your code more expressive and easier to understand when dealing with optional data.
+*/
+
+std::optional<int> get_even_number(int number) 
+{
+    if (number % 2 == 0) {
+        return number; // Return the number wrapped in an optional if it is even
+    } else {
+        return std::nullopt; // Return an empty optional for odd numbers
+    }
+}
+
+void func_get_even_number() 
+{
+    int value1 = 10;
+    int value2 = 15;
+
+    std::optional<int> result1 = get_even_number(value1);
+    if (result1) {
+        std::cout << "Even number found: " << *result1 << std::endl;
+    } else {
+        std::cout << "No even number found." << std::endl;
+    }
+
+    std::optional<int> result2 = get_even_number(value2);
+    if (result2) {
+        std::cout << "Even number found: " << *result2 << std::endl;
+    } else {
+        std::cout << "No even number found." << std::endl;
+    }
+}
+
 
 
 
