@@ -682,6 +682,59 @@ void func_get_even_number()
     }
 }
 
+/*
+    - Reading method of  a value from std::optional:
+    - To access the value contained in an std::optional, you have several methods available in the C++ Standard Library. 
+    - These methods help you safely retrieve and work with the underlying value without invoking undefined behavior in case the std::optional is empty.
+    - Let's go through the methods for reading the value from std::optional:
+        - value(): 
+            - The value() method allows you to access the underlying value stored in the std::optional. However, this method should be used with caution, as calling value() on an empty std::optional will result in a runtime error (exception). To avoid this, always ensure that the std::optional contains a value before calling value() using the has_value() method.
+        - operator*: 
+            - You can use the dereference operator * with an std::optional to access the underlying value. This method checks if the std::optional has a value before attempting to access it. If it's empty, dereferencing the std::optional will result in undefined behavior. Therefore, use this operator only when you are sure that the std::optional is not empty.
+        - operator->: 
+            - Similarly to operator*, the operator-> allows you to access the underlying value through a pointer-like syntax. It checks if the std::optional has a value before attempting to access it. If it's empty, using the operator-> on the std::optional will result in undefined behavior.
+        - value_or(): 
+            - The value_or() method provides a safe way to access the underlying value while also specifying a default value in case the std::optional is empty. If the std::optional contains a value, value_or() returns the underlying value; otherwise, it returns the specified default value.
+*/
+
+std::optional<int> get_value(bool hasValue) 
+{
+    if (hasValue) {
+        return 42; // Return a value if hasValue is true
+    } else {
+        return std::nullopt; // Return an empty optional if hasValue is false
+    }
+}
+
+void func_get_value() 
+{
+    std::optional<int> optionalValue = get_value(true);
+
+    // Check for safety
+    if (optionalValue.has_value()) {
+        std::cout << "Value exists: " << optionalValue.value() << std::endl;
+    } else {
+        std::cout << "Value does not exist." << std::endl;
+    }
+
+    // Using operator* to access the value
+    if (optionalValue) {
+        std::cout << "Value exists: " << *optionalValue << std::endl;
+    } else {
+        std::cout << "Value does not exist." << std::endl;
+    }
+
+    // Using operator-> to access the value [Class, Struct, Enum, etc..]
+    // if (optionalValue) {
+    //     std::cout << "Value exists: " << optionalValue->value() << std::endl;
+    // } else {
+    //     std::cout << "Value does not exist." << std::endl;
+    // }
+
+    // Using value_or() with a default value
+    int defaultValue = 100;
+    std::cout << "Value (or default): " << optionalValue.value_or(defaultValue) << std::endl;
+}
 
 
 
