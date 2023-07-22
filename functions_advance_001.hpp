@@ -562,7 +562,68 @@ void func_calculate_square_root()
     }
 }
 
+/*
+    - std::optional
+        - Returning optional values from functions is a useful technique in C++ to indicate that a function may not always produce a valid result. 
+        - The std::optional class, introduced in C++17, provides a way to represent an optional value that may or may not have a value.
+        - std::optional is a class template introduced in C++17 as part of the C++ Standard Library to represent optional values. 
+        - It allows you to encapsulate a value that may or may not exist, essentially representing an "optional" or "nullable" value. 
+        - std::optional provides a safer and more expressive alternative to using pointers or special values (like NULL) for representing missing or optional data.
+        -Here are some key details and features of std::optional:
+            - Declaration and Initialization:
+                - You can declare an std::optional object by specifying the type it will hold, like std::optional<int> or std::optional<std::string>.
+                - It can be initialized with a value of its underlying type or left uninitialized, representing the absence of a value.
+                - To initialize an std::optional without a value, you can use std::nullopt, which is a special constant representing "no value."
+            - Accessing the Value:
+                - You can access the contained value using the value() method. However, make sure the std::optional is not empty before calling value() to avoid undefined behavior. Calling value() on an empty std::optional results in a runtime error (exception).
+                - To access the value safely, you can use the operator* and operator-> like you would with a pointer. These operators check if the std::optional contains a value before attempting to access it. If it's empty, dereferencing the std::optional will result in undefined behavior.
+            - Checking if std::optional Contains a Value:
+                - You can check if an std::optional contains a value using the has_value() method. It returns true if the std::optional contains a value and false otherwise.
+                - You can also use the operator bool() to check if the std::optional has a value. It allows you to use the if (optional) syntax to check if it contains a value.
+            - Assigning and Resetting the std::optional:
+                - You can assign a value to an std::optional using the assignment operator =. It assigns the value and makes the std::optional have a value.
+                - To reset the std::optional and remove the contained value, you can use the reset() method.
+        - Using std::optional in this scenario provides a clear and safe way to handle optional output from functions. 
+        - It eliminates the need for error codes or null pointers, making the code more readable and less error-prone.
+*/
 
+// Structure representing a student
+struct Student {
+    int id;
+    std::string name;
+    int age;
+};
+
+// Function to find a student by ID and return it using std::optional
+std::optional<Student> find_student(int studentId, const std::vector<Student>& students) {
+    for (const auto& student : students) {
+        if (student.id == studentId) {
+            return student; // Wrap the found student in an std::optional
+        }
+    }
+    return std::nullopt; // Return an empty std::optional to indicate the student was not found
+}
+
+void func_find_student() {
+    // Sample vector of students
+    std::vector<Student> students = {
+        {101, "Alice", 21},
+        {102, "Bob", 20},
+        {103, "Charlie", 22}
+    };
+
+    int targetId = 102;
+
+    // Search for the student with the target ID
+    std::optional<Student> result = find_student(targetId, students);
+
+    if (result) {
+        // Check if the optional contains a value
+        std::cout << "Student found: " << result->name << ", Age: " << result->age << std::endl;
+    } else {
+        std::cout << "Student with ID " << targetId << " not found." << std::endl;
+    }
+}
 
 
 
