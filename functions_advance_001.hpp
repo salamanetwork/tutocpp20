@@ -513,6 +513,53 @@ void func_get_larger()
     std::cout << "a: " << a << ", b: " << b << std::endl;
 }
 
+/*
+    - Optional output from functions:
+        - Returning optional values from functions is a useful technique in C++ to indicate that a function may not always produce a valid result. 
+        - provides a way to represent an optional value that may or may not have a value.
+        - Using optional output from functions allows you to handle cases where the function may fail to produce a valid result gracefully. 
+        - It provides a cleaner alternative to using error codes or null pointers for handling exceptional cases. 
+*/
+
+// Function that calculates the square root of a number and returns it using a pointer
+bool calculate_square_root(double number, double* result)
+{
+    if (number >= 0)
+    {
+        *result = std::sqrt(number);
+        return true;
+    }
+    else
+    {
+        return false; // Return false to indicate an error or absence of value
+    }
+}
+
+void func_calculate_square_root()
+{
+    double x = 25.0;
+    double y = -4.0;
+
+    double result_x;
+    if (calculate_square_root(x, &result_x))
+    {
+        std::cout << "Square root of " << x << " is " << result_x << std::endl;
+    }
+    else
+    {
+        std::cout << "Cannot calculate square root of " << x << ", the number is negative." << std::endl;
+    }
+
+    double result_y;
+    if (calculate_square_root(y, &result_y))
+    {
+        std::cout << "Square root of " << y << " is " << result_y << std::endl;
+    }
+    else
+    {
+        std::cout << "Cannot calculate square root of " << y << ", the number is negative." << std::endl;
+    }
+}
 
 
 
