@@ -35,6 +35,7 @@
 #include <chrono>
 #include <filesystem>
 #include <chrono>
+#include <optional>
 
 #include <cassert>
 #include <cstddef>
