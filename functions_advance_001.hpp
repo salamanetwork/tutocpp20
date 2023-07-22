@@ -659,6 +659,14 @@ void func_get_even_number()
     int value1 = 10;
     int value2 = 15;
 
+    // Decalre & Intialize withe empty values 
+    // (By Default it will be: std::nullopt)
+    std::optional<std::string> NoString {};      // Implicit: std::nullopt
+    std::optional<int> NoInt { std::nullopt };   // Explicit: std::nullopt
+
+    std::optional<char> NoChar = std::nullopt;   // Explicit: std::nullopt
+    std::optional<double> NoDouble = {};         // Implicit: std::nullopt
+
     std::optional<int> result1 = get_even_number(value1);
     if (result1) {
         std::cout << "Even number found: " << *result1 << std::endl;
