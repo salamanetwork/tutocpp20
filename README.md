@@ -53,7 +53,8 @@
     00017)    compilation.hpp
     00018)    enums.hpp
     00019)    aliases.hpp
-    00020)    functions_advanced_001.hpp
+    00020)    functions_advance_001.hpp
+    00021)    functions_advance_002.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
