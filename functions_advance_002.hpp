@@ -369,6 +369,48 @@ void func_swap_values_with_overloaded_ptr_to_const_const_ptr()
 
 }
 
+/*
+    - Overloading with default parameters:
+*/
+
+const double PI = 3.14159265359;
+
+// Function to calculate the volume of a sphere
+double fn_calculate_volume(const long double& radius, const double& pi = PI)
+{
+    return 4.0 / 3.0 * pi * pow(radius, 3);
+}
+
+// Function to calculate the volume of a cube
+double fn_calculate_volume(const double& side)
+{
+    return pow(side, 3);
+}
+
+// Function to calculate the volume of a rectangular prism
+double fn_calculate_volume(const double& length, const double& width, const double& height)
+{
+    return length * width * height;
+}
+
+void func_calculate_volume_with_default_parameter_overloaded()
+{
+    double sphere_radius = 2.5;
+    double cube_side = 3.0;
+    double prism_length = 4.0;
+    double prism_width = 5.0;
+    double prism_height = 2.0;
+
+    double sphere_volume = fn_calculate_volume(sphere_radius);                   // Calls fn_calculate_volume(const double& radius, const double& pi = PI)
+    double cube_volume = fn_calculate_volume(cube_side);                         // Calls fn_calculate_volume(const double& side)
+    double prism_volume = fn_calculate_volume(prism_length, prism_width, prism_height);  // Calls fn_calculate_volume(const double& length, const double& width, const double& height)
+
+    std::cout << "Volume of the sphere: " << sphere_volume << std::endl;
+    std::cout << "Volume of the cube: " << cube_volume << std::endl;
+    std::cout << "Volume of the rectangular prism: " << prism_volume << std::endl;
+
+}
+
 
 
 
