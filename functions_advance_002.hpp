@@ -156,6 +156,65 @@ void func_calculate_overloaded()
 
 }
 
+/*
+    - Overloading with pointer parameters:
+*/
+
+// Function to print an integer value
+void fn_print_int_value(int* ptr)
+{
+    if (ptr)
+    {
+        std::cout << "Integer value: " << *ptr << std::endl;
+    }
+    else
+    {
+        std::cout << "Invalid pointer!" << std::endl;
+    }
+}
+
+// Function to print a double value
+void fn_print_double_value(double* ptr)
+{
+    if (ptr)
+    {
+        std::cout << "Double value: " << *ptr << std::endl;
+    }
+    else
+    {
+        std::cout << "Invalid pointer!" << std::endl;
+    }
+}
+
+// Function to swap two integer values
+void fn_swap_int_values(int* ptr1, int* ptr2)
+{
+    if (ptr1 && ptr2)
+    {
+        int temp = *ptr1;
+        *ptr1 = *ptr2;
+        *ptr2 = temp;
+    }
+    else
+    {
+        std::cout << "Invalid pointers for swapping!" << std::endl;
+    }
+}
+
+void func_print_overloaded_values()
+{
+    int num1 = 5;
+    int num2 = 10;
+    double dbl1 = 3.14;
+
+    fn_print_int_value(&num1);       // Calls fn_print_int_value(int*)
+    fn_print_double_value(&dbl1);    // Calls fn_print_double_value(double*)
+
+    std::cout << "Before swapping: num1 = " << num1 << ", num2 = " << num2 << std::endl;
+    fn_swap_int_values(&num1, &num2);   // Calls fn_swap_int_values(int*, int*)
+    std::cout << "After swapping: num1 = " << num1 << ", num2 = " << num2 << std::endl;
+}
+
 
 
 
