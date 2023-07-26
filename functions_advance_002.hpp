@@ -314,6 +314,60 @@ void func_find_min_overloaded()
     std::cout << "Minimum of doubles: " << double_min << std::endl;
 }
 
+/*
+    - Overloading with const pointer and pointer to const parameters:
+*/
+
+// Function to swap two integer values using const pointer parameters
+void fn_swap_values(int* const ptr1, int* const ptr2)
+{
+    if (ptr1 && ptr2)
+    {
+        int temp = *ptr1;
+        *ptr1 = *ptr2;
+        *ptr2 = temp;
+    }
+    else
+    {
+        std::cout << "Invalid pointers for swapping!" << std::endl;
+    }
+}
+
+// Function to swap two double values using pointer to const parameters
+void fn_swap_values(const double* ptr1, const double* ptr2)
+{
+    if (ptr1 && ptr2)
+    {
+        double temp = *ptr1;
+        // Note: We can't modify the values since pointers are const.
+        // *ptr1 = *ptr2; // This would cause a compilation error.
+        // *ptr2 = temp;
+    }
+    else
+    {
+        std::cout << "Invalid pointers for swapping!" << std::endl;
+    }
+}
+
+void func_swap_values_with_overloaded_ptr_to_const_const_ptr()
+{
+    int num1 = 5;
+    int num2 = 10;
+    double dbl1 = 3.14;
+    double dbl2 = 2.71;
+
+    int* ptr1 = &num1;
+    int* ptr2 = &num2;
+    const double* dbl_ptr1 = &dbl1;
+    const double* dbl_ptr2 = &dbl2;
+
+    fn_swap_values(ptr1, ptr2);          // Calls fn_swap_values(int* const ptr1, int* const ptr2)
+    fn_swap_values(dbl_ptr1, dbl_ptr2);  // Calls fn_swap_values(const double* ptr1, const double* ptr2)
+
+    std::cout << "After swapping integers: num1 = " << num1 << ", num2 = " << num2 << std::endl;
+    std::cout << "After swapping doubles: dbl1 = " << dbl1 << ", dbl2 = " << dbl2 << std::endl;
+
+}
 
 
 
