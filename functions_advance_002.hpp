@@ -215,6 +215,83 @@ void func_print_overloaded_values()
     std::cout << "After swapping: num1 = " << num1 << ", num2 = " << num2 << std::endl;
 }
 
+/*
+    - Overloading with reference parameters:
+*/
+
+// Function to calculate the area of a circle
+double fn_calculate_area_with_ref(const double& radius)
+{
+    return M_PI * radius * radius;
+}
+
+// Function to calculate the area of a rectangle
+double fn_calculate_area_with_ref(const double& length, const double& width)
+{
+    return length * width;
+}
+
+// Function to calculate the area of a triangle
+double fn_calculate_area_with_ref(const long double& base, const double& height)
+{
+    return 0.5 * base * height;
+}
+
+void func_calculate_overloaded_area()
+{
+    double circle_radius = 2.5;
+    double rectangle_length = 3.0;
+    double rectangle_width = 4.0;
+    double triangle_base = 5.0;
+    double triangle_height = 2.0;
+
+    double circle_area = fn_calculate_area_with_ref(circle_radius);                              // Calls fn_calculate_area(const double& radius)
+    double rectangle_area = fn_calculate_area_with_ref(rectangle_length, rectangle_width);      // Calls fn_calculate_area(const double& length, const double& width)
+    double triangle_area = fn_calculate_area_with_ref(triangle_base, triangle_height);          // Calls fn_calculate_area(const double& base, const double& height)
+
+    std::cout << "Area of the circle: " << circle_area << std::endl;
+    std::cout << "Area of the rectangle: " << rectangle_area << std::endl;
+    std::cout << "Area of the triangle: " << triangle_area << std::endl;
+}
+
+// Function to calculate the sum of integers in an array
+int fn_calculate_sum(const int arr[], const int& size)
+{
+    int sum = 0;
+    for (int i = 0; i < size; ++i)
+    {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+// Function to calculate the sum of doubles in an array
+double fn_calculate_sum(const double arr[], const int& size)
+{
+    double sum = 0;
+    for (int i = 0; i < size; ++i)
+    {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+void func_calc_overloaded_sum()
+{
+    int int_array[] = {1, 2, 3, 4, 5};
+    double double_array[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+
+    int int_sum = fn_calculate_sum(int_array, 5);            // Calls fn_calculate_sum(const int arr[], const int& size)
+    double double_sum = fn_calculate_sum(double_array, 5);   // Calls fn_calculate_sum(const double arr[], const int& size)
+
+    std::cout << "Sum of integers: " << int_sum << std::endl;
+    std::cout << "Sum of doubles: " << double_sum << std::endl;
+
+}
+
+
+
+
 
 
 
