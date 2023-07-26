@@ -289,7 +289,30 @@ void func_calc_overloaded_sum()
 
 }
 
+/*
+    - Overloading with const parameters by value:
+*/
 
+// Function to find the minimum value among integers
+int fn_find_min(const int a, const int b)
+{
+    return (a < b) ? a : b;
+}
+
+// Function to find the minimum value among doubles
+double fn_find_min(const double a, const double b)
+{
+    return (a < b) ? a : b;
+}
+
+void func_find_min_overloaded()
+{
+    int int_min = fn_find_min(5, 10);             // Calls fn_find_min(const int a, const int b)
+    double double_min = fn_find_min(3.14, 2.71);  // Calls fn_find_min(const double a, const double b)
+
+    std::cout << "Minimum of integers: " << int_min << std::endl;
+    std::cout << "Minimum of doubles: " << double_min << std::endl;
+}
 
 
 
