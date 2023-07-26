@@ -108,7 +108,53 @@ void func_add_overloaded()
     std::cout << "Result 2: " << result_2 << std::endl;
 }
 
+/*
+    - Overloading with different parameters:
+*/
 
+// Function to perform addition
+int fn_calculate(int a, int b)
+{
+    return a + b;
+}
+
+// Function to perform subtraction
+int fn_calculate(int a, int b, int c)
+{
+    return a - b - c;
+}
+
+// Function to perform multiplication
+int fn_calculate(int a, int b, int c, int d)
+{
+    return a * b * c * d;
+}
+
+// Function to perform division
+double fn_calculate(double a, double b)
+{
+    if (b != 0)
+        return a / b;
+    else
+    {
+        std::cout << "Error: Division by zero!" << std::endl;
+        return 0;
+    }
+}
+
+void func_calculate_overloaded()
+{
+    int sum = fn_calculate(1, 2);                 // Calls calculate(int a, int b)
+    int difference = fn_calculate(10, 2, 3);      // Calls calculate(int a, int b, int c)
+    int product = fn_calculate(2, 3, 4, 5);       // Calls calculate(int a, int b, int c, int d)
+    double division = fn_calculate(10.0, 2.0);    // Calls calculate(double a, double b)
+
+    std::cout << "Sum: " << sum << std::endl;
+    std::cout << "Difference: " << difference << std::endl;
+    std::cout << "Product: " << product << std::endl;
+    std::cout << "Division: " << division << std::endl;
+
+}
 
 
 
