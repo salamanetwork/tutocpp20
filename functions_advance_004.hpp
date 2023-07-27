@@ -236,6 +236,67 @@ void func_rec_fact()
     std::cout << "Factorial of " << num << " is: " << result << std::endl;
 }
 
+/*
+    
+    Let's analyze the output of the Fibonacci number calculation for `n = 10` from the previous recursive function example.
+    
+    - Explanation:
+        - The output `Fibonacci(10) = 55` indicates that the 10th Fibonacci number is 55.
+    
+    - Working of the Recursive Function:
+        - The `fibonacci()` function is defined to compute the nth Fibonacci number using recursion. 
+    
+    - Let's walk through how the function evaluates `Fibonacci(10)`:
+        - 1. `fibonacci(10)` is called in the `main()` function.
+        - 2. In the `fibonacci()` function:
+           - The base cases are checked. Since `n` is not 0 or 1, the recursive case is executed.
+           - The function returns `fibonacci(n - 1) + fibonacci(n - 2)`.
+        
+        - 3. The function now calls `fibonacci(9)` and `fibonacci(8)` to calculate the 9th and 8th Fibonacci numbers, respectively.
+        
+        - 4. The recursive calls continue until reaching the base cases:
+           - `fibonacci(2)` calls `fibonacci(1)` and `fibonacci(0)`.
+           - `fibonacci(1)` returns 1, and `fibonacci(0)` returns 0.
+        
+        - 5. Now, the recursion starts to unwind, and the Fibonacci numbers are computed in reverse:
+           - `fibonacci(2)` returns `fibonacci(1) + fibonacci(0)` = 1 + 0 = 1.
+           - `fibonacci(3)` returns `fibonacci(2) + fibonacci(1)` = 1 + 1 = 2.
+           - `fibonacci(4)` returns `fibonacci(3) + fibonacci(2)` = 2 + 1 = 3.
+           - `fibonacci(5)` returns `fibonacci(4) + fibonacci(3)` = 3 + 2 = 5.
+           - `fibonacci(6)` returns `fibonacci(5) + fibonacci(4)` = 5 + 3 = 8.
+           - `fibonacci(7)` returns `fibonacci(6) + fibonacci(5)` = 8 + 5 = 13.
+           - `fibonacci(8)` returns `fibonacci(7) + fibonacci(6)` = 13 + 8 = 21.
+           - `fibonacci(9)` returns `fibonacci(8) + fibonacci(7)` = 21 + 13 = 34.
+        
+        - 6. Finally, the original call `fibonacci(10)` returns `fibonacci(9) + fibonacci(8)` = 34 + 21 = 55.
+            - Thus, the function call stack unwinds, and the Fibonacci number for `n = 10` is computed as 55.
+    
+    Performance Considerations:
+        - The recursive implementation of Fibonacci numbers has an exponential time complexity of O(2^n) due to redundant calculations. 
+        - This makes it inefficient for large values of `n`. For more efficient solutions, iterative methods or memoization techniques can be used to avoid redundant calculations and achieve linear time complexity. 
+        - Nevertheless, the recursive implementation helps illustrate the concept of recursion and how it can be used to solve problems that have recursive structures.
+*/
+
+// Recursive function to compute the nth Fibonacci number
+int fn_rec_fibonacci(int n)
+{
+    // Base cases
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+
+    // Recursive case
+    return fn_rec_fibonacci(n - 1) + fn_rec_fibonacci(n - 2);
+}
+
+void func_rec_fibonacci()
+{
+    int n = 10;
+    int result = fn_rec_fibonacci(n);
+    std::cout << "Fibonacci(" << n << ") = " << result << std::endl;
+}
+
 
 
 
