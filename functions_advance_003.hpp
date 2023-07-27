@@ -223,6 +223,70 @@ void func_lambdas_captures_types()
     lambdaByValueReadOnly();
 }
 
+/*
+    - Capture all in context:
+*/
+
+
+void func_capture_all_in_context_01()
+{
+    int x = 10;
+    int y = 20;
+    int z = 30;
+
+    // Capture all variables by reference and capture x by value
+    std::vector<int> numbers = {3, 7, 2, 9, 5, 1, 8, 4, 6};
+    std::for_each(numbers.begin(), numbers.end(), [&, x](int num)
+    {
+        std::cout << "x = " << x << ", y = " << y << ", z = " << z << ", num = " << num << std::endl;
+    });
+
+    // Capture all variables by value and capture z by reference
+    std::sort(numbers.begin(), numbers.end(), [=, &z](int a, int b)
+    {
+        return a < b + z;
+    });
+
+    // Print the sorted numbers
+    std::cout << "Sorted Numbers: ";
+    for (int num : numbers)
+    {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+}
+
+
+void func_capture_all_in_context_02()
+{
+    // Sample list of integers
+    std::vector<int> numbers = {3, 7, 2, 9, 5, 1, 8, 4, 6};
+
+    // Example 1: Find the sum of all numbers using a lambda function
+    int sum = 0;
+    std::for_each(numbers.begin(), numbers.end(), [&](int num)
+    {
+        sum += num;
+    });
+    std::cout << "Sum: " << sum << std::endl;
+
+    // Example 2: Find the maximum element using a lambda function
+    int maxElement = *std::max_element(numbers.begin(), numbers.end(), [](int a, int b)
+    {
+        return a < b;
+    });
+    std::cout << "Max Element: " << maxElement << std::endl;
+
+    // Example 3: Count even numbers using a lambda function
+    int evenCount = std::count_if(numbers.begin(), numbers.end(), [](int num)
+    {
+        return num % 2 == 0;
+    });
+    std::cout << "Even Count: " << evenCount << std::endl;
+
+}
+
 
 
 
