@@ -163,7 +163,78 @@ void func_inline_add_call()
 }
 
 
+/*
+    - Recursive Function:
+        - Introduction to Recursive Functions:
+            - In computer programming, a recursive function is a function that calls itself to solve a problem. 
+            - The process of solving a problem by breaking it down into smaller subproblems and solving each subproblem in a similar way is called recursion. 
+            - Recursive functions are a fundamental concept in programming and are widely used in various algorithms and data structures.
+        - How Recursive Functions Work:
+            - A recursive function consists of two main components:
+                - Base case: 
+                    - This is the termination condition that defines when the recursion should stop. 
+                    - It represents the simplest instance of the problem that can be solved directly without further recursion. 
+                    - The base case is crucial to prevent infinite recursion and stack overflow errors.
+                - Recursive case: 
+                    - This is the part of the function where it calls itself with modified parameters to solve a smaller subproblem. 
+                    - The function makes progress towards the base case with each recursive call.
+                - The general structure of a recursive function is as follows:
+                    return_type recursive_function(parameters)
+                    {
+                        // Base case(s) - Termination condition(s)
+                        if (base_case_condition)
+                        {
+                            // Return the base case result
+                            return base_case_result;
+                        }
+                        else
+                        {
+                            // Recursive case - Call the function with modified parameters
+                            return recursive_function(modified_parameters);
+                        }
+                    }
 
+                    - The function keeps calling itself with modified parameters until the base case is reached, at which point the recursion stops, and the function returns a result back through the chain of recursive calls.
+        - Example of Recursive Function: Factorial
+            - A recursive function that calculates the factorial of a non-negative integer. 
+            - The factorial of a number n (denoted as n!) is the product of all positive integers less than or equal to n.
+        - Tail Recursion:
+            - In some programming languages, tail recursion is a special case of recursion where the recursive call is the last operation performed in a function. 
+            - In such cases, the compiler may optimize the recursion by reusing the current function's stack frame for the next recursive call, effectively reducing the risk of stack overflow.
+            - However, C++ does not guarantee tail call optimization (TCO), so tail recursion should be used with caution in C++. 
+            - Tail recursion is still useful for its simplicity and conceptual clarity.
+        - When to Use Recursive Functions:
+            - Recursive functions are useful when solving problems that exhibit recursive structures, such as tree traversal, searching, backtracking, and divide-and-conquer algorithms. 
+            - However, not all problems are suitable for recursive solutions. 
+                - For instance, problems with exponential growth in recursion depth may not be efficiently solved using recursion.
+        - Performance Considerations:
+            - Recursion involves function calls and maintaining a stack of recursive calls, which can lead to increased memory consumption and slower execution for deeply nested recursions. 
+                - In such cases, iterative solutions or memoization techniques may be more efficient.
+        - Summary:
+            - Recursive functions in C++ are functions that call themselves to solve problems by dividing them into smaller subproblems. 
+            - They involve a base case that terminates the recursion and a recursive case where the function calls itself with modified parameters. 
+            - Recursive functions are widely used to solve problems with recursive structures, but they should be designed carefully with proper base cases to prevent infinite recursion. 
+            - While recursion can lead to concise and elegant solutions, it's essential to consider performance implications for deeply nested recursions.
+
+*/
+
+// Recursive function to calculate factorial
+int fn_rec_factorial(int n)
+{
+    // Base case: 0! and 1! are both 1
+    if (n == 0 || n == 1)
+        return 1;
+    
+    // Recursive case: n! = n * (n-1)!
+    return n * fn_rec_factorial(n - 1);
+}
+
+void func_rec_fact()
+{
+    int num = 5;
+    int result = fn_rec_factorial(num);
+    std::cout << "Factorial of " << num << " is: " << result << std::endl;
+}
 
 
 
