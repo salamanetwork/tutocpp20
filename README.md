@@ -55,6 +55,7 @@
     00019)    aliases.hpp
     00020)    functions_advance_001.hpp
     00021)    functions_advance_002.hpp
+    00023)    functions_advance_003.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
