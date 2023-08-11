@@ -57,6 +57,7 @@
     00021)    functions_advance_002.hpp
     00023)    functions_advance_003.hpp
     00024)    functions_advance_004.hpp
+    00025)    templates.hpp
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
