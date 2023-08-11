@@ -1,5 +1,5 @@
-#ifndef __FUNCTION_TEMPLATES_H
-#define __FUNCTION_TEMPLATES_H
+#ifndef __TEMPLATES_H
+#define __TEMPLATES_H
 
 #include <iostream>
 #include <iomanip>
