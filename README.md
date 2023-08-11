@@ -23,7 +23,14 @@
     - Python For Smart People. Let's Face The Truth "I Am Not!", But I Am Seeking Professionalism 😂.
     - Love Myself Before Seeking Someone Loves Me 🤪.
     - CTRL+S: Saves Lives After Every One Line Of The Code, But It Keeps Destroying The Keyboards 💸.
-    
+
+## Usage:
+    01)    Using Your Favorit Editor, or IDE.
+    02)    Open file "main.cpp".
+    03)    Include any file has extension ".hpp" -> (e.g: #include "functions.hpp").
+    04)    Call any function inside the file you included in step 2.
+    05)    Use any Command from utilities section below depends on your OS (Windows, Linux, macOS, ...).
+
 ## Utilities:
     
   ##### bash 'UNIX-Like':
