@@ -28,7 +28,7 @@
     01)    Using Your Favorit Editor, or IDE.
     02)    Open file "main.cpp".
     03)    Include any file has extension ".hpp" -> (e.g: #include "functions.hpp").
-    04)    Call any function inside the file you included in step 2.
+    04)    Call any function inside the file you included in step 3.
     05)    Use any Command from utilities section below depends on your OS (Windows, Linux, macOS, ...).
 
 ## Utilities:
