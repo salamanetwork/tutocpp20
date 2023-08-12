@@ -417,6 +417,14 @@
         void PrintPermissions(Permissions permissions)
         void enum_cpp20()
         void enum_cpp20_using_no_repeat()
+
+    ---------------------------------------------------------------------
+    00019)    aliases.hpp
+    ---------------------------------------------------------------------
+        // Aliases in C++:
+        void aliases_c_cpp()
+
+
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
