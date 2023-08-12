@@ -403,6 +403,20 @@
         // ODR stands for "One Definition Rule:
         // Detailed diagram illustrating the compilation process in C++:
 
+    ---------------------------------------------------------------------    
+    00018)    enums.hpp
+    ---------------------------------------------------------------------    
+        // Enumeration in C++:
+        void enum_c_style()
+        // Enumeration Class In C++:
+        void enum_class_cpp_style()
+        // Enumeration Features in C++20:
+        enum class Permissions : unsigned int
+        Permissions operator|(Permissions lhs, Permissions rhs)
+        Permissions operator&(Permissions lhs, Permissions rhs)
+        void PrintPermissions(Permissions permissions)
+        void enum_cpp20()
+        void enum_cpp20_using_no_repeat()
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
