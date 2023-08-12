@@ -424,7 +424,57 @@
         // Aliases in C++:
         void aliases_c_cpp()
 
+    ---------------------------------------------------------------------    
+    00020)    functions_advance_001.hpp
+    ---------------------------------------------------------------------    
+        // Inputs & Outputs Parameters In C++:
+        void compute_sum_and_product(int a, int b, int& sum, int& product)
+        void func_compute_sum_and_product()
+        // Returning from functions (by value):
+        int calculate_sum(int a, int b)
+        void func_calculate_sum()
+        // Returning by reference:
+        int& increment_by_reference(int& num)
+        void func_increment_by_reference()
+        // Returning by pointer:
+        int* create_dynamic_integer()
+        void func_create_dynamic_integer()
+        //Returning array element pointer:
+        const int* get_array_element(const int arr[], size_t size, size_t index)
+        void func_get_array_element()
+        // Bare auto type deduction:
+        void func_bare_auto_type_deduction()
+        // typeid Operator:
+        void func_typeid_typeinfo()
+        // Bare auto reference deduction:
+        void func_bare_auto_ref_deduct()
+        // Proper Reference Deduction:
+        void func_proper_reference_deduct()
+        // Const Qualifiers:
+        void func_const_qualifiers()
+        // Function return type deduction:
+        auto calculate_average(const std::vector<int>& numbers)
+        void func_calculate_average()
+        // Return type deduction with references:
+        auto& get_larger(int& value1, int& value2)
+        void func_get_larger()
+        //  Optional output from functions:
+        bool calculate_square_root(double number, double* result)
+        void func_calculate_square_root()
+        // std::optional
+        std::optional<Student> find_student(int studentId, const std::vector<Student>& students) 
+        void func_find_student() 
+        // std::nulopt
+        std::optional<int> get_even_number(int number) 
+        void func_get_even_number() 
+        // Reading method of  a value from std::optional
+        std::optional<int> get_value(bool hasValue) 
+        void func_get_value() 
+        // Optional output with stdoptional from function
+        std::optional<double> calculate_square_root_02(double number)
+        void func_calculate_square_root_02()
 
+        
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
