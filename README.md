@@ -395,6 +395,13 @@
         // consteval function:
         consteval int fibonacci_by_consteval_function(int n)
         void func_fibonacci_by_consteval_function()
+    
+    ---------------------------------------------------------------------
+    00017)    compilation.hpp
+    ---------------------------------------------------------------------    
+        // Compilation In C/C++:
+        // ODR stands for "One Definition Rule:
+        // Detailed diagram illustrating the compilation process in C++:
 
         
 # Tools:
