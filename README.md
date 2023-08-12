@@ -312,11 +312,91 @@
         // C++ String View:
         void processStringView(std::string_view strView)
         void cpp_string_view()
-    
-    
-    
-        
+    ---------------------------------------------------------------------
+    00016)    functions.hpp
+    ---------------------------------------------------------------------
+        // Functions In C/C++:
+            // Function Declaration/Prototype:
+            // Function Definition:
+            // Function Call:
+            // Function Parameters:
+            // Return Type:
+            // Void Functions:
+            // Function arguments:
+            // Differences between parameters and arguments:
+            // The scope of an argument :
+            // A simple diagram illustrating the input, processing, and output of a function:
+            // Passing Methods:
+        // The different parameter passing methods in C++:
+            // Pass by Value: 
+            // Pass by Const Value: 
+            // Pass by Pointer: 
+            // Pass by Pointer to Const: 
+            // Pass by Reference: 
+            // Pass by Const Reference: 
+        // The Call Stack:
+            // Stack Frames (Activation Record): 
+            // Stack Operations: 
+            // Call Stack Management:
+            // Recursion: 
+            // Recursion and the Call Stack:
+            // Stack Overflow:
+            // Exception Handling: 
+            // Diagram:
+        // Passed By Value:
+        void func_passed_by_value(int num) 
+        void cpp_func_params_passed_by()
+        // Pass by const value:
+        void func_passed_by_const_value(const std::string message) 
+        void cpp_func_params_passed_by_const_value()
+        // Pass by pointer:
+        void func_passed_by_pointer(int* numPtr) 
+        void cpp_func_params_passed_by_pointer()
+        // Passing by pointer to const:
+        void func_passed_by_pointer_to_const(const char* message) 
+        void cpp_func_params_passed_by_pointer_to_const()
+        // Passing by reference:
+        void func_passed_by_reference(int& numRef)
+        void cpp_func_params_passed_by_reference()
+        // Array function parameters:
+            // Pass by Pointer:
+            // Pass by Reference:
+            // Pass by Pointer to const:
+            // Pass by Array:
+        // Use the ARRAY_SIZE macro to get the size of the array
+        #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
+        void array_parameters_pass_by_pointer(int* arr, int size) 
+        void array_function_parameters_pass_by_pointer() 
+        void array_function_parameters_pass_by_reference(int (&arr)[], int size)
+        void array_parameters_pass_by_reference()
+        void array_function_parameters_pass_by_pointer_to_const(const int* arr, int size)
+        void array_parameters_pass_by_pointer_to_const()
+        void array_function_parameters_pass_by_array(int arr[], int size)
+        void array_parameters_pass_by_array()
+        // Sized array function parameters:
+        void print_with_sized_array(int arr[5])
+        void func_with_sized_array()
+        // Passing sized arrays by reference
+        void print_with_sized_array_passed_by_ref(int (&arr)[5])
+        void func_with_sized_array_passed_by_ref()
+        // Multi dimensional array function parameter:
+        void print_with_multi_dim_passed_as_params(int matrix[][3], int rows)
+        void func_with_multi_dim_passed_as_params()
+        // Default function arguments:
+        void print_message_with_default_argument(const std::string& message = "Hello, World!")
+        void print_numbers_with_default_argument(int start, int end = 10, int step = 1)
+        void func_print_message_and_numbers_with_default_argument()
+        // String View as a Parameter:
+        void process_substring_string_view_passed_as_a_param(std::string_view str)
+        void func_string_view_passed_as_a_param() 
+        // constexpr function:
+        constexpr int fibonacci_by_constexpr_function(int n)
+        void func_fibonacci_by_constexpr_function()
+        // consteval function:
+        consteval int fibonacci_by_consteval_function(int n)
+        void func_fibonacci_by_consteval_function()
 
+        
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
 2) Mozilla FireFox 114
