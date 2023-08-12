@@ -39,7 +39,7 @@
   ##### pwsh 'Windows':
     cls && g++.exe -std=c++2a *.cpp -o main.exe && main.exe
 
-## Log:
+## Files Index:
   ### These are the files I coded ordered by LIFO (The recent one is the last one on the below list):
     00001)    main.cpp
     00002)    std_ios.hpp
@@ -67,6 +67,255 @@
     00025)    templates.hpp
     00026)    templates_by_value.hpp
     00027)    templates_by_reference.hpp
+
+## The Contents & The Logs:
+    
+    ---------------------------------------------------------------------
+    00001)    main.cpp
+    ---------------------------------------------------------------------
+        // Include Any File Here
+        // Call Any Function Here
+            
+    ---------------------------------------------------------------------
+    00002)    std_ios.hpp
+    ---------------------------------------------------------------------
+        #define STR_HELPER(x) #x
+        #define STR(x) STR_HELPER(x)
+        auto sum(auto x = 0.0, auto y = 0.0)
+        void std_ios()
+        void std_ioformat()
+        void std_numeric_limits()
+     
+    ---------------------------------------------------------------------
+    00003)    data_types.hpp
+    ---------------------------------------------------------------------
+         // Literals and Constants:
+             // const
+             // Constant Expressions
+                 // constexpr
+                 // constinit
+        void literals_and_constants()
+        Weired Integral Types:
+        void weried_integral_types()
+        void integers_types()
+        void floats_types()
+        void booleans_types()
+        void chars_types()
+        void auto_types()
+    
+    ---------------------------------------------------------------------
+    00004)    std_math.hpp
+    ---------------------------------------------------------------------
+            void std_math()
+        
+    ---------------------------------------------------------------------
+    00005)    rock_paper_scissor_game.hpp
+    ---------------------------------------------------------------------
+            // Rock-Paper-Scissor Game
+            std::string rps_game_get_input()
+            Chois rps_game_check(int uc)
+            void rps_game_check_message(Chois ch)
+            void rps_game_apply_the_rules_and_get_the_winner
+            void rps_game_play()
+        
+    ---------------------------------------------------------------------
+    00006)    data_conversion.hpp
+    ---------------------------------------------------------------------
+        // Data Conversion:
+        // Real World:
+        // Conversion Guidline:
+        // Narrwing Conversion
+        // Explicit Conversion
+        // Overflow && Underflow
+        void data_conversion()
+        
+    
+    ---------------------------------------------------------------------
+    00007)    bitwise_ops.hpp
+    ---------------------------------------------------------------------
+        // Bitwise operators:
+        void bitwise_ops()
+        // Bitwise shift operators:
+        void shift_ops()
+        // Logical Bitwise operators:
+        void logical_bitwise_ops()
+        // Compound Bitwith operators:
+        void compound_bitwise_ops()
+        // Bit Masks (Shadow):
+        void bitwise_mask()
+        // Masks Demo 01
+        void fun_opts_v0    // Uses many parameters & waste of memory
+        // Masks 8-bit = 1-byte 
+        void fun_opts_v1    // Uses 1 parameter & no waste of memory
+        void bitwise_mask_demo_1()
+        // Masks Demo 02
+        void bitwise_mask_demo_02()
+        
+    ---------------------------------------------------------------------    
+    00008)    variables_lifetime_scopes.hpp
+    ---------------------------------------------------------------------
+        // Storage Duration: 
+        
+    ---------------------------------------------------------------------
+    00009)    control_flow.hpp
+    ---------------------------------------------------------------------
+        // Short Circuit Evaluation:
+        void short_circuit_evaluation()
+        // Itegral Logic Conditions
+        void itegral_logic_conditions()
+        // Ternary Operators:
+        void ternary_ops()
+        void ternary_init()
+        // if constexpr
+        void if_constexpr()
+        // if with initializer:
+        void if_with_initializer()
+        // switch with initializer:
+        void switch_with_initializer()
+                
+    ---------------------------------------------------------------------
+    00010)    loops.hpp 
+    ---------------------------------------------------------------------
+        // Traditional For Loop Statement:
+        void for_trad_loop()
+        // Range Based For Loop Statement:
+        void for_range_loop()
+        // Traditional While Loop Statement:
+        void while_trad_loop()
+        // Traditional Do While Loop Statement:
+        void do_while_trad_loop()
+        // Infinite Loops:
+        void infinite_loops()
+        // Nesting Loops
+        void nesting_loops()
+        // Range based for loop with Initializer
+        void range_based_for_loop_with_initializer()
+        
+    ---------------------------------------------------------------------
+    00011)    arrays.hpp
+    ---------------------------------------------------------------------    
+        void arrays()
+        // Arrays of Chars
+        void arrays_of_chars()
+        // Random Numbers:
+        void arrays_rands()
+        void arrays_rands_ranges_range_0_to_10_starts_from_0_without_seeding()
+        void arrays_rands_ranges_range_1_to_10_starts_from_1_without_seeding()
+        void arrays_rands_ranges_range_1_to_10_starts_from_1_with_seeding()
+        // Multi-Dimessional Array
+        void multi_dim_2d_array()
+        void multi_dim_3d_array()
+        
+        
+    ---------------------------------------------------------------------
+    00012)    pointers.hpp
+    ---------------------------------------------------------------------    
+        void pointers()
+        // Pointer to char
+        void pointer_to_array_of_chars()
+        // Arrays of pointer to chars (Array of Pointers to Strings):
+        void arrays_of_pointer_to_chars()
+        // Const Pointer and Pointer to Const:
+            // 01) Non 'const' pointer:
+            // 02) Pointer to 'const'
+            // 03) Const Pointer (Opposite to case (02)):
+            // 04) Const Pointer to Pointer to Const (Opposite to Case (01)):
+        void const_pointer_and_pointer_to_const()
+        // Array of const pointer to const char:
+        void array_of_const_pointer_to_const_char()
+        // Pointer and Array
+        void arrays_and_pointers()
+        // Demo [Swapping Arrays' Data]:
+        void demo_swapping_arrays_data()
+        // Pointer Arithmetic:
+        void pointer_arithm()
+        // Distance between elements (Subtarcting Pointers):
+        void dist_pointers()
+        // Comparing Pointers
+        void compr_ptrs()
+                
+    ---------------------------------------------------------------------
+    00013)    dyn_mem_alloc.hpp
+    ---------------------------------------------------------------------    
+        // Difference Between Stack and Heap:
+        // Difference Between Static and Dynamic Memory Allocation in C:
+        // Allocating the dynamic memory by using 'new' keyword:
+        // Releasing And Resetting the dynamic memory by using 'delete' && 'nullptr' keyword:
+        // Intializing at the same time declaring the pointer:
+        // IMPORTANT Guidelines:
+        void dyn_mem()
+        // Dangling Pointers (Wild pointers ):
+        void dangling_ptrs()
+        // Handling a memory allocation failure:
+        void dyn_mem_alloc_fails()
+        //  Null Pointer Safety:
+        void nullptr_safety()
+        // Memory Leaks
+        void mem_leaks()
+        // Dynamic Arrays:
+        void dyn_arr_alloc()
+        
+    ---------------------------------------------------------------------
+    00014)    references.hpp
+    ---------------------------------------------------------------------    
+        // References are Just Aliases:
+        // Comparison of references and pointers in C++:
+        void references()
+        
+    ---------------------------------------------------------------------    
+    00015)    strings.hpp
+    ---------------------------------------------------------------------    
+        // Using String & Chars manipulation with C/C++ Standard Library:
+        void chr_str_manip()
+        // Using 'cstring' standard library:
+        void std_cstring()
+        //  Using some useful functions of strings
+        void std_cstring_02()
+        // C++ String (<string>) (std::string):
+        // You can initialize an std::string object in C++ using various methods.
+        // Here is a list of functions provided by the <string> header in C++:
+        void cpp_string_01()
+        // Using some useful functions of strings
+            // 01) Accessing and Modifying:
+            // 02) String Manipulation:
+            // 03) String Information and Properties:
+            // 04) String Conversion and I/O:
+        bool startsWith(const std::string& str, const std::string& prefix)
+        bool endsWith(const std::string& str, const std::string& suffix)
+        void cpp_string_02()
+        // String Literals (#include <string_literals>):
+        void cpp_string_literals()
+        // std::to_string():
+        void cpp_string_to_sting()
+        // Accessing & Modification & Looping Through std::string:
+        void cpp_string_access_modif_loop()
+        // Size & The Capacity of std::string:
+        void cpp_string_size_n_capacity()
+        // Modifying std::strings:
+        void cpp_string_modif_funcs()
+        // C++ Compare Strings:
+        void cpp_string_comparison()
+        // C++ String Resizeing
+        void cpp_string_resizing()
+        // C++ String Copying
+        void cpp_string_copying()
+        // C++ String Searching & Finding
+        void cpp_string_searching()
+        // C++ String To Numbers
+        void cpp_string_to_num()
+        // C++ String Escape Sequence:
+        void cpp_string_esc_seq()
+        // C++ String / Raw String Literals:
+        void cpp_string_raw_str_literals()
+        // C++ String / Copied Strings:
+        void cpp_string_copied_strings()
+        // C++ String View:
+        void processStringView(std::string_view strView)
+        void cpp_string_view()
+    
+    
+    
+        
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
