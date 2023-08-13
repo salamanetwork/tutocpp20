@@ -514,6 +514,15 @@
         double fn_calculate_volume(const double& length, const double& width, const double& height)
         void func_calculate_volume_with_default_parameter_overloaded()
 
+    ---------------------------------------------------------------------    
+    00023)    functions_advance_003.hpp
+    ---------------------------------------------------------------------
+        // Declaring and using lambda functions:
+        void func_various_lambda_funs()
+        void func_lambdas_captures_types() 
+        // Capture all in context:
+        void func_capture_all_in_context_01()
+        void func_capture_all_in_context_02()
         
         
 # Tools:
