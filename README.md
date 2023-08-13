@@ -67,6 +67,7 @@
     00024)    templates.hpp
     00025)    templates_by_value.hpp
     00026)    templates_by_reference.hpp
+    00027)    templates_by_pointer.hpp
 
 ## The Contents & The Logs:
     
