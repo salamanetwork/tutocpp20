@@ -596,6 +596,25 @@
         T cpp_func_dotProduct(const T arr1[], const T arr2[], size_t size)
         T cpp_func_sumAbsoluteDifferences(const T arr1[], const T arr2[], size_t size) 
         void cpp_func_templates_call() 
+
+    ---------------------------------------------------------------------    
+    00026)    templates_by_reference.hpp
+    ---------------------------------------------------------------------
+        // Templates By Reference:
+        double cpp_func_modifyAndCalculateAverage(Container& container)
+        void cpp_func_elementWiseAdd(const Container& container1, const Container& container2, Container& result)
+        void cpp_func_findCommonElements(const Container& container1, const Container& container2, Container& result)
+        void processData(Container& data, Transformation transform)
+        void customSort(Container& container, Comparator comp)
+        void traverseLinkedList(Node* head)
+        void printContainer(const Container& container)
+        void matrixAddition(const std::vector<std::vector<T>>& matrix1, const std::vector<std::vector<T>>& matrix2, std::vector<std::vector<T>>& result)
+        void serializeData(const T& data, std::ofstream& outputFile)
+        void deserializeData(T& data, std::ifstream& inputFile)
+        struct ListNode
+        void cpp_func_templates_call()
+
+
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
