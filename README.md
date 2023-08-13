@@ -614,7 +614,22 @@
         struct ListNode
         void cpp_func_templates_call()
 
+    ---------------------------------------------------------------------    
+    00027)    templates_by_pointer.hpp
+    ---------------------------------------------------------------------
+        // Templates By Pointer:
+        struct CustomData
+        struct ListNode 
+        void processCustomDataByPointer(CustomData<T>* data)
+        void matrixMultiplication(const T* matrix1, size_t rows1, size_t cols1, const T* matrix2, size_t rows2, size_t cols2, T* result)
+        std::unique_ptr<T[]> readFileData(const std::string& filename, size_t& dataSize)
+        void appendToLinkedList(Node*& head, typename Node::ValueType value)
+        void processDataByPointer(T* data, size_t size, Transformation transform)
+        void sortContainer(Container* container)
+        T* allocateArray(size_t size)
+        void cpp_func_templates_call()
 
+    
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
