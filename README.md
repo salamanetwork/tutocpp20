@@ -62,11 +62,11 @@
     00019)    aliases.hpp
     00020)    functions_advance_001.hpp
     00021)    functions_advance_002.hpp
-    00023)    functions_advance_003.hpp
-    00024)    functions_advance_004.hpp
-    00025)    templates.hpp
-    00026)    templates_by_value.hpp
-    00027)    templates_by_reference.hpp
+    00022)    functions_advance_003.hpp
+    00023)    functions_advance_004.hpp
+    00024)    templates.hpp
+    00025)    templates_by_value.hpp
+    00026)    templates_by_reference.hpp
 
 ## The Contents & The Logs:
     
@@ -515,7 +515,7 @@
         void func_calculate_volume_with_default_parameter_overloaded()
 
     ---------------------------------------------------------------------    
-    00023)    functions_advance_003.hpp
+    00022)    functions_advance_003.hpp
     ---------------------------------------------------------------------
         // Declaring and using lambda functions:
         void func_various_lambda_funs()
