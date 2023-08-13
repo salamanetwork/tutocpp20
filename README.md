@@ -523,7 +523,22 @@
         // Capture all in context:
         void func_capture_all_in_context_01()
         void func_capture_all_in_context_02()
-        
+
+    ---------------------------------------------------------------------    
+    00023)    functions_advance_004.hpp
+    ---------------------------------------------------------------------
+        // static variable within the function:
+        void fn_static_variable()
+        void func_static_variable_calls()
+        // Inline functions:
+        inline int fun_inline_add(int a, int b)
+        void func_inline_add_call()
+        // Recursive Function:
+        int fn_rec_factorial(int n)
+        void func_rec_fact()
+        // Analyze the output of the Fibonacci number calculation for n
+        int fn_rec_fibonacci(int n)
+        void func_rec_fibonacci()
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
