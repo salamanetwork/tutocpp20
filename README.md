@@ -539,6 +539,50 @@
         // Analyze the output of the Fibonacci number calculation for n
         int fn_rec_fibonacci(int n)
         void func_rec_fibonacci()
+
+    ---------------------------------------------------------------------
+    00024)    templates.hpp
+    ---------------------------------------------------------------------
+        // Templates:
+        // Here's a list of benefits and drawbacks of using C++ function templates:
+        // Syntax:
+        // void cpp_func_template_print(T value)
+        void cpp_func_template_print<std::string>(std::string value)
+        T cpp_func_template_power(T base)
+        void cpp_func_template_process(T value)
+        void cpp_func_template_log(Args... args)
+        void cpp_func_template_print_proc_log()
+        //  Let's consider a real-world example of a function template that performs element-wise addition for different types of arrays 
+        std::vector<T> cpp_func_template_array_add(const std::vector<T>& arr1, const std::vector<T>& arr2)
+        void cpp_func_template_array_add_call()
+        // Let's consider another real-world example of a function template. In this case, we'll create a function template that finds the maximum element in a container.
+        typename Container::value_type cpp_func_template_find_max(const Container& container)
+        void cpp_func_template_find_max_call()
+        // Let's explore another real-world example of a function template. This time, we'll create a template for a mathematical function that calculates the average of a collection of values.
+        T cpp_func_template_calculate_average(const std::vector<T>& values)
+        void cpp_func_template_calculate_average_call()
+        // Let's explore another real-world example of a function template. In this scenario, we'll create a template for a sorting function that sorts elements of different types in ascending order.
+        void cpp_func_template_sort(std::vector<T>& elements)
+        void cpp_func_template_sort_call()
+        // Let's explore another real-world example of a function template. In this case, we'll create a template for a function that finds the first occurrence of a given value in a collection.
+        typename Container::const_iterator cpp_func_template_find(const Container& container, const T& value) {
+        size_t calculate_index(const Container& container, Iterator it)
+        void cpp_func_template_find_call()
+        // Let's explore another example, this time focusing on a function template that finds the minimum and maximum elements in a collection.
+        std::pair<T, T> cpp_func_template_find_min_max(const Container& container)
+        void cpp_func_template_find_min_max_call()
+        // Let's explore another example of a function template. This time, we'll create a template for a function that performs element-wise multiplication of two vectors and returns a new vector containing the result.
+        std::vector<T> cpp_func_template_vector_multiply(const std::vector<T>& vec1, const std::vector<T>& vec2)
+        void cpp_func_template_vector_multiply_call()
+        // In this example, we'll create a function template for a generic calculator that supports basic arithmetic operations.
+        T cpp_func_template_calculator(T a, T b, char operation)
+        void cpp_func_template_calculator_call()
+        // In this example, let's create a function template for a generic converter that converts temperature values between Fahrenheit and Celsius.
+        T cpp_func_template_convert_temperature(T temperature, char fromUnit, char toUnit)
+        void cpp_func_template_convert_temperature_call()
+        //  In this example, let's create a function template for a generic swap function that swaps the values of two variables.
+        void cpp_func_template_swap(T& a, T& b)
+        void cpp_func_template_swap_call()  
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
