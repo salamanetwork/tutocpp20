@@ -474,6 +474,46 @@
         std::optional<double> calculate_square_root_02(double number)
         void func_calculate_square_root_02()
 
+    ---------------------------------------------------------------------
+    00021)    functions_advance_002.hpp
+    ---------------------------------------------------------------------
+        // Function Overload:
+        int fn_add(int a, int b)
+        double fn_add(double a, double b)
+        void func_add_overloaded()
+        // Overloading with different parameters:
+        int fn_calculate(int a, int b)
+        int fn_calculate(int a, int b, int c)
+        int fn_calculate(int a, int b, int c, int d)
+        double fn_calculate(double a, double b)
+        void func_calculate_overloaded()
+        // Overloading with pointer parameters:
+        void fn_print_int_value(int* ptr)
+        void fn_print_double_value(double* ptr)
+        void fn_swap_int_values(int* ptr1, int* ptr2)
+        void func_print_overloaded_values()
+        // Overloading with reference parameters:
+        double fn_calculate_area_with_ref(const double& radius)
+        double fn_calculate_area_with_ref(const double& length, const double& width)
+        double fn_calculate_area_with_ref(const long double& base, const double& height)
+        void func_calculate_overloaded_area()
+        int fn_calculate_sum(const int arr[], const int& size)
+        double fn_calculate_sum(const double arr[], const int& size)
+        void func_calc_overloaded_sum()
+        // Overloading with const parameters by value:
+        int fn_find_min(const int a, const int b)
+        double fn_find_min(const double a, const double b)
+        void func_find_min_overloaded()
+        // Overloading with const pointer and pointer to const parameters:
+        void fn_swap_values(int* const ptr1, int* const ptr2)
+        void fn_swap_values(const double* ptr1, const double* ptr2)
+        void func_swap_values_with_overloaded_ptr_to_const_const_ptr()
+        // Overloading with default parameters:
+        double fn_calculate_volume(const long double& radius, const double& pi = PI)
+        double fn_calculate_volume(const double& side)
+        double fn_calculate_volume(const double& length, const double& width, const double& height)
+        void func_calculate_volume_with_default_parameter_overloaded()
+
         
         
 # Tools:
