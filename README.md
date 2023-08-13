@@ -129,8 +129,7 @@
         // Explicit Conversion
         // Overflow && Underflow
         void data_conversion()
-        
-    
+            
     ---------------------------------------------------------------------
     00007)    bitwise_ops.hpp
     ---------------------------------------------------------------------
@@ -206,8 +205,7 @@
         // Multi-Dimessional Array
         void multi_dim_2d_array()
         void multi_dim_3d_array()
-        
-        
+                
     ---------------------------------------------------------------------
     00012)    pointers.hpp
     ---------------------------------------------------------------------    
@@ -313,6 +311,7 @@
         // C++ String View:
         void processStringView(std::string_view strView)
         void cpp_string_view()
+        
     ---------------------------------------------------------------------
     00016)    functions.hpp
     ---------------------------------------------------------------------
@@ -584,6 +583,19 @@
         //  In this example, let's create a function template for a generic swap function that swaps the values of two variables.
         void cpp_func_template_swap(T& a, T& b)
         void cpp_func_template_swap_call()  
+
+    ---------------------------------------------------------------------    
+    00025)    templates_by_value.hpp
+    ---------------------------------------------------------------------
+        // Templates By Value:
+        T cpp_func_average(const T arr[], size_t size)
+        T cpp_func_findMax(const T arr[], size_t size)
+        void cpp_func_elementWiseMultiply(const T arr1[], const T arr2[], T result[], size_t size) 
+        int cpp_func_findIndex(const T arr[], size_t size, const T& value)
+        void cpp_func_bubbleSort(T arr[], size_t size)
+        T cpp_func_dotProduct(const T arr1[], const T arr2[], size_t size)
+        T cpp_func_sumAbsoluteDifferences(const T arr1[], const T arr2[], size_t size) 
+        void cpp_func_templates_call() 
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
