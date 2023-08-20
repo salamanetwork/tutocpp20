@@ -671,6 +671,7 @@
   14) www.wikipedia.org
   15) www.w3schools.com
   16) https://chat.openai.com
+  17) www.learncpp.com
   
   #### Videos, Online Courses:
   1) Udemy - The C++20 Masterclass - From Fundamentals to Advanced / Daniel Gakwaya
