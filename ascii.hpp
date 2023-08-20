@@ -4,26 +4,28 @@
 /*
     - ASCII:
 
-        ASCII (American Standard Code for Information Interchange) is a character encoding standard that assigns numerical values to various characters, symbols, and control codes used in computers and communication systems. In ASCII, each character is represented by a unique 7-bit binary number, which corresponds to a decimal value between 0 and 127.
+        - ASCII (American Standard Code for Information Interchange) is a character encoding standard that assigns numerical values to various characters, symbols, and control codes used in computers and communication systems. 
+        - In ASCII, each character is represented by a unique 7-bit binary number, which corresponds to a decimal value between 0 and 127.
 
-        For example, let's take the lowercase letter "a". In ASCII, the decimal value assigned to "a" is 97. This value is represented in binary as 01100001.
+        - For example, let's take the lowercase letter "a". In ASCII, the decimal value assigned to "a" is 97. This value is represented in binary as 01100001.
 
-        Here's a step-by-step breakdown:
+        - Here's a step-by-step breakdown:
 
             1. **Decimal Value:** The ASCII value for "a" is 97.
             2. **Binary Representation:** Convert 97 to binary. The binary representation of 97 is 1100001.
             3. **Padding:** Since ASCII uses 7 bits, we need to pad the binary value with a leading zero. The padded binary value becomes 01100001.
 
-        So, the ASCII representation of the lowercase letter "a" is 01100001.
+        - So, the ASCII representation of the lowercase letter "a" is 01100001.
 
-        Here are a few more examples:
+        - Here are a few more examples:
 
             - The ASCII value for the uppercase letter "A" is 65, which in binary is 01000001.
             - The ASCII value for the digit "0" is 48, which in binary is 00110000.
             - The ASCII value for the space character is 32, which in binary is 00100000.
             - The ASCII value for the exclamation mark "!" is 33, which in binary is 00100001.
 
-        You can find complete ASCII tables online that list the decimal, binary, and corresponding characters for all ASCII values. This character encoding is foundational for text-based communication and representation in computers and programming.
+        - You can find complete ASCII tables online that list the decimal, binary, and corresponding characters for all ASCII values. 
+        - This character encoding is foundational for text-based communication and representation in computers and programming.
 
     - ASCII Table:
 
