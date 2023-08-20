@@ -68,6 +68,7 @@
     00025)    templates_by_value.hpp
     00026)    templates_by_reference.hpp
     00027)    templates_by_pointer.hpp
+    00028)    ascii.hpp
 
 ## The Contents & The Logs:
     
@@ -628,6 +629,45 @@
         void sortContainer(Container* container)
         T* allocateArray(size_t size)
         void cpp_func_templates_call()
+
+    ---------------------------------------------------------------------    
+    00028)    templates_by_pointer.hpp
+    ---------------------------------------------------------------------
+        ASCII:
+        ASCII Table:
+        ASCII Code (Code Point):
+            NUL (null)
+            SOH (start of header)
+            STX (start of text)
+            ETX (end of text)
+            EOT (end of transmission)
+            ENQ (enquiry)
+            ACK (acknowledge)
+            BEL (bell)
+            BS (backspace)
+            HT (horizontal tab)
+            LF (line feed/new line)
+            VT (vertical tab)
+            FF (form feed / new page)
+            CR (carriage return)
+            SO (shift out)
+            SI (shift in)
+            DLE (data link escape)
+            DC1 (data control 1)
+            DC2 (data control 2)
+            DC3 (data control 3)
+            DC4 (data control 4)
+            NAK (negative acknowledge)
+            SYN (synchronous idle)
+            ETB (end of transmission block)
+            CAN (cancel)
+            EM (end of medium)
+            SUB (substitute)
+            ESC (escape)
+            FS (file separator)
+            GS (group separator)
+            RS (record separator)
+            US (unit separator)
 
     
         
