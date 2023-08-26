@@ -631,7 +631,7 @@
         void cpp_func_templates_call()
 
     ---------------------------------------------------------------------    
-    00028)    templates_by_pointer.hpp
+    00028)    ascii.hpp
     ---------------------------------------------------------------------
         ASCII:
         ASCII Table:
@@ -668,8 +668,6 @@
             GS (group separator)
             RS (record separator)
             US (unit separator)
-
-    
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
