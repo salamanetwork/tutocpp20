@@ -678,6 +678,15 @@
         cpp_func_max
         typename Container::value_type cpp_func_median
         bool cpp_func_median(const std::vector<bool>& container)
+
+    ---------------------------------------------------------------------    
+    00028)    template_function_with_overloading.hpp
+    ---------------------------------------------------------------------            
+        // Function Templates with Multiple Parameters:
+        void cpp_func_swap(T& a, U& b) 
+        PriceType cpp_func_total_cost(const PriceType& price, const QuantityType& quantity) 
+        std::vector<typename Container1::value_type> cpp_func_elementwise_add(const Container1& a, const Container2& b)
+        void cpp_func_templates_call()
         
         
 # Tools:
