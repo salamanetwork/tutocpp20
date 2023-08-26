@@ -680,15 +680,14 @@
         bool cpp_func_median(const std::vector<bool>& container)
 
     ---------------------------------------------------------------------    
-    00030)    template_function_with_overloading.hpp
+    00030)    template_function_with_multiple_params.hpp
     ---------------------------------------------------------------------            
         // Function Templates with Multiple Parameters:
         void cpp_func_swap(T& a, U& b) 
         PriceType cpp_func_total_cost(const PriceType& price, const QuantityType& quantity) 
         std::vector<typename Container1::value_type> cpp_func_elementwise_add(const Container1& a, const Container2& b)
         void cpp_func_templates_call()
-        
-        
+
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
 2) Mozilla FireFox 114
