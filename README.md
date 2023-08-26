@@ -69,6 +69,7 @@
     00026)    templates_by_reference.hpp
     00027)    templates_by_pointer.hpp
     00028)    ascii.hpp
+    00029)    template_function_with_overloading.hpp
 
 ## The Contents & The Logs:
     
@@ -668,6 +669,15 @@
             GS (group separator)
             RS (record separator)
             US (unit separator)
+
+    ---------------------------------------------------------------------    
+    00028)    template_function_with_overloading.hpp
+    ---------------------------------------------------------------------            
+        // Function Template Overloading:
+        cpp_func_max
+        typename Container::value_type cpp_func_median
+        bool cpp_func_median(const std::vector<bool>& container)
+        
         
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
