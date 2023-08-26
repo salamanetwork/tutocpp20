@@ -70,6 +70,7 @@
     00027)    templates_by_pointer.hpp
     00028)    ascii.hpp
     00029)    template_function_with_overloading.hpp
+    00030)    template_function_with_multiple_params.hpp
 
 ## The Contents & The Logs:
     
