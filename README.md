@@ -707,6 +707,8 @@
         auto cpp_func_average(const Container& container) -> std::decay_t<decltype(container.front())> 
         auto cpp_func_dot_product(const std::vector<T>& vec1, const std::vector<T>& vec2) -> std::decay_t<decltype(vec1[0] * vec2[0])>
         auto cpp_func_find_index(const Container& container, const Value& value) -> decltype(std::distance(container.begin(), std::find(container.begin(), container.end(), value))) 
+        auto getMax(T& a, U& b) -> decltype((a > b) ? a : b)
+        decltype(auto) getMin(T& a, U& b)
         void cpp_func_templates_call() 
 
 # Tools:
