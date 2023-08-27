@@ -72,6 +72,7 @@
     00029)    template_function_with_overloading.hpp
     00030)    template_function_with_multiple_params.hpp
     00031)    template_return_type_deduction_with_auto.hpp
+    00032)    template_decltype_and_trailing_return_types.hpp
 
 ## The Contents & The Logs:
     
@@ -696,6 +697,17 @@
         auto cpp_func_sum(const Container &container)
         auto cpp_func_find_min_max(const Container& container)
         cpp_func_templates_call()
+
+    ---------------------------------------------------------------------    
+    00031)    template_decltype_and_trailing_return_types.hpp
+    --------------------------------------------------------------------- 
+        // Decltype and trailing return types:
+        // Combining decltype and Trailing Return Types:
+        std::pair<typename Container::value_type, typename Container::value_type> cpp_func_sum_and_product(const Container& container) 
+        auto cpp_func_average(const Container& container) -> std::decay_t<decltype(container.front())> 
+        auto cpp_func_dot_product(const std::vector<T>& vec1, const std::vector<T>& vec2) -> std::decay_t<decltype(vec1[0] * vec2[0])>
+        auto cpp_func_find_index(const Container& container, const Value& value) -> decltype(std::distance(container.begin(), std::find(container.begin(), container.end(), value))) 
+        void cpp_func_templates_call() 
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
