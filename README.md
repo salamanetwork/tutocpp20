@@ -71,6 +71,7 @@
     00028)    ascii.hpp
     00029)    template_function_with_overloading.hpp
     00030)    template_function_with_multiple_params.hpp
+    00031)    template_return_type_deduction_with_auto.hpp
 
 ## The Contents & The Logs:
     
@@ -687,6 +688,14 @@
         PriceType cpp_func_total_cost(const PriceType& price, const QuantityType& quantity) 
         std::vector<typename Container1::value_type> cpp_func_elementwise_add(const Container1& a, const Container2& b)
         void cpp_func_templates_call()
+
+    ---------------------------------------------------------------------    
+    00031)    template_return_type_deduction_with_auto.hpp
+    --------------------------------------------------------------------- 
+        // Function Templates with Multiple Parameters:
+        auto cpp_func_sum(const Container &container)
+        auto cpp_func_find_min_max(const Container& container)
+        cpp_func_templates_call()
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
