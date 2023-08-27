@@ -165,6 +165,54 @@ namespace cpp_fun_templates
         }
         return -1; // Return -1 if value is not found
     }
+
+    // Using decltypeas a trailing return with auto
+    template <typename T, typename U>
+    auto getMax(T& a, U& b) -> decltype((a > b) ? a : b)
+    {
+        stringstream str;
+        string a_str, b_str;
+        
+        str << "a: " << "b: ";
+        
+        str >> a_str >> b_str;
+        
+        if (a > b) 
+        {
+            std::cout << a_str;
+        }
+        else
+        {
+            std::cout << b_str;
+        }
+        
+        
+        return (a > b) ? a : b;
+    }
+
+    // Using decltype(auto) as a return
+    template <typename T, typename U>
+    decltype(auto) getMin(T& a, U& b)
+    {
+        stringstream str;
+        string a_str, b_str;
+        
+        str << "a: " << "b: ";
+        
+        str >> a_str >> b_str;
+        
+        if (a > b) 
+        {
+            std::cout << a_str;
+        }
+        else
+        {
+            std::cout << b_str;
+        }
+        
+        
+        return (a < b) ? a : b;
+    }
     
 
 } // namespace cpp_fun_templates
@@ -243,6 +291,12 @@ void cpp_func_templates_call()
     } catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
+
+    int a {14};
+    int b {5};
+    
+    std::cout << "Max: " << getMax(a, b) << std::endl;
+    std::cout << "Min: " << getMin(a, b) << std::endl;
 
 }
 
