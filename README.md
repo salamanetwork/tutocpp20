@@ -74,6 +74,7 @@
     00031)    template_return_type_deduction_with_auto.hpp
     00032)    template_decltype_and_trailing_return_types.hpp
     00033)    template_non_type_params_and_default_args.hpp
+    00034)    template_auto_function.hpp
 
 ## The Contents & The Logs:
     
@@ -724,6 +725,16 @@
         void check_const()
         struct Sum
         void cpp_func_templates_call()
+
+    ---------------------------------------------------------------------    
+    00034)    template_auto_function.hpp
+    ---------------------------------------------------------------------
+        // Template Auto Function:
+        auto add(T a, U b) -> decltype(a + b)
+        T calculate_average(const T* values, size_t size) 
+        auto concatenate_strings(const Container& strings) -> decltype(strings[0])
+        auto find_max_element(ForwardIt first, ForwardIt last) -> decltype(*first)
+        void swap_values(T& a, T& b)
 
 # Tools:
 1) Fedora 38 GNU/LINUX, KDE
